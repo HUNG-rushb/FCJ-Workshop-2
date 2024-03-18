@@ -1,0 +1,113 @@
+[
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "AWS S3 Logging",
+	"tags": [],
+	"description": "",
+	"content": "AWS S3 Logging Workshop Tổng quan Trong workshop này, chúng ta sẽ cùng nhau thực hành sử dụng tính năng AWS S3 server access logging và AWS CloudTrail để logging khi S3 bucket của chúng ta được truy cập. Từ đó chúng ta sử dụng AWS Athena để truy vấn log.\nNội dung Giới thiệu Các bước chuẩn bị S3 Server Access Logging Sử dụng AWS CloudTrail Truy vấn log với AWS Athena Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/3-s3sal/3.1-sal/",
+	"title": "Bật S3 Server Access Logging",
+	"tags": [],
+	"description": "",
+	"content": "Server access logging cung cấp cho bạn khả năng hiển thị các hoạt động cấp đối tượng chi tiết trên dữ liệu của bạn. Log là tệp văn bản có một dòng cho mỗi bản ghi nhật ký. Mỗi log đại diện cho một yêu cầu và bao gồm các trường được phân cách bằng dấu cách.\nCác trường liên quan đến operation, requester, resource và thông tin session. Dưới đây là một ví dụ:\n79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be awsexamplebucket1 [06/Feb/2019:00:00:38 +0000] 192.0.2.3 79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be 3E57427F3EXAMPLE REST.GET.VERSIONING - \u0026#34;GET /awsexamplebucket1?versioning HTTP/1.1\u0026#34; 200 - 113 - 7 - \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4\u0026#34; - s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234= SigV2 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader awsexamplebucket1.s3.us-west-1.amazonaws.com TLSV1.1 Kích hoạt Server access logging Trong giao diện S3, chọn bucket logging-workshop. Trong giao diện bucket, chọn Properties. Kéo xuống tại muc Server access logging, chọn Edit Chọn Enable, sau đó chọn Brow S3 để chọn bucket lưu log. Chọn bucket logging-workshop-destination, sau đó nhấn Choose destination. Review lại bucket lưu log, sau đó nhấn Save changes. Xác nhận Server access logging đã được bật. "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Khi sử dụng tính năng logging trên Amazon S3, bạn có thể ghi lại các hành động do người dùng và dịch vụ thực hiện trên tài nguyên Amazon S3 của mình. Sau đó, bạn có thể sử dụng bản ghi logging cho mục đích kiểm tra, kiểm soát.\nBạn có thể ghi lại logging của Amazon S3 bằng Server access logging hoặc AWS CloudTrail logs.\nServer access logging là một chức năng nằm trong dịch vụ S3 của AWS, cung cấp log chi tiết cho các yêu cầu được gửi tới S3 bucket.\nServer access logging bị disabled theo mặc định. Log thường được gửi trong vòng vài giờ và rất hiếm khi mất log. Tính năng này không bị tính phí logging cũng như các thao tác PUT lưu log vào bucket. Bạn chỉ bị tính phí cho việc lưu trữ log và các thao tác GET trên file log. Bạn có thể sử dụng object lifecycle management để xóa bớt log cũ, giảm thiểu chi phí lưu trữ.\nAWS CloudTrail là dịch vụ cung cấp bản ghi các hành động được thực hiện bởi người dùng, vai trò hoặc dịch vụ trong Tài khoản AWS của bạn. Bạn có thể sử dụng CloudTrail để kiểm tra tài khoản của mình bằng cách logging và monitor mọi hoạt động, phát hiện nếu như có hoạt động bất thường trong tài khoản của mình.\nLog các hành động của Amazon S3 bằng AWS CloudTrail giúp bảo mật tài khoản của bạn bằng cách cung cấp khả năng kiểm tra và phân tích quyền truy cập.\nSo sánh giữa hai phương án logging\nTiêu chí AWS CloudTrail Amazon S3 server logs Kết hợp với những hệ thống hay service khác (Amazon CloudWatch Logs, Amazon CloudWatch Events) Có Không Gửi log tới một hoặc nhiều destination khác (ví dụ gửi 1 log tới 2 bucket khác nhau) Có Không Chỉ bật log cho một số object cụ thể (prefix) Có Không Gửi log xuyên account (bucket khác account) Có Không Xác thực tính toàn vẹn của log bằng cách sử dụng chữ ký số hoặc hàm băm Có Không Mặc định hoặc lựa chọn mã hóa cho log Có Không Log object operations (sử dụng Amazon S3 APIs) Có Có Log bucket operations (sử dụng Amazon S3 APIs) Có Có Giao diện quản lý log Có Không Cho phép Object Lock parameters, Amazon S3 Select chọn log record Có Không Bên cạnh đó, Amazon Athena là dịch vụ query tương tác giúp bạn dễ dàng phân tích dữ liệu trong Amazon S3 bằng SQL tiêu chuẩn. Bạn không cần quản lý bất kỳ cơ sở hạ tầng nào với Athena và bạn chỉ trả tiền cho các truy vấn bạn chạy.\nSau khi bật server access logs hoặc AWS CloudTrail và lưu trữ trong S3 bucket mục tiêu, bạn có thể muốn phân tích hoặc tìm kiếm thông tin từ log. Logs không được Amazon S3 tự động phân tích và bạn có thể có rất nhiều dữ liệu. Để phân tích tất cả dữ liệu Amazon S3, bạn có thể sử dụng Amazon Athena.\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-2buckets/",
+	"title": "Tạo 2 bucket",
+	"tags": [],
+	"description": "",
+	"content": "Tạo 2 bucket Truy cập vào AWS Management Console, tìm S3 và chọn S3. Trong giao diện S3, chọn Create bucket. Trong giao diện create bucket: Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop. Tiếp tục: Mục Block Public Access settings for this bucket, bỏ chọn Block all public access. Mục Turning off block all public access might result in this bucket and the objects within becoming public, xác nhận mục này. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. Tiếp tục tạo bucket logging-workshop-destination Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop-destination. Không cần bỏ chọn mục Block Public Access settings for this bucket. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Để chuẩn bị cho workshop này, chúng ta tạo 1 bucket với public access để chứa file cần truy cập và 1 private bucket để chứa server access log.\nNội dung Tạo 2 bucket Cập nhật quyền tạo log Upload file vào bucket Thêm policy cho bucket Truy cập file "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-permission/",
+	"title": "Cập nhật quyền tạo log",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật quyền tạo log cho S3 log delivery group Quay về giao diện các bucket, chọn bucket logging-workshop-destination. Kéo xuống mục Object Ownership, chọn Edit Chọn ACLs enabled, xác nhận I acknowledge that ACLS will be restored., nhấn Save changes. Bước này sẽ giúp những đối tượng trong Access control list (ACL) ngoài bucket owner có quyền tạo object. Sau đó kéo xuống mục Access control list (ACL), chọn Edit. Tại mục S3 log delivery group, chọn quyền Write, sau đó Save changes. Xác nhận quyền Write cho S3 log delivery group. Trở vê giao diện các bucket. "
+},
+{
+	"uri": "//localhost:1313/vi/3-s3sal/3.2-log/",
+	"title": "Kiểm tra log",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.\nQuay về giao diện buckets, chọn bucket logging-workshop-destination, chờ khoảng 15 phút, refresh lại bucket.\nChúng ta sẽ thấy những file log đã được tạo ra. Chọn vào 1 file log. Chúng ta có thể thấy thông tin file log này. Chọn Download và mở file log ra File log sẽ có cấu trúc như sau: b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/vi/3-s3sal/",
+	"title": "S3 Server Access Logging",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năng Server access logging.\nNội dung Bật S3 Server Access Logging Kiểm tra log "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.3-upload/",
+	"title": "Upload file vào bucket",
+	"tags": [],
+	"description": "",
+	"content": "Upload file vào bucket Chọn bucket logging-workshop. Trong giao diện bucket, chọn Upload. Trong giao diện upload, chọn Add files. Tiếp tục: Tải xuống file S3_logging_workshop.txt tại Attachments\rS3_logging_workshop.txt\r(0 ko)\rBạn hãy mở file trong tab mới, nhấn Ctrl + S để lưu file về máy.\nXác nhận file đã chọn thành công. Chọn Upload. Xác nhận file đã được tải lên thành công. "
+},
+{
+	"uri": "//localhost:1313/vi/4-s3cloudtrail/",
+	"title": "Logging với AWS CloudTrail",
+	"tags": [],
+	"description": "",
+	"content": " Cách hoạt động của CloudTrail bao gồm 3 thành phần chính: Event là record về một hoạt động trong tài khoản AWS. Trail cho phép CloudTrail phân phối log tới bucket Amazon S3, CloudWatch log và CloudWatch event. Log bucket dùng để lưu trữ các file log. Kích hoạt Server access logging Trong giao diện AWS Console, tìm và chọn Cloudtrail. Chọn Create trail Thực hiện: Mục Trail name, nhập S3_logging_workshop. Mục Trail log bucket and folder, nhập aws-cloud-trail-logs-workshop. Mục Log file SSE-KMS encryption, bỏ tick Enable. Kéo xuống dưới và chọn Next. Tại mục Event type, tick chọn thêm Data events. Kéo xuống dưới, tại mục Data events, chọn S3. Sau đó nhấn Next. Review lại và ấn Create trail. Kiểm tra trail đã được tạo thành công. Quay trở về giao diện S3 console, chúng ta có thể thấy bucket aws-cloud-trail-logs-workshop đã được tạo ra để lưu log. Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.\nChờ khoảng 10 phút, sau đó refresh. Truy cập vào các folder bên trong cho tới khi chúng ta có thể thấy các file log đã được tạo ra.\nChọn vào 1 file log bất kỳ, ấn Download. Khi xem file log đã được tải về, ta có thể thấy nội dung có dạng JSON như sau: { \u0026#34;Records\u0026#34;: [ { \u0026#34;eventVersion\u0026#34;: \u0026#34;1.09\u0026#34;, \u0026#34;userIdentity\u0026#34;: { \u0026#34;type\u0026#34;: \u0026#34;IAMUser\u0026#34;, \u0026#34;principalId\u0026#34;: \u0026#34;******\u0026#34;, \u0026#34;arn\u0026#34;: \u0026#34;arn:aws:iam::****:user/****\u0026#34;, \u0026#34;accountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;accessKeyId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;userName\u0026#34;: \u0026#34;****\u0026#34;, \u0026#34;sessionContext\u0026#34;: { \u0026#34;attributes\u0026#34;: { \u0026#34;creationDate\u0026#34;: \u0026#34;2024-03-03T05:32:58Z\u0026#34;, \u0026#34;mfaAuthenticated\u0026#34;: \u0026#34;false\u0026#34; } } }, \u0026#34;eventTime\u0026#34;: \u0026#34;2024-03-03T14:00:32Z\u0026#34;, \u0026#34;eventSource\u0026#34;: \u0026#34;s3.amazonaws.com\u0026#34;, \u0026#34;eventName\u0026#34;: \u0026#34;GetObject\u0026#34;, \u0026#34;awsRegion\u0026#34;: \u0026#34;ap-southeast-1\u0026#34;, \u0026#34;sourceIPAddress\u0026#34;: \u0026#34;118.69.159.186\u0026#34;, \u0026#34;userAgent\u0026#34;: \u0026#34;[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0]\u0026#34;, \u0026#34;requestParameters\u0026#34;: { \u0026#34;X-Amz-Date\u0026#34;: \u0026#34;20240303T140026Z\u0026#34;, \u0026#34;bucketName\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop\u0026#34;, \u0026#34;X-Amz-Algorithm\u0026#34;: \u0026#34;AWS4-HMAC-SHA256\u0026#34;, \u0026#34;response-content-disposition\u0026#34;: \u0026#34;attachment\u0026#34;, \u0026#34;X-Amz-SignedHeaders\u0026#34;: \u0026#34;host\u0026#34;, \u0026#34;Host\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com\u0026#34;, \u0026#34;X-Amz-Expires\u0026#34;: \u0026#34;300\u0026#34;, \u0026#34;key\u0026#34;: \u0026#34;AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz\u0026#34; }, \u0026#34;responseElements\u0026#34;: null, \u0026#34;additionalEventData\u0026#34;: { \u0026#34;SignatureVersion\u0026#34;: \u0026#34;SigV4\u0026#34;, \u0026#34;CipherSuite\u0026#34;: \u0026#34;ECDHE-RSA-AES128-GCM-SHA256\u0026#34;, \u0026#34;bytesTransferredIn\u0026#34;: 0, \u0026#34;AuthenticationMethod\u0026#34;: \u0026#34;QueryString\u0026#34;, \u0026#34;x-amz-id-2\u0026#34;: \u0026#34;0nSxx7oCCBTlrpXwQsLYoA0MqHo/+k/FiMnikrVCDKiWDr1Aoeg7oSqlJvBsYm2J3BnFpU31IUA=\u0026#34;, \u0026#34;bytesTransferredOut\u0026#34;: 7759 }, \u0026#34;requestID\u0026#34;: \u0026#34;MB8NVKR3FVMSSRM9\u0026#34;, \u0026#34;eventID\u0026#34;: \u0026#34;3d4906c8-52ce-456f-bc0a-a89f07b364a0\u0026#34;, \u0026#34;readOnly\u0026#34;: true, \u0026#34;resources\u0026#34;: [ { \u0026#34;type\u0026#34;: \u0026#34;AWS::S3::Object\u0026#34;, \u0026#34;ARN\u0026#34;: \u0026#34;arn:aws:s3:::aws-cloudtrail-logs-workshop/AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz\u0026#34; }, { \u0026#34;accountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;AWS::S3::Bucket\u0026#34;, \u0026#34;ARN\u0026#34;: \u0026#34;arn:aws:s3:::aws-cloudtrail-logs-workshop\u0026#34; } ], \u0026#34;eventType\u0026#34;: \u0026#34;AwsApiCall\u0026#34;, \u0026#34;managementEvent\u0026#34;: false, \u0026#34;recipientAccountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;eventCategory\u0026#34;: \u0026#34;Data\u0026#34;, \u0026#34;tlsDetails\u0026#34;: { \u0026#34;tlsVersion\u0026#34;: \u0026#34;TLSv1.2\u0026#34;, \u0026#34;cipherSuite\u0026#34;: \u0026#34;ECDHE-RSA-AES128-GCM-SHA256\u0026#34;, \u0026#34;clientProvidedHostHeader\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com\u0026#34; } } ] } "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.4-policy/",
+	"title": "Thêm policy cho bucket",
+	"tags": [],
+	"description": "",
+	"content": "Thêm policy cho bucket Trở về giao diện S3, chọn logging-workshop bucket. Trong giao diện bucket, chọn mục Permissions. Mục Bucket policy, chọn Edit. Nhập vào mục policy: { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Principal\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;s3:GetObject\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:s3:::logging-workshop/*\u0026#34; } ] } Kéo xuống dưới cùng, chọn Save changes Xác nhận update policy thành công. "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.5-file/",
+	"title": "Truy cập file thành công",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file thành công Trở về giao diện bucket, chọn vào file S3_logging_workshop.txt. Copy Object URL. Paste URL vào trình duyệt vào xác nhận đã truy cập được vào file. Hãy giữ lại URL này cho phần tiếp theo. "
+},
+{
+	"uri": "//localhost:1313/vi/5-s3athena/",
+	"title": "Truy vấn log với AWS Athena",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng Athena với CloudTrail log là một cách để nâng cao khả năng phân tích của bạn về hoạt động dịch vụ AWS. Ví dụ: bạn có thể sử dụng truy vấn để xác định xu hướng và tách biệt hơn nữa hoạt động theo thuộc tính, chẳng hạn như địa chỉ IP nguồn hoặc người dùng.\nTruy cập vào CloudTrail console. Ở bảng điều hướng bên trái, chọn Event history. Sau đó chọn Create Athena table. Tại muc Storage location, chọn bucket aws-cloud-trail-logs-workshop mà ta đang dùng để lưu trữ CloudTrail log. Sau đó chọn Create table. Xác nhận Athena table cloudtrail_logs_aws_cloudtrail_logs_workshop đã được tạo. Tìm và chọn service Athena, sau đó chọn Launch query editor. Nếu như đây là lần đầu bạn sử dụng Athena thì ấn Edit settings, nếu không thì bạn có thể tiếp tục tại bước số 10. Ấn Browse S3. Chọn 1 bucket để lưu kết quả khi query, ở đây chúng ta sử dụng bucket logging-workshop-destination. Kiểm tra và ấn Save. Kiểm tra và ấn Editor để quay trở về. Copy đoạn code dưới đây vào editor, hãy đảm bảo tên table mà ta đang query giống với tên table ở bảng bên trái. Query này sẽ lọc ra những log hành động GetObject có eventsource là s3.amazonaws.com. Sau đó ấn Run. SELECT * FROM cloudtrail_logs_aws_cloudtrail_logs_workshop WHERE eventsource = \u0026#39;s3.amazonaws.com\u0026#39; AND eventname in (\u0026#39;GetObject\u0026#39;) Kiểm tra kết quả query ở ngay bên dưới. Sau khi thành công, hãy chạy đoạn query sau trong editor để xóa table DROP TABLE `cloudtrail_logs_aws_cloudtrail_logs_workshop` "
+},
+{
+	"uri": "//localhost:1313/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nXóa Athena query Tìm và chọn service Athena, sau đó chọn Launch query editor, chọn tab Settings, ấn Manage. Ấn X để xóa bucket lưu query, ấn Save. Xóa CloudTrail Tìm và chọn service CloudTrail, chọn Trails ở bảng điều hướng bên trái. Chọn trail S3_logging_workshop, sau đó chọn Delete. Xác nhận Delete. Xóa S3 buckets Tìm và chọn service S3, sau chọn chọn bucket logging_workshop. Để xóa bucket ta cần xóa tất cả các file trong bucket đó. Chọn tất cả cái file sau đó ấn Delete. Xác nhận để xóa tất cả các file. Ấn Delete objects. Quay trở về danh sách bucket, và chọn bucket logging_workshop, chọn Delete. Xác nhận tên bucket và ấn Delete bucket. Lặp lai các bước từ bước 5 để xóa objects và xóa bucket cho 2 bucket còn lại, logging-workshop-destinations và aws-cloudtrail-log-workshop. "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
