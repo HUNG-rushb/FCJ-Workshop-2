@@ -12,15 +12,15 @@ pre: " <b> 3.2 </b> "
 
 2. In buckets console, select bucket **logging-workshop-destination**, wait about 15 minutes, refresh the bucket.
 
-![CreateBucket](/images/3.connect/37.png)
+![CreateBucket](/Workshop-1/images/3.connect/37.png)
 
 3. We can see there are logs there, select one.
 
-![CreateBucket](/images/3.connect/38.png)
+![CreateBucket](/Workshop-1/images/3.connect/38.png)
 
 4.  Select **Download** and open it.
 
-![CreateBucket](/images/3.connect/39.png)
+![CreateBucket](/Workshop-1/images/3.connect/39.png)
 
 5. the log file will looks like below:
 

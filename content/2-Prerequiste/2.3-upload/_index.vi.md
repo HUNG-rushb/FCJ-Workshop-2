@@ -10,11 +10,11 @@ pre: " <b> 2.3 </b> "
 
 1. Chọn bucket **logging-workshop**. Trong giao diện bucket, chọn **Upload**.
 
-![CreateBucket](/images/2.prerequisite/26.png)
+![CreateBucket](/Workshop-1/images/2.prerequisite/26.png)
 
 2. Trong giao diện upload, chọn **Add files**.
 
-![CreateBucket](/images/2.prerequisite/27.png)
+![CreateBucket](/Workshop-1/images/2.prerequisite/27.png)
 
 3. Tiếp tục:
 
@@ -27,8 +27,8 @@ Bạn hãy mở file trong tab mới, nhấn **Ctrl + S** để lưu file về m
 - Xác nhận file đã chọn thành công.
 - Chọn **Upload**.
 
-![CreateBucket](/images/2.prerequisite/28.png)
+![CreateBucket](/Workshop-1/images/2.prerequisite/28.png)
 
 4. Xác nhận file đã được tải lên thành công.
 
-![CreateBucket](/images/2.prerequisite/29.png)
+![CreateBucket](/Workshop-1/images/2.prerequisite/29.png)

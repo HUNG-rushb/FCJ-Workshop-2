@@ -18,28 +18,28 @@ Các trường liên quan đến operation, requester, resource và thông tin s
 
 1. Trong giao diện S3, chọn bucket **logging-workshop**.
 
-![S3console](/images/3.connect/30.png)
+![S3console](/Workshop-1/images/3.connect/30.png)
 
 2. Trong giao diện bucket, chọn **Properties**.
 
-![CreateBucket](/images/3.connect/31.png)
+![CreateBucket](/Workshop-1/images/3.connect/31.png)
 
 3. Kéo xuống tại muc **Server access logging**, chọn **Edit**
 
-![CreateBucket](/images/3.connect/32.png)
+![CreateBucket](/Workshop-1/images/3.connect/32.png)
 
 4. Chọn **Enable**, sau đó chọn **Brow S3** để chọn bucket lưu log.
 
-![CreateBucket](/images/3.connect/33.png)
+![CreateBucket](/Workshop-1/images/3.connect/33.png)
 
 5. Chọn bucket **logging-workshop-destination**, sau đó nhấn **Choose destination**.
 
-![CreateBucket](/images/3.connect/34.png)
+![CreateBucket](/Workshop-1/images/3.connect/34.png)
 
 6. Review lại bucket lưu log, sau đó nhấn **Save changes**.
 
-![CreateBucket](/images/3.connect/35.png)
+![CreateBucket](/Workshop-1/images/3.connect/35.png)
 
 7. Xác nhận **Server access logging** đã được bật.
 
-![CreateBucket](/images/3.connect/36.png)
+![CreateBucket](/Workshop-1/images/3.connect/36.png)

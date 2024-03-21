@@ -12,15 +12,15 @@ pre: " <b> 3. </b> "
 
 2. Quay về giao diện buckets, chọn bucket **logging-workshop-destination**, chờ khoảng 15 phút, refresh lại bucket.
 
-![CreateBucket](/images/3.connect/37.png)
+![CreateBucket](/Workshop-1/images/3.connect/37.png)
 
 3. Chúng ta sẽ thấy những file log đã được tạo ra. Chọn vào 1 file log.
 
-![CreateBucket](/images/3.connect/38.png)
+![CreateBucket](/Workshop-1/images/3.connect/38.png)
 
 4. Chúng ta có thể thấy thông tin file log này. Chọn **Download** và mở file log ra
 
-![CreateBucket](/images/3.connect/39.png)
+![CreateBucket](/Workshop-1/images/3.connect/39.png)
 
 5. File log sẽ có cấu trúc như sau:
 

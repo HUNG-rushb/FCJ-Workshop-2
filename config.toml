@@ -1,4 +1,5 @@
-relativeURLs = true
+baseURL="https://hung-rushb.github.io/Workshop-1/"
+BaseURL="https://hung-rushb.github.io/Workshop-1/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"

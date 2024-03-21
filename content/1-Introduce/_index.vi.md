@@ -8,7 +8,7 @@ pre: " <b> 1. </b> "
 
 Khi sử dụng tính năng logging trên Amazon S3, bạn có thể ghi lại các hành động do người dùng và dịch vụ thực hiện trên tài nguyên **Amazon S3** của mình. Sau đó, bạn có thể sử dụng bản ghi logging cho mục đích kiểm tra, kiểm soát.
 
-![S3log](/images/1.introduce/10.png)
+![S3log](/Workshop-1/images/1.introduce/10.png)
 
 Bạn có thể ghi lại logging của Amazon S3 bằng **Server access logging** hoặc **AWS CloudTrail logs**.
 
@@ -16,13 +16,13 @@ Bạn có thể ghi lại logging của Amazon S3 bằng **Server access logging
 
 **Server access logging** bị disabled theo mặc định. Log thường được gửi trong vòng vài giờ và rất hiếm khi mất log. Tính năng này không bị tính phí logging cũng như các thao tác PUT lưu log vào bucket. Bạn chỉ bị tính phí cho việc lưu trữ log và các thao tác GET trên file log. Bạn có thể sử dụng **object lifecycle management** để xóa bớt log cũ, giảm thiểu chi phí lưu trữ.
 
-![S3sal](/images/1.introduce/11.png)
+![S3sal](/Workshop-1/images/1.introduce/11.png)
 
 **AWS CloudTrail** là dịch vụ cung cấp bản ghi các hành động được thực hiện bởi người dùng, vai trò hoặc dịch vụ trong Tài khoản AWS của bạn. Bạn có thể sử dụng **CloudTrail** để kiểm tra tài khoản của mình bằng cách logging và monitor mọi hoạt động, phát hiện nếu như có hoạt động bất thường trong tài khoản của mình.
 
 Log các hành động của **Amazon S3** bằng **AWS CloudTrail** giúp bảo mật tài khoản của bạn bằng cách cung cấp khả năng kiểm tra và phân tích quyền truy cập.
 
-![S3ct](/images/1.introduce/12.png)
+![S3ct](/Workshop-1/images/1.introduce/12.png)
 
 **So sánh giữa hai phương án logging**
 
@@ -43,4 +43,4 @@ Bên cạnh đó, **Amazon Athena** là dịch vụ query tương tác giúp b�
 
 Sau khi bật **server access logs** hoặc **AWS CloudTrail** và lưu trữ trong S3 bucket mục tiêu, bạn có thể muốn phân tích hoặc tìm kiếm thông tin từ log. Logs không được **Amazon S3** tự động phân tích và bạn có thể có rất nhiều dữ liệu. Để phân tích tất cả dữ liệu **Amazon S3**, bạn có thể sử dụng **Amazon Athena**.
 
-![S3athena](/images/1.introduce/13.png)
+![S3athena](/Workshop-1/images/1.introduce/13.png)
