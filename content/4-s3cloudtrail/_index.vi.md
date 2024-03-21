@@ -15,11 +15,7 @@ pre: " <b> 4. </b> "
 
 1. Trong giao diện **AWS Console**, tìm và chọn **Cloudtrail**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/41.png)
-
 2. Chọn **Create trail**
-
-![S3](/Workshop-1/images/4.s3cloudtrail/42.png)
 
 3. Thực hiện:
 
@@ -27,43 +23,25 @@ pre: " <b> 4. </b> "
 - Mục **Trail log bucket and folder**, nhập **`aws-cloud-trail-logs-workshop`**.
 - Mục **Log file SSE-KMS encryption**, bỏ tick **Enable**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/43.png)
-
 4. Kéo xuống dưới và chọn **Next**.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/44.png)
 
 5. Tại mục **Event type**, tick chọn thêm **Data events**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/45.png)
-
 6. Kéo xuống dưới, tại mục **Data events**, chọn **S3**. Sau đó nhấn **Next**.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/46.png)
 
 7. Review lại và ấn **Create trail**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/47.png)
-
 8. Kiểm tra trail đã được tạo thành công.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/48.png)
-
 9. Quay trở về giao diện **S3 console**, chúng ta có thể thấy bucket **aws-cloud-trail-logs-workshop** đã được tạo ra để lưu log.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/49.png)
 
 10. Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.
 
 11. Chờ khoảng 10 phút, sau đó refresh. Truy cập vào các folder bên trong cho tới khi chúng ta có thể thấy các file log đã được tạo ra.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/59.png)
-
 12. Chọn vào 1 file log bất kỳ, ấn **Download**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/60.png)
-
-12. Khi xem file log đã được tải về, ta có thể thấy nội dung có dạng JSON như sau:
+13. Khi xem file log đã được tải về, ta có thể thấy nội dung có dạng JSON như sau:
 
 ```json
 {

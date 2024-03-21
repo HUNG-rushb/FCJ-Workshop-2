@@ -20,28 +20,14 @@ The fields relate to operation, requester, resource, and session information. He
 
 1. In S3 console, select bucket **logging-workshop**.
 
-![S3console](/Workshop-1/images/3.connect/30.png)
-
 2. In bucket console, select **Properties**.
-
-![CreateBucket](/Workshop-1/images/3.connect/31.png)
 
 3. Scroll dowm to **Server access logging**, select **Edit**
 
-![CreateBucket](/Workshop-1/images/3.connect/32.png)
-
 4. Select **Enable**, then select **Brow S3** for storing the logs afterward.
-
-![CreateBucket](/Workshop-1/images/3.connect/33.png)
 
 5. Select bucket **logging-workshop-destination**, then select **Choose destination**.
 
-![CreateBucket](/Workshop-1/images/3.connect/34.png)
-
 6. Review bucket, then select **Save changes**.
 
-![CreateBucket](/Workshop-1/images/3.connect/35.png)
-
 7. Confirm **Server access logging** is enabled.
-
-![CreateBucket](/Workshop-1/images/3.connect/36.png)

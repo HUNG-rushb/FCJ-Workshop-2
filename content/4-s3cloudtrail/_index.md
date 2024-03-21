@@ -15,11 +15,7 @@ pre: " <b> 4. </b> "
 
 1. In **AWS Console**, find and choose **Cloudtrail**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/41.png)
-
 2. Select **Create trail**
-
-![S3](/Workshop-1/images/4.s3cloudtrail/42.png)
 
 3. Continue:
 
@@ -27,43 +23,25 @@ pre: " <b> 4. </b> "
 - For **Trail log bucket and folder**, insert **`aws-cloud-trail-logs-workshop`**.
 - For **Log file SSE-KMS encryption**, untick **Enable**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/43.png)
-
 4. Scroll down and select **Next**.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/44.png)
 
 5. For **Event type**, tick **Data events**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/45.png)
-
 6. Scroll down, for **Data events**, select **S3**. Then hit **Next**.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/46.png)
 
 7. Review and select **Create trail**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/47.png)
-
 8. Confirm trail is created.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/48.png)
-
 9. Return **S3 console**, we can see that **aws-cloud-trail-logs-workshop** is created for storing logs.
-
-![S3](/Workshop-1/images/4.s3cloudtrail/49.png)
 
 10. Open private tab and access the file.
 
 11. Wait 10 minuts then refresh. Follow, get into inners folder until you can see the logs.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/59.png)
-
 12. Select a file and **Download**.
 
-![S3](/Workshop-1/images/4.s3cloudtrail/60.png)
-
-12. Log file will look like this:
+13. Log file will look like this:
 
 ```json
 {

@@ -10,15 +10,9 @@ pre: " <b> 2.4 </b> "
 
 1. Trở về giao diện S3, chọn **logging-workshop** bucket.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/30.png)
-
 2. Trong giao diện bucket, chọn mục **Permissions**.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/31.png)
-
 3. Mục **Bucket policy**, chọn **Edit**.
-
-![CreateBucket](/Workshop-1/images/2.prerequisite/32.png)
 
 4. Nhập vào mục policy:
 
@@ -36,12 +30,6 @@ pre: " <b> 2.4 </b> "
 }
 ```
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/33.png)
-
 5. Kéo xuống dưới cùng, chọn **Save changes**
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/34.png)
-
 6. Xác nhận update policy thành công.
-
-![CreateBucket](/Workshop-1/images/2.prerequisite/35.png)

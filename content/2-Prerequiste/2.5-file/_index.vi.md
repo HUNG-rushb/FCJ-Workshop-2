@@ -10,12 +10,6 @@ pre: " <b> 2.5 </b> "
 
 1. Trở về giao diện bucket, chọn vào file **S3_logging_workshop.txt**.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/36.png)
-
 2. Copy **Object URL**.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/37.png)
-
 3. Paste URL vào trình duyệt vào xác nhận đã truy cập được vào file. Hãy giữ lại URL này cho phần tiếp theo.
-
-![CreateBucket](/Workshop-1/images/2.prerequisite/38.png)
