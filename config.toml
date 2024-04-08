@@ -1,5 +1,4 @@
-baseURL="https://hung-rushb.github.io/FCJ-Workshop-2/"
-BaseURL="https://hung-rushb.github.io/FCJ-Workshop-2/"
+
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"

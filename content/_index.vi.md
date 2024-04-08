@@ -1,15 +1,21 @@
 ---
-title: "AWS S3 Logging"
+title: "AWS Pipeline"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 ---
 
-# AWS S3 Logging Workshop
+# Triển khai CI/CD pipeline trên AWS
 
 ### Tổng quan
 
-Trong workshop này, chúng ta sẽ cùng nhau thực hành sử dụng tính năng **AWS S3 server access logging** và **AWS CloudTrail** để logging khi S3 bucket của chúng ta được truy cập. Từ đó chúng ta sử dụng **AWS Athena** để truy vấn log.
+Trong workshop này, chúng ta sẽ cùng nhau xây dựng một CD pipeline sử dụng **AWS CodePipeline**.
+
+![FCJ_ws2](/images/1.introduce/1.png)
+![FCJ_ws2](/images/1.introduce/1.png?w=500)
+![FCJ_ws2](/images/1.introduce/1.png?w=5)
+
+**AWS CodePipeline** là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. **CodePipeline** tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.
 
 ### Nội dung
 

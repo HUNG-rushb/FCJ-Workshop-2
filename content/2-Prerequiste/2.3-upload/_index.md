@@ -10,11 +10,7 @@ pre: " <b> 2.3 </b> "
 
 1. Select bucket **logging-workshop**. Then, select **Upload**.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/26.png)
-
 2. Select **Add files**.
-
-![CreateBucket](/Workshop-1/images/2.prerequisite/27.png)
 
 3. Then:
 
@@ -27,8 +23,4 @@ Open in a new tab, **Ctrl + S** to save the file to your local.
 - confirm the file is selected
 - Select **Upload**.
 
-![CreateBucket](/Workshop-1/images/2.prerequisite/28.png)
-
 4. Confirm uploaded successfully.
-
-![CreateBucket](/Workshop-1/images/2.prerequisite/29.png)
