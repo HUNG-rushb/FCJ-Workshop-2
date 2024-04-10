@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>AWS S3 Logging :: AWS System Manager</title>
+    <title>AWS Blue/Green Deployment :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1712570823" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1712570823" rel="stylesheet">
-    <link href="/css/hybrid.css?1712570823" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1712570823" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1712570823" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712570823" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1712570823" rel="stylesheet">
-    <link href="/css/theme.css?1712570823" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1712570823" rel="stylesheet">
+    <link href="/css/nucleus.css?1712767981" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1712767981" rel="stylesheet">
+    <link href="/css/hybrid.css?1712767981" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1712767981" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1712767981" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712767981" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1712767981" rel="stylesheet">
+    <link href="/css/theme.css?1712767981" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1712767981" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1712570823" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1712767981" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1712570823"></script>
+    <script src="/js/jquery-3.3.1.min.js?1712767981"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1712570823"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1712570823"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1712767981"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1712767981"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1712570823"></script>
+<script type="text/javascript" src="/js/search.js?1712767981"></script>
 
     
   </div>
@@ -461,12 +461,12 @@
  
   
     
-    <li data-nav-id="/vi/6-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+    <li data-nav-id="/vi/7-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
         
         
         
         ">
-      <a href="/vi/6-cleanup/">
+      <a href="/vi/7-cleanup/">
            <b> 6. </b> Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
@@ -606,21 +606,20 @@
 </span>
 
  
-<h1 id="aws-s3-logging-workshop">AWS S3 Logging Workshop</h1>
+<h1 id="triển-khai-bluegreen-pipeline-trên-nền-tảng-aws">Triển khai Blue/Green pipeline trên nền tảng AWS</h1>
 <h3 id="tổng-quan">Tổng quan</h3>
 <p>Trong workshop này, chúng ta sẽ cùng nhau xây dựng một CD pipeline sử dụng <strong>AWS CodePipeline</strong>.</p>
-<p><img alt="FCJ_ws2" src="/images/1.introduce/1.png">
-<img alt="FCJ_ws2" src="/images/1.introduce/1.png?w=500">
-<img alt="FCJ_ws2" src="/images/1.introduce/1.png?w=5"></p>
+<p><img alt="FCJ_ws2" src="/images/1.introduce/1.png"></p>
 <p><strong>AWS CodePipeline</strong> là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. <strong>CodePipeline</strong> tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.</p>
 <h3 id="nội-dung">Nội dung</h3>
 <ol>
 <li><a href="/vi/1-introduce/">Giới thiệu</a></li>
 <li><a href="/vi/2-prerequiste/">Các bước chuẩn bị</a></li>
-<li><a href="/vi/3-s3sal/">S3 Server Access Logging</a></li>
-<li><a href="/vi/4-s3cloudtrail/">Sử dụng AWS CloudTrail</a></li>
-<li><a href="/vi/5-s3athena/">Truy vấn log với AWS Athena</a></li>
-<li><a href="/vi/6-cleanup/">Dọn dẹp tài nguyên</a></li>
+<li><a href="/vi/3-s3sal/">AWS CodeCommit</a></li>
+<li><a href="/vi/4-s3cloudtrail/">AWS CodeBuild</a></li>
+<li><a href="/vi/5-s3athena/">AWS CodeDeploy</a></li>
+<li><a href="6-cleanup/">AWS CodePipeline</a></li>
+<li><a href="/vi/7-cleanup/">Dọn dẹp tài nguyên</a></li>
 </ol>
 	
   
@@ -885,19 +884,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1712570823"></script>
-    <script src="/js/perfect-scrollbar.min.js?1712570823"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1712570823"></script>
-    <script src="/js/jquery.sticky.js?1712570823"></script>
-    <script src="/js/featherlight.min.js?1712570823"></script>
-    <script src="/js/highlight.pack.js?1712570823"></script>
+    <script src="/js/clipboard.min.js?1712767981"></script>
+    <script src="/js/perfect-scrollbar.min.js?1712767981"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1712767981"></script>
+    <script src="/js/jquery.sticky.js?1712767981"></script>
+    <script src="/js/featherlight.min.js?1712767981"></script>
+    <script src="/js/highlight.pack.js?1712767981"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1712570823"></script>
-    <script src="/js/learn.js?1712570823"></script>
-    <script src="/js/hugo-learn.js?1712570823"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1712767981"></script>
+    <script src="/js/learn.js?1712767981"></script>
+    <script src="/js/hugo-learn.js?1712767981"></script>
 
-    <link href="/mermaid/mermaid.css?1712570823" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1712570823"></script>
+    <link href="/mermaid/mermaid.css?1712767981" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1712767981"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

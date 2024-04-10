@@ -91,7 +91,7 @@
 	"content": "Using Athena with CloudTrail logs is even easier than server access logs. With server access logs, you had to go to the Athena console to create a database and table, but with CloudTrail logging, Athena will automatically create a table for you.\nTo use Athena with CloudTrail logs, simply go to the CloudTrail event history and select Run advanced queries in Amazon Athena.\nGo to CloudTrail console. On left panel, select Event history, select Create Athena table.\nfor Storage location, select bucket aws-cloud-trail-logs-workshop which we are using to store logs then select Create table.\nConfirm Athena table cloudtrail_logs_aws_cloudtrail_logs_workshop created.\nFind select service Athena, then select Launch query editor.\nIf this is the first time you use Athena, select Edit settings, if not, skip to step 10.\nClick Browse S3.\nSelect 1 bucket to store query\u0026rsquo;s result, here we choose bucket logging-workshop-destination.\nCheck and click Save.\nCheck and click Editor to return.\nCopy the query into the editor, make sure you are using the right table.This query will filter operation GetObject whihc have eventsource is s3.amazonaws.com. select Run.\nSELECT * FROM cloudtrail_logs_aws_cloudtrail_logs_workshop WHERE eventsource = \u0026#39;s3.amazonaws.com\u0026#39; AND eventname in (\u0026#39;GetObject\u0026#39;) Check the result below.\nFinally, run this query to drop the table.\nDROP TABLE `cloudtrail_logs_aws_cloudtrail_logs_workshop` "
 },
 {
-	"uri": "//localhost:1313/6-cleanup/",
+	"uri": "//localhost:1313/7-cleanup/",
 	"title": "Clean up",
 	"tags": [],
 	"description": "",
