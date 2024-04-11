@@ -12,3 +12,5 @@ Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năn
 
 1.  [Bật S3 Server Access Logging](3.1-sal/)
 2.  [Kiểm tra log](3.2-log/)
+
+<!-- https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 -->
