@@ -12,21 +12,21 @@
     <title>Logging với AWS CloudTrail :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1712771923" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1712771923" rel="stylesheet">
-    <link href="/css/hybrid.css?1712771923" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1712771923" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1712771923" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712771923" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1712771923" rel="stylesheet">
-    <link href="/css/theme.css?1712771923" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1712771923" rel="stylesheet">
+    <link href="/css/nucleus.css?1712997601" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1712997601" rel="stylesheet">
+    <link href="/css/hybrid.css?1712997601" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1712997601" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1712997601" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712997601" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1712997601" rel="stylesheet">
+    <link href="/css/theme.css?1712997601" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1712997601" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1712771923" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1712997601" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1712771923"></script>
+    <script src="/js/jquery-3.3.1.min.js?1712997601"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1712771923"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1712771923"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1712997601"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1712997601"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1712771923"></script>
+<script type="text/javascript" src="/js/search.js?1712997601"></script>
 
     
   </div>
@@ -315,12 +315,12 @@
  
   
     
-    <li data-nav-id="/vi/3-s3sal/" title="S3 Server Access Logging" class="dd-item 
+    <li data-nav-id="/vi/3-codecommit/" title="S3 Server Access Logging" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-s3sal/">
+      <a href="/vi/3-codecommit/">
            <b> 3. </b> S3 Server Access Logging
           
             <i class="fas fa-check read-icon"></i>
@@ -346,12 +346,12 @@
  
   
     
-    <li data-nav-id="/vi/3-s3sal/3.1-sal/" title="Bật S3 Server Access Logging" class="dd-item 
+    <li data-nav-id="/vi/3-codecommit/3.1-sal/" title="Bật S3 Server Access Logging" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-s3sal/3.1-sal/">
+      <a href="/vi/3-codecommit/3.1-sal/">
            <b> 3. </b> Bật S3 Server Access Logging
           
             <i class="fas fa-check read-icon"></i>
@@ -374,12 +374,12 @@
  
   
     
-    <li data-nav-id="/vi/3-s3sal/3.2-log/" title="Kiểm tra log" class="dd-item 
+    <li data-nav-id="/vi/3-codecommit/3.2-log/" title="Kiểm tra log" class="dd-item 
         
         
         
         ">
-      <a href="/vi/3-s3sal/3.2-log/">
+      <a href="/vi/3-codecommit/3.2-log/">
            <b> 3. </b> Kiểm tra log
           
             <i class="fas fa-check read-icon"></i>
@@ -473,6 +473,46 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-codepipeline/7-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-codepipeline/7-cleanup/">
+           <b> 6. </b> Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -769,71 +809,23 @@
 </li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Records&#34;</span>: [
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Statement&#34;</span>: [
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventVersion&#34;</span>: <span style="color:#e6db74">&#34;1.09&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;userIdentity&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;IAMUser&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;principalId&#34;</span>: <span style="color:#e6db74">&#34;******&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::****:user/****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accessKeyId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;userName&#34;</span>: <span style="color:#e6db74">&#34;****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;sessionContext&#34;</span>: {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;attributes&#34;</span>: {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;creationDate&#34;</span>: <span style="color:#e6db74">&#34;2024-03-03T05:32:58Z&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;mfaAuthenticated&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventTime&#34;</span>: <span style="color:#e6db74">&#34;2024-03-03T14:00:32Z&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventSource&#34;</span>: <span style="color:#e6db74">&#34;s3.amazonaws.com&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventName&#34;</span>: <span style="color:#e6db74">&#34;GetObject&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;awsRegion&#34;</span>: <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;sourceIPAddress&#34;</span>: <span style="color:#e6db74">&#34;118.69.159.186&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;userAgent&#34;</span>: <span style="color:#e6db74">&#34;[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0]&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestParameters&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Date&#34;</span>: <span style="color:#e6db74">&#34;20240303T140026Z&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bucketName&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Algorithm&#34;</span>: <span style="color:#e6db74">&#34;AWS4-HMAC-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;response-content-disposition&#34;</span>: <span style="color:#e6db74">&#34;attachment&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-SignedHeaders&#34;</span>: <span style="color:#e6db74">&#34;host&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Expires&#34;</span>: <span style="color:#e6db74">&#34;300&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz&#34;</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;responseElements&#34;</span>: <span style="color:#66d9ef">null</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;additionalEventData&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;SignatureVersion&#34;</span>: <span style="color:#e6db74">&#34;SigV4&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;CipherSuite&#34;</span>: <span style="color:#e6db74">&#34;ECDHE-RSA-AES128-GCM-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bytesTransferredIn&#34;</span>: <span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;AuthenticationMethod&#34;</span>: <span style="color:#e6db74">&#34;QueryString&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x-amz-id-2&#34;</span>: <span style="color:#e6db74">&#34;0nSxx7oCCBTlrpXwQsLYoA0MqHo/+k/FiMnikrVCDKiWDr1Aoeg7oSqlJvBsYm2J3BnFpU31IUA=&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bytesTransferredOut&#34;</span>: <span style="color:#ae81ff">7759</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestID&#34;</span>: <span style="color:#e6db74">&#34;MB8NVKR3FVMSSRM9&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventID&#34;</span>: <span style="color:#e6db74">&#34;3d4906c8-52ce-456f-bc0a-a89f07b364a0&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;readOnly&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;resources&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;AWS::S3::Object&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;ARN&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::aws-cloudtrail-logs-workshop/AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz&#34;</span>
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;AWS::S3::Bucket&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;ARN&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::aws-cloudtrail-logs-workshop&#34;</span>
-</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:GetAuthorizationToken&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;sts:GetServiceBearerToken&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:BatchCheckLayerAvailability&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:GetRepositoryPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:DescribeRepositories&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:DescribeRegistries&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:DescribeImages&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:DescribeImageTags&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:GetRepositoryCatalogData&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr-public:GetRegistryCatalogData&#34;</span>
 </span></span><span style="display:flex;"><span>      ],
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventType&#34;</span>: <span style="color:#e6db74">&#34;AwsApiCall&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;managementEvent&#34;</span>: <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;recipientAccountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventCategory&#34;</span>: <span style="color:#e6db74">&#34;Data&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tlsDetails&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;tlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLSv1.2&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cipherSuite&#34;</span>: <span style="color:#e6db74">&#34;ECDHE-RSA-AES128-GCM-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;clientProvidedHostHeader&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com&#34;</span>
-</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
@@ -1085,8 +1077,26 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1132,7 +1142,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/3-s3sal/3.2-log/" title="Kiểm tra log"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-codecommit/3.2-log/" title="Kiểm tra log"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/5-codedeploy/" title="Truy vấn log với AWS Athena" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1145,19 +1155,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1712771923"></script>
-    <script src="/js/perfect-scrollbar.min.js?1712771923"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1712771923"></script>
-    <script src="/js/jquery.sticky.js?1712771923"></script>
-    <script src="/js/featherlight.min.js?1712771923"></script>
-    <script src="/js/highlight.pack.js?1712771923"></script>
+    <script src="/js/clipboard.min.js?1712997601"></script>
+    <script src="/js/perfect-scrollbar.min.js?1712997601"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1712997601"></script>
+    <script src="/js/jquery.sticky.js?1712997601"></script>
+    <script src="/js/featherlight.min.js?1712997601"></script>
+    <script src="/js/highlight.pack.js?1712997601"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1712771923"></script>
-    <script src="/js/learn.js?1712771923"></script>
-    <script src="/js/hugo-learn.js?1712771923"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1712997601"></script>
+    <script src="/js/learn.js?1712997601"></script>
+    <script src="/js/hugo-learn.js?1712997601"></script>
 
-    <link href="/mermaid/mermaid.css?1712771923" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1712771923"></script>
+    <link href="/mermaid/mermaid.css?1712997601" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1712997601"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

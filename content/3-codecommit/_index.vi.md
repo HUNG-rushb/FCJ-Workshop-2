@@ -10,7 +10,7 @@ Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năn
 
 ### Nội dung
 
-1.  [Bật S3 Server Access Logging](3.1-sal/)
-2.  [Kiểm tra log](3.2-log/)
+1.  [Tạo repo CodeCommit](3.1-repo/)
+2.  [Push code lên repo](3.2-code/)
 
 <!-- https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 -->

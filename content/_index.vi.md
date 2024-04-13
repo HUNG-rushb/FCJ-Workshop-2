@@ -9,6 +9,8 @@ chapter: false
 
 ### Tổng quan
 
+![FCJ_ws2](/images/1.introduce/aws.png)
+
 Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng **AWS CodePipeline**.
 
 - **Thời lượng**: 150 phút.

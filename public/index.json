@@ -7,14 +7,14 @@
 	"content": "AWS S3 Logging Workshop Overall In this workshop, we will use AWS S3 server access logging and AWS CloudTrail to logging when thereis operation on our S3 objects. Then we will use AWS Athena to query log.\nContent Introduction Preparation S3 Server Access Logging Apply AWS CloudTrail Log query with Athena Clean up "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.1-2buckets/",
+	"uri": "//localhost:1313/2-prerequiste/2.1-git_credentials/",
 	"title": "Create 2 bucket ",
 	"tags": [],
 	"description": "",
 	"content": "Create 2 bucket At AWS Management Console, find S3 and select S3.\nAt S3 console, select Create bucket.\nIn create bucket steps:\nFor AWS Region, select Asia Pacific (Singapore) ap-southeast-1. For Bucket name, insert logging-workshop. Tiếp tục: For Block Public Access settings for this bucket, untick Block all public access. For Turning off block all public access might result in this bucket and the objects within becoming public, confirm this. Scroll down, select Create bucket.\nConfirm bucket is created successfully.\nContinue creating bucket logging-workshop-destination\nFor AWS Region, select Asia Pacific (Singapore) ap-southeast-1. For Bucket name, insert logging-workshop-destination. No need to untick Block Public Access settings for this bucket. Scroll down, select Create bucket. Confirm bucket is created successfully. "
 },
 {
-	"uri": "//localhost:1313/3-s3sal/3.1-sal/",
+	"uri": "//localhost:1313/3-codecommit/3.1-sal/",
 	"title": "Enable S3 Server access logging",
 	"tags": [],
 	"description": "",
@@ -25,10 +25,10 @@
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": "When you use logging with Amazon S3, you can record actions taken by users, and services on your Amazon S3 resources. You can then use the log records for auditing and compliance purposes.\nYou can log Amazon S3 actions using server access logs or AWS CloudTrail logs.\nServer access logging is a mechanism that provides detailed records for requests made to an S3 bucket.\nServer access logging is disabled by default. Enable server access logging to start receiving logs. Log records are generally delivered within a few hours and it is rare to lose log records. There is no charge for enabling access logging, nor for PUT operations for log files. You are only charged for storage of the logs and for GET operations on the files. You can use object lifecycle management to minimize storage costs.\nAWS CloudTrail is a service that provides records of actions taken by a user, role, or service in your AWS Account. You can use CloudTrail to audit your account by logging and monitoring all activity. You can also use CloudTrail to detect unusual activity in your account.\nLogging Amazon S3 actions with AWS CloudTrail helps keep your account secure by providing access auditing and analysis.\nComparison\nLog properties AWS CloudTrail Amazon S3 server logs Can be forwarded to other systems (Amazon CloudWatch Logs, Amazon CloudWatch Events) Yes No Deliver logs to more than one destination (for example, send the same logs to two different buckets) Yes No Turn on logs for a subset of objects (prefix) Yes No Cross-account log delivery (target and source bucket owned by different accounts) Yes No Integrity validation of log file by using digital signature or hashing Yes No Default or choice of encryption for log files Yes No Object operations (by using Amazon S3 APIs) Yes Yes Bucket operations (by using Amazon S3 APIs) Yes Yes Searchable UI for logs Yes No Fields for Object Lock parameters, Amazon S3 Select properties for log records Yes No Amazon Athena is an interactive query service that makes it easy for you to analyze data in Amazon S3 using standard SQL. You do not need to manage any infrastructure with Athena, and you pay only for the queries that you run.\nOnce you enable server access logs and store them in your target S3 bucket, you might want to analyze or search through them. Logs are not automatically analyzed by Amazon S3, and you might have a lot of data. To analyze all your Amazon S3 data, you can use Amazon Athena.\n"
+	"content": ""
 },
 {
-	"uri": "//localhost:1313/3-s3sal/3.2-log/",
+	"uri": "//localhost:1313/3-codecommit/3.2-log/",
 	"title": "Check logs",
 	"tags": [],
 	"description": "",
@@ -49,7 +49,7 @@
 	"content": "Cập nhật quyền tạo log cho S3 log delivery group Return to bucket console, select bucket logging-workshop-destination. Scroll down to section Object Ownership, select Edit\nSelect ACLs enabled, confirm I acknowledge that ACLS will be restored., select Save changes. This will make everythin in the Access control list (ACL) can create object.\nScroll down to section Access control list (ACL), select Edit.\nAt S3 log delivery group, select Write, then Save changes.\nConfrim Write for S3 log delivery group.\nReturn to bucket console.\n"
 },
 {
-	"uri": "//localhost:1313/3-s3sal/",
+	"uri": "//localhost:1313/3-codecommit/",
 	"title": "S3 Server Access Logging",
 	"tags": [],
 	"description": "",
@@ -70,7 +70,7 @@
 	"content": "Thêm policy cho bucket In S3 console, select logging-workshop bucket.\nSelect Permissions tab.\nfor Bucket policy, select Edit.\nInsert:\n{ \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Principal\u0026#34;: \u0026#34;*\u0026#34;, \u0026#34;Action\u0026#34;: \u0026#34;s3:GetObject\u0026#34;, \u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:s3:::logging-workshop/*\u0026#34; } ] } Chọn Save changes\nConfirm updated successfully\n"
 },
 {
-	"uri": "//localhost:1313/4-s3cloudtrail/",
+	"uri": "//localhost:1313/4-codebuild/",
 	"title": "Logging with AWS CloudTrail",
 	"tags": [],
 	"description": "",
@@ -84,14 +84,35 @@
 	"content": "Access the file In bucket console, select file S3_logging_workshop.txt.\nCopy Object URL.\nAccess the file in browser.\n"
 },
 {
-	"uri": "//localhost:1313/5-s3athena/",
+	"uri": "//localhost:1313/5-codedeploy/",
 	"title": "Query logs with Athena",
 	"tags": [],
 	"description": "",
 	"content": "Using Athena with CloudTrail logs is even easier than server access logs. With server access logs, you had to go to the Athena console to create a database and table, but with CloudTrail logging, Athena will automatically create a table for you.\nTo use Athena with CloudTrail logs, simply go to the CloudTrail event history and select Run advanced queries in Amazon Athena.\nGo to CloudTrail console. On left panel, select Event history, select Create Athena table.\nfor Storage location, select bucket aws-cloud-trail-logs-workshop which we are using to store logs then select Create table.\nConfirm Athena table cloudtrail_logs_aws_cloudtrail_logs_workshop created.\nFind select service Athena, then select Launch query editor.\nIf this is the first time you use Athena, select Edit settings, if not, skip to step 10.\nClick Browse S3.\nSelect 1 bucket to store query\u0026rsquo;s result, here we choose bucket logging-workshop-destination.\nCheck and click Save.\nCheck and click Editor to return.\nCopy the query into the editor, make sure you are using the right table.This query will filter operation GetObject whihc have eventsource is s3.amazonaws.com. select Run.\nSELECT * FROM cloudtrail_logs_aws_cloudtrail_logs_workshop WHERE eventsource = \u0026#39;s3.amazonaws.com\u0026#39; AND eventname in (\u0026#39;GetObject\u0026#39;) Check the result below.\nFinally, run this query to drop the table.\nDROP TABLE `cloudtrail_logs_aws_cloudtrail_logs_workshop` "
 },
 {
+	"uri": "//localhost:1313/6-codepipeline/7-cleanup/",
+	"title": "Clean up",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete the resources we created in this exercise.\nXóa Athena query Find and select service Athena, then select Launch query editor, select tab Settings, click Manage.\nClick X to delete the connections to bucket, click Save.\nXóa CloudTrail Find and select service CloudTrail, select Trails on left panel. Select trail S3_logging_workshop, then select Delete.\nConfirm Delete.\nXóa S3 buckets Find and select service S3, select bucket logging_workshop. We have to empty the bucket before delete it. Select all files then click Delete.\nConfirmto delete. click Delete objects.\nReturn to buckets list, then select bucket logging_workshop, select Delete.\nConfirm bucket\u0026rsquo;s name and click Delete bucket.\nRepeat delete step from step 5 to delete 2 remainings buckets, logging-workshop-destinations và aws-cloudtrail-log-workshop.\n"
+},
+{
+	"uri": "//localhost:1313/6-codepipeline/",
+	"title": "Clean up",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete the resources we created in this exercise.\nXóa Athena query Find and select service Athena, then select Launch query editor, select tab Settings, click Manage.\nClick X to delete the connections to bucket, click Save.\nXóa CloudTrail Find and select service CloudTrail, select Trails on left panel. Select trail S3_logging_workshop, then select Delete.\nConfirm Delete.\nXóa S3 buckets Find and select service S3, select bucket logging_workshop. We have to empty the bucket before delete it. Select all files then click Delete.\nConfirmto delete. click Delete objects.\nReturn to buckets list, then select bucket logging_workshop, select Delete.\nConfirm bucket\u0026rsquo;s name and click Delete bucket.\nRepeat delete step from step 5 to delete 2 remainings buckets, logging-workshop-destinations và aws-cloudtrail-log-workshop.\n"
+},
+{
 	"uri": "//localhost:1313/7-cleanup/",
+	"title": "Clean up",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete the resources we created in this exercise.\nXóa Athena query Find and select service Athena, then select Launch query editor, select tab Settings, click Manage.\nClick X to delete the connections to bucket, click Save.\nXóa CloudTrail Find and select service CloudTrail, select Trails on left panel. Select trail S3_logging_workshop, then select Delete.\nConfirm Delete.\nXóa S3 buckets Find and select service S3, select bucket logging_workshop. We have to empty the bucket before delete it. Select all files then click Delete.\nConfirmto delete. click Delete objects.\nReturn to buckets list, then select bucket logging_workshop, select Delete.\nConfirm bucket\u0026rsquo;s name and click Delete bucket.\nRepeat delete step from step 5 to delete 2 remainings buckets, logging-workshop-destinations và aws-cloudtrail-log-workshop.\n"
+},
+{
+	"uri": "//localhost:1313/8-ref/",
 	"title": "Clean up",
 	"tags": [],
 	"description": "",
