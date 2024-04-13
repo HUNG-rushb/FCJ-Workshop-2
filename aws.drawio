@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-04-13T08:30:03.619Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="-1OBpAbdfEOW0kMJZw3q" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-04-13T15:06:49.324Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="XEnzDfK8I_9KiN9_oH9D" version="23.1.5" type="device">
   <diagram name="Page-1" id="e5MP3v1tcQqfkrlQCdR-">
-    <mxGraphModel dx="2693" dy="-144" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1900" dy="-431" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -176,11 +176,11 @@
         <mxCell id="_ywE8sGmRXG5GQr4Udn0-61" value="Public subnet" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#7AA116;fillColor=#F2F6E8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;" parent="1" vertex="1">
           <mxGeometry x="830" y="1860" width="500" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="_ywE8sGmRXG5GQr4Udn0-62" value="&lt;font color=&quot;#0000ff&quot;&gt;Blue Target group&lt;/font&gt;" style="fillColor=none;strokeColor=#6678ff;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#232F3D;whiteSpace=wrap;html=1;gradientColor=default;dashPattern=12 12;strokeWidth=3;" parent="1" vertex="1">
-          <mxGeometry x="860" y="1420" width="200" height="540" as="geometry" />
+        <mxCell id="_ywE8sGmRXG5GQr4Udn0-62" value="&lt;font color=&quot;#0000ff&quot;&gt;Blue Target group&lt;/font&gt;" style="fillColor=none;strokeColor=#6678ff;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#232F3D;whiteSpace=wrap;html=1;gradientColor=default;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="860" y="1420" width="200" height="550" as="geometry" />
         </mxCell>
-        <mxCell id="_ywE8sGmRXG5GQr4Udn0-63" value="&lt;font color=&quot;#00cc00&quot;&gt;Green Target group&lt;/font&gt;" style="fillColor=none;strokeColor=#42ff29;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#232F3D;whiteSpace=wrap;html=1;gradientColor=default;dashPattern=12 12;strokeWidth=3;" parent="1" vertex="1">
-          <mxGeometry x="1100" y="1420" width="200" height="540" as="geometry" />
+        <mxCell id="_ywE8sGmRXG5GQr4Udn0-63" value="&lt;font color=&quot;#00cc00&quot;&gt;Green Target group&lt;/font&gt;" style="fillColor=none;strokeColor=#42ff29;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#232F3D;whiteSpace=wrap;html=1;gradientColor=default;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="1420" width="200" height="550" as="geometry" />
         </mxCell>
         <mxCell id="_ywE8sGmRXG5GQr4Udn0-64" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.container_1;" parent="1" vertex="1">
           <mxGeometry x="921.29" y="1460" width="77.42" height="50" as="geometry" />
@@ -201,7 +201,7 @@
           <mxGeometry x="1161.29" y="1895" width="77.42" height="50" as="geometry" />
         </mxCell>
         <mxCell id="_ywE8sGmRXG5GQr4Udn0-71" value="&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#ff8000&quot;&gt;Fargate Tasks&lt;/font&gt;" style="fillColor=none;strokeColor=#fb8618;dashed=1;verticalAlign=top;fontStyle=0;fontColor=#5A6C86;whiteSpace=wrap;html=1;strokeWidth=3;" parent="1" vertex="1">
-          <mxGeometry x="890" y="1450" width="380" height="500" as="geometry" />
+          <mxGeometry x="890" y="1450" width="380" height="510" as="geometry" />
         </mxCell>
         <mxCell id="_ywE8sGmRXG5GQr4Udn0-52" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_gateway;" parent="1" vertex="1">
           <mxGeometry x="843.29" y="2040" width="78" height="78" as="geometry" />
@@ -256,7 +256,7 @@
             <mxPoint x="1550" y="1730" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wDm-2wXrq-0tG4cOfVoo-1" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="wDm-2wXrq-0tG4cOfVoo-1" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1410" y="1200" as="sourcePoint" />
             <mxPoint x="1480" y="1200" as="targetPoint" />
