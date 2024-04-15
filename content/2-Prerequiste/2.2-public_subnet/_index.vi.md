@@ -1,5 +1,5 @@
 ---
-title: "Cập nhật quyền tạo log"
+title: "Tạo Public subnet"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: true

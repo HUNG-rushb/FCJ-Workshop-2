@@ -7,13 +7,6 @@
 	"content": "Triển khai Blue/Green pipeline trên nền tảng AWS Tổng quan Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng AWS CodePipeline và AWS ECS.\nThời lượng: 150 phút. Cần chuẩn bị: tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess. Nội dung Giới thiệu Các bước chuẩn bị AWS CodeCommit AWS CodeBuild AWS CodePipeline AWS CodeDeploy và AWS ECS Dọn dẹp tài nguyên Tài liệu tham khảo "
 },
 {
-	"uri": "//localhost:1313/vi/3-codecommit/3.1-repo/",
-	"title": "Bật S3 Server Access Logging",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
 	"uri": "//localhost:1313/vi/1-introduce/",
 	"title": "Giới thiệu",
 	"tags": [],
@@ -22,10 +15,17 @@
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.1-git_credentials/",
-	"title": "Tạo 2 bucket",
+	"title": "Tạo HTTPS Git Credentials cho CodeCommit",
 	"tags": [],
 	"description": "",
-	"content": " Tạo 2 bucket Tiếp tục tạo bucket logging-workshop-destination Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop-destination. Không cần bỏ chọn mục Block Public Access settings for this bucket. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. "
+	"content": "Với Git credential, bạn có thể tạo username và static password trong IAM Console mà bạn có thể sử dụng để truy cập AWS CodeCommit từ cmd, Git CLI hoặc bất kỳ công cụ Git nào hỗ trợ xác thực HTTPS.\nVì đây là static credentials nên chúng có thể được cached bằng cách sử dụng các công cụ quản lý mật khẩu có trong hệ điều hành local của bạn hoặc được lưu trữ trong tiện ích quản lý thông tin xác thực. Điều này cho phép bạn bắt đầu với AWS CodeCommit trong vòng vài phút. Bạn không cần tải xuống AWS CLI hoặc đặt cấu hình ứng dụng khách Git để kết nối với kho lưu trữ CodeCommit trên HTTPS. Bạn cũng có thể sử dụng username và password để kết nối với CodeCommit từ các công cụ của bên thứ ba hỗ trợ xác thực tên username và password, bao gồm các ứng dụng khách GUI Git phổ biến (như TowerUI) và IDE (như Eclipse, IntelliJ và Visual Studio).\nTạo HTTPS Git Credentials cho CodeCommit Tiếp tục tạo bucket logging-workshop-destination Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop-destination. Không cần bỏ chọn mục Block Public Access settings for this bucket. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. Tiếp tục tạo bucket logging-workshop-destination b Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. "
+},
+{
+	"uri": "//localhost:1313/vi/3-codecommit/3.1-repo/",
+	"title": "Tạo repo CodeCommit",
+	"tags": [],
+	"description": "",
+	"content": "Tạo repo CodeCommit 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/",
@@ -33,20 +33,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Nội dung Tạo HTTPS Git Credentials cho CodeCommit Tạo Public subnet Tạo Security group Tạo Target group Tạo Application load balancer "
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
-	"title": "Cập nhật quyền tạo log",
-	"tags": [],
-	"description": "",
-	"content": " Cập nhật quyền tạo log cho S3 log delivery group "
-},
-{
-	"uri": "//localhost:1313/vi/3-codecommit/3.2-code/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/4.1-ecr_repo/",
@@ -112,18 +98,32 @@
 	"content": " "
 },
 {
+	"uri": "//localhost:1313/vi/3-codecommit/3.2-code/",
+	"title": "Push code lên repo",
+	"tags": [],
+	"description": "",
+	"content": "Push code lên repo 1 1 1 1 1 1 1 1 "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
+	"title": "Tạo Public subnet",
+	"tags": [],
+	"description": "",
+	"content": " Cập nhật quyền tạo log cho S3 log delivery group "
+},
+{
 	"uri": "//localhost:1313/vi/3-codecommit/",
 	"title": "AWS CodeCommit",
 	"tags": [],
 	"description": "",
-	"content": "Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năng Server access logging.\nNội dung Tạo repo CodeCommit Push code lên repo "
+	"content": "Nội dung Tạo repo CodeCommit Push code lên repo "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.3-security_group/",
-	"title": "Upload file vào bucket",
+	"title": "Tạo Security group",
 	"tags": [],
 	"description": "",
-	"content": " Upload file vào bucket Tải xuống file S3_logging_workshop.txt tại Attachments\rS3_logging_workshop.txt\r(0 ko)\r"
+	"content": "Tạo Security group Tiếp tục tạo bucket logging-workshop-destination Tải xuống file S3_logging_workshop.txt tại Attachments\rS3_logging_workshop.txt\r(0 ko)\r2 3 "
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/",
@@ -134,10 +134,10 @@
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.4-target_group/",
-	"title": "Thêm policy cho bucket",
+	"title": "Tạo Target group",
 	"tags": [],
 	"description": "",
-	"content": " "
+	"content": "Tạo Target group 1 2 3 4 5 "
 },
 {
 	"uri": "//localhost:1313/vi/5-codepipeline/",
@@ -148,10 +148,10 @@
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.5-alb/",
-	"title": "Truy cập file thành công",
+	"title": "Tạo Application load balancer",
 	"tags": [],
 	"description": "",
-	"content": " Truy cập file thành công Trở về giao diện bucket, chọn vào file S3_logging_workshop.txt.\nCopy Object URL.\nPaste URL vào trình duyệt vào xác nhận đã truy cập được vào file. Hãy giữ lại URL này cho phần tiếp theo.\n"
+	"content": "Tạo Application load balancer 1 1 1 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/",

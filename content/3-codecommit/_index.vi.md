@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năng **Server access logging**.
-
 ### Nội dung
 
 1.  [Tạo repo CodeCommit](3.1-repo/)
