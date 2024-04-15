@@ -6,25 +6,11 @@ chapter: true
 pre: " <b> 2.1 </b> "
 ---
 
+![FCJ_ws2](/images/2.prerequisite/_1.png)
+![FCJ_ws2](/images/2.prerequisite/_2.png)
+![FCJ_ws2](/images/2.prerequisite/_3.png)
+
 ### Tạo 2 bucket
-
-1. Truy cập vào **AWS Management Console**, tìm **S3** và chọn **S3**.
-
-2. Trong giao diện **S3**, chọn **Create bucket**.
-
-3. Trong giao diện create bucket:
-
-- Mục **AWS Region**, chọn **Asia Pacific (Singapore) ap-southeast-1**.
-- Mục **Bucket name**, nhập **`logging-workshop`**.
-
-4. Tiếp tục:
-
-- Mục **Block Public Access settings for this bucket**, bỏ chọn **Block all public access**.
-- Mục **Turning off block all public access might result in this bucket and the objects within becoming public**, xác nhận mục này.
-
-5. Kéo xuống dưới cùng, chọn **Create bucket**.
-
-6. Xác nhận bucket đã được tạo thành công.
 
 7. Tiếp tục tạo bucket **logging-workshop-destination**
 

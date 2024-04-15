@@ -14,7 +14,7 @@
 	"content": "Create 2 bucket At AWS Management Console, find S3 and select S3.\nAt S3 console, select Create bucket.\nIn create bucket steps:\nFor AWS Region, select Asia Pacific (Singapore) ap-southeast-1. For Bucket name, insert logging-workshop. Tiếp tục: For Block Public Access settings for this bucket, untick Block all public access. For Turning off block all public access might result in this bucket and the objects within becoming public, confirm this. Scroll down, select Create bucket.\nConfirm bucket is created successfully.\nContinue creating bucket logging-workshop-destination\nFor AWS Region, select Asia Pacific (Singapore) ap-southeast-1. For Bucket name, insert logging-workshop-destination. No need to untick Block Public Access settings for this bucket. Scroll down, select Create bucket. Confirm bucket is created successfully. "
 },
 {
-	"uri": "//localhost:1313/3-codecommit/3.1-sal/",
+	"uri": "//localhost:1313/3-codecommit/3.1-repo/",
 	"title": "Enable S3 Server access logging",
 	"tags": [],
 	"description": "",
@@ -28,7 +28,70 @@
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/3-codecommit/3.2-log/",
+	"uri": "//localhost:1313/3-codecommit/3.2-code/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/4-codebuild/4.1-ecr_repo/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/4-codebuild/4.2-build_project/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/4-codebuild/4.3-role/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.1-cluster/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.2-task_def/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.3-code/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.4-service/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.5-role/",
+	"title": "Check logs",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập file và kiễm tra log Open new private tab and acces the file.\nIn buckets console, select bucket logging-workshop-destination, wait about 15 minutes, refresh the bucket.\nWe can see there are logs there, select one.\nSelect Download and open it.\nthe log file will looks like below:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+},
+{
+	"uri": "//localhost:1313/6-codedeploy/6.6-deployment/",
 	"title": "Check logs",
 	"tags": [],
 	"description": "",
@@ -42,7 +105,7 @@
 	"content": "To prepare for this workshop, we will create 1 group with public access to hold the files we need to access and 1 private group to hold the server access logs.\nContent Create 2 bucket Update permissiong Upload file to bucket Add policy for bucket Access files "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.2-permission/",
+	"uri": "//localhost:1313/2-prerequiste/2.2-public_subnet/",
 	"title": "Update logging permission ",
 	"tags": [],
 	"description": "",
@@ -56,14 +119,14 @@
 	"content": "In this step, we will enable Server access logging.\nContent Enable S3 Server Access Logging Check log "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.3-upload/",
+	"uri": "//localhost:1313/2-prerequiste/2.3-security_group/",
 	"title": "Upload file to S3 bucket ",
 	"tags": [],
 	"description": "",
 	"content": "Upload file vào bucket Select bucket logging-workshop. Then, select Upload.\nSelect Add files.\nThen:\nDownload S3_logging_workshop.txt here Attachments\rS3_logging_workshop.txt\r(0 ko)\rOpen in a new tab, Ctrl + S to save the file to your local.\nconfirm the file is selected Select Upload. Confirm uploaded successfully. "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.4-policy/",
+	"uri": "//localhost:1313/2-prerequiste/2.4-target_group/",
 	"title": "Edit policy ",
 	"tags": [],
 	"description": "",
@@ -77,28 +140,21 @@
 	"content": " CloudTrail includes 3 main components: Event A record of an activity in an AWS account.. Trail A trail enables CloudTrail to deliver log files to an Amazon S3 bucket, CloudWatch logs, and CloudWatch events. Log bucket The target S3 bucket where logs files are delivered. Kích hoạt Server access logging In AWS Console, find and choose Cloudtrail.\nSelect Create trail\nContinue:\nFor Trail name, insert S3_logging_workshop. For Trail log bucket and folder, insert aws-cloud-trail-logs-workshop. For Log file SSE-KMS encryption, untick Enable. Scroll down and select Next.\nFor Event type, tick Data events.\nScroll down, for Data events, select S3. Then hit Next.\nReview and select Create trail.\nConfirm trail is created.\nReturn S3 console, we can see that aws-cloud-trail-logs-workshop is created for storing logs.\nOpen private tab and access the file.\nWait 10 minuts then refresh. Follow, get into inners folder until you can see the logs.\nSelect a file and Download.\nLog file will look like this:\n{ \u0026#34;Records\u0026#34;: [ { \u0026#34;eventVersion\u0026#34;: \u0026#34;1.09\u0026#34;, \u0026#34;userIdentity\u0026#34;: { \u0026#34;type\u0026#34;: \u0026#34;IAMUser\u0026#34;, \u0026#34;principalId\u0026#34;: \u0026#34;******\u0026#34;, \u0026#34;arn\u0026#34;: \u0026#34;arn:aws:iam::****:user/****\u0026#34;, \u0026#34;accountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;accessKeyId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;userName\u0026#34;: \u0026#34;****\u0026#34;, \u0026#34;sessionContext\u0026#34;: { \u0026#34;attributes\u0026#34;: { \u0026#34;creationDate\u0026#34;: \u0026#34;2024-03-03T05:32:58Z\u0026#34;, \u0026#34;mfaAuthenticated\u0026#34;: \u0026#34;false\u0026#34; } } }, \u0026#34;eventTime\u0026#34;: \u0026#34;2024-03-03T14:00:32Z\u0026#34;, \u0026#34;eventSource\u0026#34;: \u0026#34;s3.amazonaws.com\u0026#34;, \u0026#34;eventName\u0026#34;: \u0026#34;GetObject\u0026#34;, \u0026#34;awsRegion\u0026#34;: \u0026#34;ap-southeast-1\u0026#34;, \u0026#34;sourceIPAddress\u0026#34;: \u0026#34;118.69.159.186\u0026#34;, \u0026#34;userAgent\u0026#34;: \u0026#34;[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0]\u0026#34;, \u0026#34;requestParameters\u0026#34;: { \u0026#34;X-Amz-Date\u0026#34;: \u0026#34;20240303T140026Z\u0026#34;, \u0026#34;bucketName\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop\u0026#34;, \u0026#34;X-Amz-Algorithm\u0026#34;: \u0026#34;AWS4-HMAC-SHA256\u0026#34;, \u0026#34;response-content-disposition\u0026#34;: \u0026#34;attachment\u0026#34;, \u0026#34;X-Amz-SignedHeaders\u0026#34;: \u0026#34;host\u0026#34;, \u0026#34;Host\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com\u0026#34;, \u0026#34;X-Amz-Expires\u0026#34;: \u0026#34;300\u0026#34;, \u0026#34;key\u0026#34;: \u0026#34;AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz\u0026#34; }, \u0026#34;responseElements\u0026#34;: null, \u0026#34;additionalEventData\u0026#34;: { \u0026#34;SignatureVersion\u0026#34;: \u0026#34;SigV4\u0026#34;, \u0026#34;CipherSuite\u0026#34;: \u0026#34;ECDHE-RSA-AES128-GCM-SHA256\u0026#34;, \u0026#34;bytesTransferredIn\u0026#34;: 0, \u0026#34;AuthenticationMethod\u0026#34;: \u0026#34;QueryString\u0026#34;, \u0026#34;x-amz-id-2\u0026#34;: \u0026#34;0nSxx7oCCBTlrpXwQsLYoA0MqHo/+k/FiMnikrVCDKiWDr1Aoeg7oSqlJvBsYm2J3BnFpU31IUA=\u0026#34;, \u0026#34;bytesTransferredOut\u0026#34;: 7759 }, \u0026#34;requestID\u0026#34;: \u0026#34;MB8NVKR3FVMSSRM9\u0026#34;, \u0026#34;eventID\u0026#34;: \u0026#34;3d4906c8-52ce-456f-bc0a-a89f07b364a0\u0026#34;, \u0026#34;readOnly\u0026#34;: true, \u0026#34;resources\u0026#34;: [ { \u0026#34;type\u0026#34;: \u0026#34;AWS::S3::Object\u0026#34;, \u0026#34;ARN\u0026#34;: \u0026#34;arn:aws:s3:::aws-cloudtrail-logs-workshop/AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz\u0026#34; }, { \u0026#34;accountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;type\u0026#34;: \u0026#34;AWS::S3::Bucket\u0026#34;, \u0026#34;ARN\u0026#34;: \u0026#34;arn:aws:s3:::aws-cloudtrail-logs-workshop\u0026#34; } ], \u0026#34;eventType\u0026#34;: \u0026#34;AwsApiCall\u0026#34;, \u0026#34;managementEvent\u0026#34;: false, \u0026#34;recipientAccountId\u0026#34;: \u0026#34;*****\u0026#34;, \u0026#34;eventCategory\u0026#34;: \u0026#34;Data\u0026#34;, \u0026#34;tlsDetails\u0026#34;: { \u0026#34;tlsVersion\u0026#34;: \u0026#34;TLSv1.2\u0026#34;, \u0026#34;cipherSuite\u0026#34;: \u0026#34;ECDHE-RSA-AES128-GCM-SHA256\u0026#34;, \u0026#34;clientProvidedHostHeader\u0026#34;: \u0026#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com\u0026#34; } } ] } "
 },
 {
-	"uri": "//localhost:1313/2-prerequiste/2.5-file/",
+	"uri": "//localhost:1313/2-prerequiste/2.5-alb/",
 	"title": "Access the file ",
 	"tags": [],
 	"description": "",
 	"content": "Access the file In bucket console, select file S3_logging_workshop.txt.\nCopy Object URL.\nAccess the file in browser.\n"
 },
 {
-	"uri": "//localhost:1313/5-codedeploy/",
+	"uri": "//localhost:1313/5-codepipeline/",
 	"title": "Query logs with Athena",
 	"tags": [],
 	"description": "",
 	"content": "Using Athena with CloudTrail logs is even easier than server access logs. With server access logs, you had to go to the Athena console to create a database and table, but with CloudTrail logging, Athena will automatically create a table for you.\nTo use Athena with CloudTrail logs, simply go to the CloudTrail event history and select Run advanced queries in Amazon Athena.\nGo to CloudTrail console. On left panel, select Event history, select Create Athena table.\nfor Storage location, select bucket aws-cloud-trail-logs-workshop which we are using to store logs then select Create table.\nConfirm Athena table cloudtrail_logs_aws_cloudtrail_logs_workshop created.\nFind select service Athena, then select Launch query editor.\nIf this is the first time you use Athena, select Edit settings, if not, skip to step 10.\nClick Browse S3.\nSelect 1 bucket to store query\u0026rsquo;s result, here we choose bucket logging-workshop-destination.\nCheck and click Save.\nCheck and click Editor to return.\nCopy the query into the editor, make sure you are using the right table.This query will filter operation GetObject whihc have eventsource is s3.amazonaws.com. select Run.\nSELECT * FROM cloudtrail_logs_aws_cloudtrail_logs_workshop WHERE eventsource = \u0026#39;s3.amazonaws.com\u0026#39; AND eventname in (\u0026#39;GetObject\u0026#39;) Check the result below.\nFinally, run this query to drop the table.\nDROP TABLE `cloudtrail_logs_aws_cloudtrail_logs_workshop` "
 },
 {
-	"uri": "//localhost:1313/6-codepipeline/7-cleanup/",
-	"title": "Clean up",
-	"tags": [],
-	"description": "",
-	"content": "We will take the following steps to delete the resources we created in this exercise.\nXóa Athena query Find and select service Athena, then select Launch query editor, select tab Settings, click Manage.\nClick X to delete the connections to bucket, click Save.\nXóa CloudTrail Find and select service CloudTrail, select Trails on left panel. Select trail S3_logging_workshop, then select Delete.\nConfirm Delete.\nXóa S3 buckets Find and select service S3, select bucket logging_workshop. We have to empty the bucket before delete it. Select all files then click Delete.\nConfirmto delete. click Delete objects.\nReturn to buckets list, then select bucket logging_workshop, select Delete.\nConfirm bucket\u0026rsquo;s name and click Delete bucket.\nRepeat delete step from step 5 to delete 2 remainings buckets, logging-workshop-destinations và aws-cloudtrail-log-workshop.\n"
-},
-{
-	"uri": "//localhost:1313/6-codepipeline/",
+	"uri": "//localhost:1313/6-codedeploy/",
 	"title": "Clean up",
 	"tags": [],
 	"description": "",

@@ -18,10 +18,11 @@ Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipe
 
 ### Nội dung
 
-https://stackoverflow.com/questions/69274998/could-not-connect-to-the-endpoint-url-https-api-ecr-public-xxxxxxxxx-amazona
-
-https://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken
-
-https://stackoverflow.com/questions/62022787/aws-ecs-blue-green-codepipeline-exception-while-trying-to-read-the-image-artifa
-
-https://stackoverflow.com/questions/60684118/aws-codedeploy-requires-two-target-groups-but-why
+1.  [Giới thiệu](1-Introduce/)
+2.  [Các bước chuẩn bị](2-Prerequiste/)
+3.  [AWS CodeCommit](3-codecommit/)
+4.  [AWS CodeBuild](4-codebuild/)
+5.  [AWS CodePipeline](5-codepipeline/)
+6.  [AWS CodeDeploy và AWS ECS](6-codedeploy/)
+7.  [Dọn dẹp tài nguyên](7-cleanup/)
+8.  [Tài liệu tham khảo](8-ref/)

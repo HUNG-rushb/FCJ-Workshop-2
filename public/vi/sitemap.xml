@@ -14,16 +14,16 @@
                 href="//localhost:1313/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-codecommit/3.1-sal/</loc>
+    <loc>//localhost:1313/vi/3-codecommit/3.1-repo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-codecommit/3.1-sal/"
+                href="//localhost:1313/3-codecommit/3.1-repo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-codecommit/3.1-sal/"
+                href="//localhost:1313/vi/3-codecommit/3.1-repo/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/1-introduce/</loc>
@@ -38,16 +38,16 @@
                 href="//localhost:1313/vi/1-introduce/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-2buckets/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.1-git_credentials/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-2buckets/"
+                href="//localhost:1313/2-prerequiste/2.1-git_credentials/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-2buckets/"
+                href="//localhost:1313/vi/2-prerequiste/2.1-git_credentials/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/</loc>
@@ -62,28 +62,136 @@
                 href="//localhost:1313/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.2-permission/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.2-public_subnet/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.2-permission/"
+                href="//localhost:1313/2-prerequiste/2.2-public_subnet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.2-permission/"
+                href="//localhost:1313/vi/2-prerequiste/2.2-public_subnet/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-codecommit/3.2-log/</loc>
+    <loc>//localhost:1313/vi/3-codecommit/3.2-code/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-codecommit/3.2-log/"
+                href="//localhost:1313/3-codecommit/3.2-code/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-codecommit/3.2-log/"
+                href="//localhost:1313/vi/3-codecommit/3.2-code/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/4-codebuild/4.1-ecr_repo/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-codebuild/4.1-ecr_repo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-codebuild/4.1-ecr_repo/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/4-codebuild/4.2-build_project/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-codebuild/4.2-build_project/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-codebuild/4.2-build_project/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/4-codebuild/4.3-role/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-codebuild/4.3-role/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-codebuild/4.3-role/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.1-cluster/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.1-cluster/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.1-cluster/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.2-task_def/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.2-task_def/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.2-task_def/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.3-code/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.3-code/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.3-code/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.4-service/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.4-service/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.4-service/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.5-role/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.5-role/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.5-role/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-codedeploy/6.6-deployment/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.6-deployment/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.6-deployment/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-codecommit/</loc>
@@ -98,16 +206,16 @@
                 href="//localhost:1313/vi/3-codecommit/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.3-upload/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.3-security_group/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.3-upload/"
+                href="//localhost:1313/2-prerequiste/2.3-security_group/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.3-upload/"
+                href="//localhost:1313/vi/2-prerequiste/2.3-security_group/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-codebuild/</loc>
@@ -122,64 +230,52 @@
                 href="//localhost:1313/vi/4-codebuild/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.4-policy/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.4-target_group/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.4-policy/"
+                href="//localhost:1313/2-prerequiste/2.4-target_group/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.4-policy/"
+                href="//localhost:1313/vi/2-prerequiste/2.4-target_group/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.5-file/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/2.5-alb/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.5-file/"
+                href="//localhost:1313/2-prerequiste/2.5-alb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.5-file/"
+                href="//localhost:1313/vi/2-prerequiste/2.5-alb/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-codedeploy/</loc>
+    <loc>//localhost:1313/vi/5-codepipeline/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-codedeploy/"
+                href="//localhost:1313/5-codepipeline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-codedeploy/"
+                href="//localhost:1313/vi/5-codepipeline/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-codepipeline/7-cleanup/</loc>
+    <loc>//localhost:1313/vi/6-codedeploy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-codepipeline/7-cleanup/"
+                href="//localhost:1313/6-codedeploy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-codepipeline/7-cleanup/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-codepipeline/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-codepipeline/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-codepipeline/"
+                href="//localhost:1313/vi/6-codedeploy/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/7-cleanup/</loc>
