@@ -1,9 +1,9 @@
 ---
-title: "Dọn dẹp tài nguyên"
+title: "Tài liệu tham khảo"
 date: "`r Sys.Date()`"
-weight: 6
+weight: 8
 chapter: false
-pre: " <b> 6. </b> "
+pre: " <b> 8. </b> "
 ---
 
 <!-- https://stackoverflow.com/questions/69274998/could-not-connect-to-the-endpoint-url-https-api-ecr-public-xxxxxxxxx-amazona

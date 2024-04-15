@@ -1,5 +1,5 @@
 ---
-title: "S3 Server Access Logging"
+title: "AWS CodeCommit"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false

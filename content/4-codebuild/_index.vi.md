@@ -1,5 +1,5 @@
 ---
-title: "Logging với AWS CloudTrail"
+title: "AWS CodeBuild"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false

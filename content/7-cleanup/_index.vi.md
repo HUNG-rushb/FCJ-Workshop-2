@@ -1,9 +1,9 @@
 ---
 title: "Dọn dẹp tài nguyên"
 date: "`r Sys.Date()`"
-weight: 6
+weight: 7
 chapter: false
-pre: " <b> 6. </b> "
+pre: " <b> 7. </b> "
 ---
 
 ![FCJ_ws2](/images/7.clean/1.png)

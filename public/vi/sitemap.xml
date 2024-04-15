@@ -170,16 +170,16 @@
                 href="//localhost:1313/vi/6-codedeploy/6.4-service/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-codedeploy/6.5-role/</loc>
+    <loc>//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-codedeploy/6.5-role/"
+                href="//localhost:1313/6-codedeploy/6.5-deploy_stage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-codedeploy/6.5-role/"
+                href="//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/6-codedeploy/6.6-deployment/</loc>

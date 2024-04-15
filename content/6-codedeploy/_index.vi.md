@@ -1,5 +1,5 @@
 ---
-title: "Dọn dẹp tài nguyên"
+title: "AWS CodeDeploy và AWS ECS"
 date: "`r Sys.Date()`"
 weight: 6
 chapter: false

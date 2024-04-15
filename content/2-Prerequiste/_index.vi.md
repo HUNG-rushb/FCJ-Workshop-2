@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Để chuẩn bị cho workshop này, chúng ta tạo 1 bucket với public access để chứa file cần truy cập và 1 private bucket để chứa server access log.
-
 ### Nội dung
 
 1.  [Tạo HTTPS Git Credentials cho CodeCommit](2.1-git_credentials/)

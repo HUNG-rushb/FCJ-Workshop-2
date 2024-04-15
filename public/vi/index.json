@@ -4,7 +4,7 @@
 	"title": "AWS Blue/Green Deployment",
 	"tags": [],
 	"description": "",
-	"content": "Triển khai Blue/Green pipeline trên nền tảng AWS Tổng quan Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng AWS CodePipeline.\nThời lượng: 150 phút. Cần chuẩn bị: tài khoản GitHub, IDE, tài khoản AWS, Admin IAM User/Role. Nội dung Giới thiệu Các bước chuẩn bị AWS CodeCommit AWS CodeBuild AWS CodePipeline AWS CodeDeploy và AWS ECS Dọn dẹp tài nguyên Tài liệu tham khảo "
+	"content": "Triển khai Blue/Green pipeline trên nền tảng AWS Tổng quan Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng AWS CodePipeline và AWS ECS.\nThời lượng: 150 phút. Cần chuẩn bị: tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess. Nội dung Giới thiệu Các bước chuẩn bị AWS CodeCommit AWS CodeBuild AWS CodePipeline AWS CodeDeploy và AWS ECS Dọn dẹp tài nguyên Tài liệu tham khảo "
 },
 {
 	"uri": "//localhost:1313/vi/3-codecommit/3.1-repo/",
@@ -18,7 +18,7 @@
 	"title": "Giới thiệu",
 	"tags": [],
 	"description": "",
-	"content": " AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\n"
+	"content": "\nBlue/Green Deployment là một quy trình triển khai liên tục nhằm giảm thời gian chết và rủi ro bằng cách có hai môi trường production giống hệt nhau, được gọi là Blue và Green.\nGiả sử môi trường Blue đang hoạt động và môi trường Green không hoạt động. Khi nhà phát triển muốn phát hành bất kỳ code mới nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường Green, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản Green và phiên bản Blue được duy trì như một bản sao lưu.\nƯu điểm của chiến lược Blue/Green Deployment là :\nTesting parity: tính năng này có nghĩa là các thử nghiệm phản ánh thực sự thực tế của sản xuất. Triển khai bất kỳ lúc nào: không có downtime có nghĩa là chúng ta có thể phát hành bất kỳ lúc nào. Không cần phải đợi các maintenance windows. Chuyển tiếp tức thì: người dùng được chuyển sang phiên bản mới ngay lập tức, hoặc gần như vậy. Mọi người đều xem bản phát hành mới nhất cùng một lúc. Khôi phục tức thì: phần chuyển tiếp hoạt động theo cả hai cách. Nếu chúng ta quyết định quay lại phiên bản trước, chúng ta có thể chuyển tất cả người dùng trở lại ngay lập tức. Hot standby: Blue-Green có thể cứu chúng ta khỏi các tình huống thảm họa. Giả sử rằng một trung tâm dữ liệu chuyển sang chế độ ngoại tuyến, chúng ta sẽ chuyển sang cái khác cho đến khi sự cố được khắc phục. Điều này sẽ hoạt động miễn là chúng ta đã có biện pháp phòng ngừa là không đặt Blue-Green vào cùng một vùng khả dụng. Postmortem: việc gỡ lỗi các bản phát hành không thành công rất khó khăn với việc triển khai tại chỗ. Khi đối mặt với downtime, ưu tiên luôn là trở lại trạng thái bình thường. Việc thu thập dữ liệu gỡ lỗi chỉ là thứ yếu, vì vậy nhiều thông tin có giá trị có thể bị mất trong quá trình khôi phục. Blue-green không gặp phải vấn đề này — Các lần khôi phục luôn giữ nguyên việc triển khai thất bại để phân tích. Song song với đó thì chiến lược này cũng có một vài nhược điểm, có thể kể đến:\nTiêu tốn nhiều tài nguyên do cần duy trì 2 môi trường cùng lúc khi triển khai Blue/Green Deployment đòi hỏi các service trên cả 2 môi trường sử dụng chung database, trong trường hợp code mới có tác động thay đổi cấu trúc database, cần xây dựng chiến lược đồng bộ sao cho cả hai môi trường có thể chạy cùng lúc mà không gặp sự cố. Với vấn đề này, ta có thể sử dụng liquibase để xây dựng giải pháp. "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.1-git_credentials/",
@@ -32,7 +32,7 @@
 	"title": "Các bước chuẩn bị",
 	"tags": [],
 	"description": "",
-	"content": "Để chuẩn bị cho workshop này, chúng ta tạo 1 bucket với public access để chứa file cần truy cập và 1 private bucket để chứa server access log.\nNội dung Tạo HTTPS Git Credentials cho CodeCommit Tạo Public subnet Tạo Security group Tạo Target group Tạo Application load balancer "
+	"content": "Nội dung Tạo HTTPS Git Credentials cho CodeCommit Tạo Public subnet Tạo Security group Tạo Target group Tạo Application load balancer "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
@@ -95,25 +95,25 @@
 	"title": "Kiểm tra log",
 	"tags": [],
 	"description": "",
-	"content": "Truy cập file và kiễm tra log Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.\nQuay về giao diện buckets, chọn bucket logging-workshop-destination, chờ khoảng 15 phút, refresh lại bucket.\nChúng ta sẽ thấy những file log đã được tạo ra. Chọn vào 1 file log.\nChúng ta có thể thấy thông tin file log này. Chọn Download và mở file log ra\nFile log sẽ có cấu trúc như sau:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+	"content": " "
 },
 {
-	"uri": "//localhost:1313/vi/6-codedeploy/6.5-role/",
+	"uri": "//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/",
 	"title": "Kiểm tra log",
 	"tags": [],
 	"description": "",
-	"content": "Truy cập file và kiễm tra log Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.\nQuay về giao diện buckets, chọn bucket logging-workshop-destination, chờ khoảng 15 phút, refresh lại bucket.\nChúng ta sẽ thấy những file log đã được tạo ra. Chọn vào 1 file log.\nChúng ta có thể thấy thông tin file log này. Chọn Download và mở file log ra\nFile log sẽ có cấu trúc như sau:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+	"content": " "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/6.6-deployment/",
 	"title": "Kiểm tra log",
 	"tags": [],
 	"description": "",
-	"content": "Truy cập file và kiễm tra log Mở một tab ẩn danh mới và nhập URL truy cập tới file chúng ta đã lưu.\nQuay về giao diện buckets, chọn bucket logging-workshop-destination, chờ khoảng 15 phút, refresh lại bucket.\nChúng ta sẽ thấy những file log đã được tạo ra. Chọn vào 1 file log.\nChúng ta có thể thấy thông tin file log này. Chọn Download và mở file log ra\nFile log sẽ có cấu trúc như sau:\nb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - \u0026#34;GET /logging-workshop?ownershipControls= HTTP/1.1\u0026#34; 200 - 193 - 53 53 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -\rb07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt \u0026#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1\u0026#34; 200 - 115 - 13 10 \u0026#34;-\u0026#34; \u0026#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard\u0026#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - - "
+	"content": " "
 },
 {
 	"uri": "//localhost:1313/vi/3-codecommit/",
-	"title": "S3 Server Access Logging",
+	"title": "AWS CodeCommit",
 	"tags": [],
 	"description": "",
 	"content": "Trong bước này, chúng ta sẽ thực hiện tạo sử dụng tính năng Server access logging.\nNội dung Tạo repo CodeCommit Push code lên repo "
@@ -127,7 +127,7 @@
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/",
-	"title": "Logging với AWS CloudTrail",
+	"title": "AWS CodeBuild",
 	"tags": [],
 	"description": "",
 	"content": "Nội dung Tạo private repo ECR Tạo CodeBuild project Cập nhật quyền cho codebuild role { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ecr-public:GetAuthorizationToken\u0026#34;, \u0026#34;sts:GetServiceBearerToken\u0026#34;, \u0026#34;ecr-public:BatchCheckLayerAvailability\u0026#34;, \u0026#34;ecr-public:GetRepositoryPolicy\u0026#34;, \u0026#34;ecr-public:DescribeRepositories\u0026#34;, \u0026#34;ecr-public:DescribeRegistries\u0026#34;, \u0026#34;ecr-public:DescribeImages\u0026#34;, \u0026#34;ecr-public:DescribeImageTags\u0026#34;, \u0026#34;ecr-public:GetRepositoryCatalogData\u0026#34;, \u0026#34;ecr-public:GetRegistryCatalogData\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
@@ -140,6 +140,13 @@
 	"content": " "
 },
 {
+	"uri": "//localhost:1313/vi/5-codepipeline/",
+	"title": "AWS CodePipeline",
+	"tags": [],
+	"description": "",
+	"content": "AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\n"
+},
+{
 	"uri": "//localhost:1313/vi/2-prerequiste/2.5-alb/",
 	"title": "Truy cập file thành công",
 	"tags": [],
@@ -147,15 +154,8 @@
 	"content": " Truy cập file thành công Trở về giao diện bucket, chọn vào file S3_logging_workshop.txt.\nCopy Object URL.\nPaste URL vào trình duyệt vào xác nhận đã truy cập được vào file. Hãy giữ lại URL này cho phần tiếp theo.\n"
 },
 {
-	"uri": "//localhost:1313/vi/5-codepipeline/",
-	"title": "Truy vấn log với AWS Athena",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
 	"uri": "//localhost:1313/vi/6-codedeploy/",
-	"title": "Dọn dẹp tài nguyên",
+	"title": "AWS CodeDeploy và AWS ECS",
 	"tags": [],
 	"description": "",
 	"content": "Nội dung Tạo ECS Cluster Tạo Task definition Cập nhật code Tạo Cluster service Cập nhật Deploy stage Cập nhật và quan sát deployment "
@@ -169,7 +169,7 @@
 },
 {
 	"uri": "//localhost:1313/vi/8-ref/",
-	"title": "Dọn dẹp tài nguyên",
+	"title": "Tài liệu tham khảo",
 	"tags": [],
 	"description": "",
 	"content": " "
