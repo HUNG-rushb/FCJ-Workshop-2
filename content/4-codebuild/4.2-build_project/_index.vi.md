@@ -14,24 +14,24 @@ pre: " <b> 4.2 </b> "
 
 2. Sau đó:
 
-- Mục **Target type**, chọn **IP Adressess**.
-- Mục **Target group name**, nhập **`FCJ-TG`**.
-- Kéo xuống chọn **Create target group**.
+- Mục **Project name**, nhập **`FCJ_Build_Project`**.
+- Mục **Source 1 - Primary**, chọn provider **AWS CodeCommit**, sau đó chọn repo **FCJ_Repo**.
+- Mục **Branch**, chọn **master**.
 
 ![FCJ_ws2](/images/4.codebuild/2.png)
 
-3. 1
+3. Mở mục **Additional configuration**, sau đó tick chọn **Enable this flag if you want to build Docker images or want your builds to get elevated privileges**.
 
 ![FCJ_ws2](/images/4.codebuild/3.png)
 
-4. 1
+4. Mục **Buildspec**, tick chọn **Use a buildspec file**, nhập **`buildspec.yml`**.
 
 ![FCJ_ws2](/images/4.codebuild/4.png)
 
-5. 1
+5. Kéo xuống dưới và chọn **Create build project**.
 
 ![FCJ_ws2](/images/4.codebuild/5.png)
 
-6. 1
+6. Xác nhận build project đã được tạo thành công.
 
 ![FCJ_ws2](/images/4.codebuild/6.png)

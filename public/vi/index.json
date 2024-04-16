@@ -4,7 +4,7 @@
 	"title": "AWS Blue/Green Deployment",
 	"tags": [],
 	"description": "",
-	"content": "Triển khai Blue/Green pipeline trên nền tảng AWS Tổng quan Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng AWS CodePipeline và AWS ECS.\nThời lượng: 150 phút. Cần chuẩn bị: tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess. Nội dung Giới thiệu Các bước chuẩn bị AWS CodeCommit AWS CodeBuild AWS CodePipeline AWS CodeDeploy và AWS ECS Dọn dẹp tài nguyên Tài liệu tham khảo "
+	"content": "Triển khai Blue/Green pipeline trên nền tảng AWS Tổng quan Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng AWS CodePipeline và AWS ECS.\nThời lượng: 150 phút. Cần chuẩn bị: git đã được cài đặt trên máy local, tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess. Nội dung Giới thiệu Các bước chuẩn bị AWS CodeCommit AWS CodeBuild AWS CodePipeline AWS CodeDeploy và AWS ECS Dọn dẹp tài nguyên Tài liệu tham khảo "
 },
 {
 	"uri": "//localhost:1313/vi/1-introduce/",
@@ -32,7 +32,7 @@
 	"title": "Tạo private repo ECR",
 	"tags": [],
 	"description": "",
-	"content": "Tạo private repo ECR 1 1 1 "
+	"content": "Tạo private repo ECR Di chuyển tới dịch vụ Amazon Elastic Container Registry. Tại menu bên trái, trong mục Private registry, chọn Repositories, sau đó chọn Create repository. Tiếp tục: Mục Viability settings, chọn Private (mặc định). Mục Repository name, nhập fcj-image-repo. Kéo xuống chọn Create repository. Xác nhận private image repo đã được tạo thành công. Mở folder source code mà bạn đã tải về trong phần trước bằng IDE của bạn, sau đó: Mở file buildspec.yml, tại dòng 4, ECR_REPO_NAME, kiểm tra và thay thế tên repo fcj-image-repo bằng tên repo của bạn nếu bạn sử dụng tên khác, nếu không hãy giữ nguyên. Lưu lại file. "
 },
 {
 	"uri": "//localhost:1313/vi/3-codecommit/3.1-repo/",
@@ -53,14 +53,14 @@
 	"title": "Push code lên repo",
 	"tags": [],
 	"description": "",
-	"content": "https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1\nPush code lên repo Truy cập vào https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 và tải về source code. Đây là Calculator App đơn giản được viết bằng React và chúng ta sẽ dùng để deploy. Tải về và giải nén nó trong thư mục mà bạn muốn làm việc. Kiểm tra các file có đầy đủ đủ giống như hình bên dưới hay không. 1 1 1 1 1 1 "
+	"content": "Tải về source code Truy cập vào https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 và tải về source code. Đây là Calculator App đơn giản được viết bằng React và chúng ta sẽ dùng để deploy. Tải về và giải nén nó trong thư mục mà bạn muốn làm việc. Kiểm tra các file có đầy đủ đủ giống như hình bên dưới hay không. Push code lên CodeCommit repo Bên trong thư mục đó: Chạy git init để tạo git repo. Chạy git remote add origin PASTE_HTTPS_REPO_LINK_HERE, thay thế PASTE_HTTPS_REPO_LINK_HERE bằng link HTTPS mà bạn đã copy ở phần trước. Chạy git add .. Chạy git commit -m \u0026quot;init\u0026quot; để commit code trên local (không có trong hình). Tiếp tục: Chạy git push origin master để đẩy code lên repo trên CodeCommit. Git sẽ hỏi bạn về Username và Password, đây chính là credentials trong file codecommit credentials mà ta đã tạo ở phần Tạo HTTPS Git Credentials cho CodeCommit. Mở file credentials lên, copy username và password vào cmd. Enter và xác nhận code đã được push lên thành công. Trở về tab mà bạn đang mở AWS, di chuyển tới dịch vụ CodeCommit và vào repo của bạn, bạn sẽ thấy code đã được push lên thành công. Trên menu bên trái, chọn Commits và kiểm tra commit gần nhất là của bạn, trong hình là init. "
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/4.2-build_project/",
 	"title": "Tạo CodeBuild project",
 	"tags": [],
 	"description": "",
-	"content": "Tạo CodeBuild project 1 1 1 1 1 1 "
+	"content": "Tạo CodeBuild project Di chuyển tới dịch vụ CodeBuild, ở menu bên trái chọn Build projects, sau đó chọn Create project. Sau đó: Mục Target type, chọn IP Adressess. Mục Target group name, nhập FCJ-TG. Kéo xuống chọn Create target group. 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
@@ -109,7 +109,7 @@
 	"title": "AWS CodeBuild",
 	"tags": [],
 	"description": "",
-	"content": "Nội dung Tạo private repo ECR Tạo CodeBuild project Cập nhật quyền cho codebuild role "
+	"content": " Nội dung Tạo private repo ECR Tạo CodeBuild project Cập nhật quyền cho codebuild role "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/6.4-service/",
@@ -172,7 +172,7 @@
 	"title": "Tài liệu tham khảo",
 	"tags": [],
 	"description": "",
-	"content": " https://stackoverflow.com/questions/69274998/could-not-connect-to-the-endpoint-url-https-api-ecr-public-xxxxxxxxx-amazona\nhttps://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken\nhttps://stackoverflow.com/questions/62022787/aws-ecs-blue-green-codepipeline-exception-while-trying-to-read-the-image-artifa\nhttps://stackoverflow.com/questions/60684118/aws-codedeploy-requires-two-target-groups-but-why\n"
+	"content": "Tài liệu tham khảo https://stackoverflow.com/questions/69274998/could-not-connect-to-the-endpoint-url-https-api-ecr-public-xxxxxxxxx-amazona https://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken https://stackoverflow.com/questions/62022787/aws-ecs-blue-green-codepipeline-exception-while-trying-to-read-the-image-artifa https://stackoverflow.com/questions/60684118/aws-codedeploy-requires-two-target-groups-but-why "
 },
 {
 	"uri": "//localhost:1313/vi/categories/",

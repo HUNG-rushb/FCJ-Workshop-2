@@ -12,21 +12,21 @@
     <title>Cập nhật quyền cho codebuild role :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713260761" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713260761" rel="stylesheet">
-    <link href="/css/hybrid.css?1713260761" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713260761" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713260761" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713260761" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713260761" rel="stylesheet">
-    <link href="/css/theme.css?1713260761" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713260761" rel="stylesheet">
+    <link href="/css/nucleus.css?1713287934" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713287934" rel="stylesheet">
+    <link href="/css/hybrid.css?1713287934" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713287934" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713287934" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713287934" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713287934" rel="stylesheet">
+    <link href="/css/theme.css?1713287934" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713287934" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713260761" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713287934" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713260761"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713287934"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713260761"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713260761"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713287934"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713287934"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713260761"></script>
+<script type="text/javascript" src="/js/search.js?1713287934"></script>
 
     
   </div>
@@ -995,37 +995,21 @@
 
 	<h3 id="cập-nhật-quyền-cho-codebuild-role">Cập nhật quyền cho codebuild role</h3>
 <ol>
-<li>1</li>
+<li>Truy cập tới dịch vụ <strong>IAM</strong>:</li>
 </ol>
+<ul>
+<li>Ở menu bên trái, chọn <strong>Roles</strong>.</li>
+<li>Nhập tìm <strong><code>codebuild</code></strong>.</li>
+<li>Chọn role codebuild tương ứng với project của bạn.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/4.codebuild/21.png"></p>
-<ol>
-<li>1</li>
+<ol start="2">
+<li>Chọn <strong>Add permissions</strong>, sau đó <strong>Create inline policy</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/4.codebuild/22.png"></p>
-<ol>
-<li>1</li>
+<ol start="3">
+<li>Copy và paste policy dưới đây vào <strong>Policy editor</strong>. Sau đó kéo xuống dưới chọn <strong>Next</strong>.</li>
 </ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/23.png"></p>
-<ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/24.png"></p>
-<ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/25.png"></p>
-<ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/26.png"></p>
-<ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/27.png"></p>
-<ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/4.codebuild/28.png"></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Statement&#34;</span>: [
@@ -1047,7 +1031,28 @@
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+</span></span></code></pre></div><p><img alt="FCJ_ws2" src="/images/4.codebuild/23.png"></p>
+<ol start="4">
+<li>Mục <strong>Policy name</strong>, nhập <strong>FCJ_ECR_Public_Access</strong>. Sau đó nhấn <strong>Create policy</strong>.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/4.codebuild/24.png"></p>
+<ol start="5">
+<li>Xác nhận policy đã được thêm thành công.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/4.codebuild/25.png"></p>
+<ol start="6">
+<li>Tiếp tục chọn <strong>Add permissions</strong>, sau đó <strong>Attach policies</strong>.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/4.codebuild/26.png"></p>
+<ol start="7">
+<li>Nhập tìm <strong>AmazonEC2ContainerRegistryFullAccess</strong>. Chọ và nhấn <strong>Add permissions</strong>.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/4.codebuild/27.png"></p>
+<ol start="8">
+<li>Xác nhận policy đã được thêm thành công.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/4.codebuild/28.png"></p>
+
 
 
 
@@ -1507,19 +1512,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713260761"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713260761"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713260761"></script>
-    <script src="/js/jquery.sticky.js?1713260761"></script>
-    <script src="/js/featherlight.min.js?1713260761"></script>
-    <script src="/js/highlight.pack.js?1713260761"></script>
+    <script src="/js/clipboard.min.js?1713287934"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713287934"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713287934"></script>
+    <script src="/js/jquery.sticky.js?1713287934"></script>
+    <script src="/js/featherlight.min.js?1713287934"></script>
+    <script src="/js/highlight.pack.js?1713287934"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713260761"></script>
-    <script src="/js/learn.js?1713260761"></script>
-    <script src="/js/hugo-learn.js?1713260761"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713287934"></script>
+    <script src="/js/learn.js?1713287934"></script>
+    <script src="/js/hugo-learn.js?1713287934"></script>
 
-    <link href="/mermaid/mermaid.css?1713260761" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713260761"></script>
+    <link href="/mermaid/mermaid.css?1713287934" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713287934"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
