@@ -14,7 +14,7 @@ chapter: false
 Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng **AWS CodePipeline** và **AWS ECS**.
 
 - **Thời lượng**: 150 phút.
-- **Cần chuẩn bị**: tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess.
+- **Cần chuẩn bị**: git đã được cài đặt trên máy local, tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess.
 
 ### Nội dung
 

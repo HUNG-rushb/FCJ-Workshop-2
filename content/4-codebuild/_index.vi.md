@@ -6,6 +6,9 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
+![FCJ_ws2](/images/4.codebuild/aws_codebuild.png)
+![FCJ_ws2](/images/4.codebuild/aws_ecr.png)
+
 ### Nội dung
 
 1.  [Tạo private repo ECR](4.1-ecr_repo/)

@@ -25,7 +25,7 @@
 	"title": "Tạo HTTPS Git Credentials cho CodeCommit",
 	"tags": [],
 	"description": "",
-	"content": "Với Git credential, bạn có thể tạo username và static password trong IAM Console mà bạn có thể sử dụng để truy cập AWS CodeCommit từ cmd, Git CLI hoặc bất kỳ công cụ Git nào hỗ trợ xác thực HTTPS.\nVì đây là static credentials nên chúng có thể được cached bằng cách sử dụng các công cụ quản lý mật khẩu có trong hệ điều hành local của bạn hoặc được lưu trữ trong tiện ích quản lý thông tin xác thực. Điều này cho phép bạn bắt đầu với AWS CodeCommit trong vòng vài phút. Bạn không cần tải xuống AWS CLI hoặc đặt cấu hình ứng dụng khách Git để kết nối với kho lưu trữ CodeCommit trên HTTPS. Bạn cũng có thể sử dụng username và password để kết nối với CodeCommit từ các công cụ của bên thứ ba hỗ trợ xác thực tên username và password, bao gồm các ứng dụng khách GUI Git phổ biến (như TowerUI) và IDE (như Eclipse, IntelliJ và Visual Studio).\nTạo HTTPS Git Credentials cho CodeCommit Tiếp tục tạo bucket logging-workshop-destination Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop-destination. Không cần bỏ chọn mục Block Public Access settings for this bucket. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. Tiếp tục tạo bucket logging-workshop-destination b Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. "
+	"content": "Với Git credential, bạn có thể tạo username và static password trong IAM Console mà bạn có thể sử dụng để truy cập AWS CodeCommit từ cmd, Git CLI hoặc bất kỳ công cụ Git nào hỗ trợ xác thực HTTPS.\nVì đây là static credentials nên chúng có thể được cached bằng cách sử dụng các công cụ quản lý mật khẩu có trong hệ điều hành local của bạn hoặc được lưu trữ trong tiện ích quản lý thông tin xác thực. Điều này cho phép bạn bắt đầu với AWS CodeCommit trong vòng vài phút. Bạn không cần tải xuống AWS CLI hoặc đặt cấu hình ứng dụng khách Git để kết nối với kho lưu trữ CodeCommit trên HTTPS. Bạn cũng có thể sử dụng username và password để kết nối với CodeCommit từ các công cụ của bên thứ ba hỗ trợ xác thực tên username và password, bao gồm các ứng dụng khách GUI Git phổ biến (như TowerUI) và IDE (như Eclipse, IntelliJ và Visual Studio).\nTạo HTTPS Git Credentials cho CodeCommit Từ root account, truy cập vào IAM console của IAM account mà bạn sẽ sử dụng cho bài lab này, chọn mục Security credentials. Ở phần HTTPS Git credentials for AWS CodeCommit, chọn Generate credentials Chọn Download credentials, và lưu nó ở nơi bạn có thể dễ dàng truy cập lại. "
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/4.1-ecr_repo/",
@@ -39,7 +39,7 @@
 	"title": "Tạo repo CodeCommit",
 	"tags": [],
 	"description": "",
-	"content": "Tạo repo CodeCommit 1 1 1 1 "
+	"content": "Tạo repo CodeCommit Chuyển hướng tới CodeCommit console. Tại Repositories, chọn Create repository. Mục Repositorie name, nhập FCJ_Repo. Xác nhận repo đã được tạo thành công. Nhấn Clone URL, chọn Clone HTTPS và sang bước tiếp theo. "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/",
@@ -53,7 +53,7 @@
 	"title": "Push code lên repo",
 	"tags": [],
 	"description": "",
-	"content": "Push code lên repo 1 1 1 1 1 1 1 1 "
+	"content": "https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1\nPush code lên repo Truy cập vào https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 và tải về source code. Đây là Calculator App đơn giản được viết bằng React và chúng ta sẽ dùng để deploy. Tải về và giải nén nó trong thư mục mà bạn muốn làm việc. Kiểm tra các file có đầy đủ đủ giống như hình bên dưới hay không. 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/4.2-build_project/",
@@ -67,7 +67,7 @@
 	"title": "Tạo Public subnet",
 	"tags": [],
 	"description": "",
-	"content": " Cập nhật quyền tạo log cho S3 log delivery group "
+	"content": " Chuyển tới VPC console, và quan sát xem bạn đã có Default VPC hay chưa. Chọn Subnets tại bảng điều hướng bên trái, chọn Create subnet. Chọn Default VPC. Tạo subnet 1: Mục Subnet name, nhập fcj-subnet-1. Mục Availability zone, chọn us-east-1a. Mục IPv4 subnet CIDR block, nhập 172.31.200.0/24. Chọn Add new subnet, và tạo subnet 2: Mục Subnet name, nhập fcj-subnet-1. Mục Availability zone, chọn us-east-1b. Mục IPv4 subnet CIDR block, nhập 172.31.201.0/24. Chọn Add new subnet, và tạo subnet 3: Mục Subnet name, nhập fcj-subnet-1. Mục Availability zone, chọn us-east-1c. Mục IPv4 subnet CIDR block, nhập 172.31.202.0/24. Chọn Create subnet. Xác nhận 3 subnet đã được tạo thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/6.2-task_def/",
@@ -81,7 +81,7 @@
 	"title": "AWS CodeCommit",
 	"tags": [],
 	"description": "",
-	"content": "Nội dung Tạo repo CodeCommit Push code lên repo "
+	"content": "\nNội dung Tạo repo CodeCommit Push code lên repo "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/6.3-code/",
@@ -102,7 +102,7 @@
 	"title": "Tạo Security group",
 	"tags": [],
 	"description": "",
-	"content": "Tạo Security group Tiếp tục tạo bucket logging-workshop-destination Tải xuống file S3_logging_workshop.txt tại Attachments\rS3_logging_workshop.txt\r(0 ko)\r2 3 "
+	"content": " Tạo Security group Chuyển tới Security Groups, chọn Create security group. Tạo security group: Mục Security group name, nhập FCJ_SG.\nMục Description, nhập Allow inbound HTTP on port 80.\nMục VPC, chọn Default VPC.\nMục Inbound rules, chọn Add rule, Type chọn HTTP, Source chọn Anywhere-IPv4.\nKéo xuống dưới cùng, chọn Create security group (không có trong hình).\n"
 },
 {
 	"uri": "//localhost:1313/vi/4-codebuild/",
@@ -123,7 +123,7 @@
 	"title": "Tạo Target group",
 	"tags": [],
 	"description": "",
-	"content": "Tạo Target group 1 2 3 4 5 "
+	"content": "Tạo Target group Chuyển tới EC2 console. Chuyển tới Target groups, chọn Create target group. Tạo target group: Mục Target type, chọn IP Adressess. Mục Target group name, nhập FCJ-TG. Kéo xuống chọn Create target group. Xác nhận target group đã được tạo thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/5-codepipeline/",
@@ -144,7 +144,7 @@
 	"title": "Tạo Application load balancer",
 	"tags": [],
 	"description": "",
-	"content": "Tạo Application load balancer 1 1 1 1 1 1 1 1 1 "
+	"content": "Tạo Application load balancer Chuyển hướng tới Load balancers, chọn Create load balancer. Chọn Application Load Balancer _ Mục Load balancer name, nhập FCJ-ALB. Mục Scheme, chọn Internet-facing (mặc định). Mục IP address type, chọn IPv4 (mặc định). Tại mục Network mapping: Mục VPC, chọn Default VPC. Mục Mappings, tick chọn cả 3 AZ, sau đó chọn các fcj-subnet tương ứng với từng AZ mà ta đã tạo. Tại mục Security groups, mở bảng dropdown, bỏ chọn default và chọn FCJ-SG. Tại mục Listeners and routing, tại Default action, chọn target group FCJ-TG. Kiểm tra lại cấu hình. Xác nhận ALB đã được tạo thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/",
