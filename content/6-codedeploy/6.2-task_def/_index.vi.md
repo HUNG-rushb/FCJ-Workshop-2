@@ -12,26 +12,26 @@ pre: " <b> 6.2 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/3.png)
 
-1. 1
+2. 1
 
 ![FCJ_ws2](/images/6.codedeploy/4.png)
 
-1. 1
+3. 1
 
 ![FCJ_ws2](/images/6.codedeploy/5.png)
 
-1. 1
+4. 1
 
 ![FCJ_ws2](/images/6.codedeploy/6.png)
 
-1. 1
+5. 1
 
 ![FCJ_ws2](/images/6.codedeploy/7.png)
 
-1. 1
+6. 1
 
 ![FCJ_ws2](/images/6.codedeploy/8.png)
 
-1. 1
+7. 1
 
 ![FCJ_ws2](/images/6.codedeploy/9.png)

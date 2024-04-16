@@ -10,70 +10,70 @@ pre: " <b> 7. </b> "
 
 ![FCJ_ws2](/images/7.clean/1.png)
 
-1. 1
+2. 1
 
 ![FCJ_ws2](/images/7.clean/2.png)
 
-1. 1
+3. 1
 
 ![FCJ_ws2](/images/7.clean/3.png)
 
-1. 1
+4. 1
 
 ![FCJ_ws2](/images/7.clean/4.png)
 
-1. 1
+5. 1
 
 ![FCJ_ws2](/images/7.clean/5.png)
 
-1. 1
+6. 1
 
 ![FCJ_ws2](/images/7.clean/6.png)
 
-1. 1
+7. 1
 
 ![FCJ_ws2](/images/7.clean/7.png)
 
-1. 1
+8. 1
 
 ![FCJ_ws2](/images/7.clean/8.png)
 
-1. 1
+9. 1
 
 ![FCJ_ws2](/images/7.clean/9.png)
 
-1. 1
+10. 1
 
 ![FCJ_ws2](/images/7.clean/10.png)
 
-1. 1
+11. 1
 
 ![FCJ_ws2](/images/7.clean/11.png)
 
-1. 1
+12. 1
 
 ![FCJ_ws2](/images/7.clean/12.png)
 
-1. 1
+13. 1
 
 ![FCJ_ws2](/images/7.clean/13.png)
 
-1. 1
+14. 1
 
 ![FCJ_ws2](/images/7.clean/14.png)
 
-1. 1
+15. 1
 
 ![FCJ_ws2](/images/7.clean/15.png)
 
-1. 1
+16. 1
 
 ![FCJ_ws2](/images/7.clean/16.png)
 
-1. 1
+17. 1
 
 ![FCJ_ws2](/images/7.clean/17.png)
 
-1. 1
+18. 1
 
 ![FCJ_ws2](/images/7.clean/18.png)

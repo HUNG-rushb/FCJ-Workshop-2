@@ -12,46 +12,46 @@ pre: " <b> 6.6 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/33_1.png)
 
-1. 1
+2. 1
 
 ![FCJ_ws2](/images/6.codedeploy/33_2.png)
 
-1. 1
+3. 1
 
 ![FCJ_ws2](/images/6.codedeploy/34.png)
 
-1. 1
+4. 1
 
 ![FCJ_ws2](/images/6.codedeploy/34_1.png)
 
-1. 1
+5. 1
 
 ![FCJ_ws2](/images/6.codedeploy/35.png)
 
-1. 1
+6. 1
 
 ![FCJ_ws2](/images/6.codedeploy/36.png)
 
-1. 1
+7. 1
 
 ![FCJ_ws2](/images/6.codedeploy/37.png)
 
-1. 1
+8. 1
 
 ![FCJ_ws2](/images/6.codedeploy/38_1.png)
 
-1. 1
+9. 1
 
 ![FCJ_ws2](/images/6.codedeploy/38.png)
 
-1. 1
+10. 1
 
 ![FCJ_ws2](/images/6.codedeploy/39_1.png)
 
-1. 1
+11. 1
 
 ![FCJ_ws2](/images/6.codedeploy/39.png)
 
-1. 1
+12. 1
 
 ![FCJ_ws2](/images/6.codedeploy/40.png)

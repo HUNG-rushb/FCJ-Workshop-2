@@ -12,70 +12,70 @@ pre: " <b> 6.4 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/10.png)
 
-1. 1
+2. 1
 
 ![FCJ_ws2](/images/6.codedeploy/11.png)
 
-1. 1
+3. 1
 
 ![FCJ_ws2](/images/6.codedeploy/12.png)
 
-1. 1
+4. 1
 
 ![FCJ_ws2](/images/6.codedeploy/13.png)
 
-1. 1
+5. 1
 
 ![FCJ_ws2](/images/6.codedeploy/14.png)
 
-1. 1
+6. 1
 
 ![FCJ_ws2](/images/6.codedeploy/15.png)
 
-1. 1
+7. 1
 
 ![FCJ_ws2](/images/6.codedeploy/16.png)
 
-1. 1
+8. 1
 
 ![FCJ_ws2](/images/6.codedeploy/17.png)
 
-1. 1
+9. 1
 
 ![FCJ_ws2](/images/6.codedeploy/18.png)
 
-1. 1
+10. 1
 
 ![FCJ_ws2](/images/6.codedeploy/19.png)
 
-1. 1
+11. 1
 
 ![FCJ_ws2](/images/6.codedeploy/19_1.png)
 
-1. 1
+12. 1
 
 ![FCJ_ws2](/images/6.codedeploy/19_2.png)
 
-1. 1
+13. 1
 
 ![FCJ_ws2](/images/6.codedeploy/19_3.png)
 
-1. 1
+14. 1
 
 ![FCJ_ws2](/images/6.codedeploy/19.png)
 
-1. 1
+15. 1
 
 ![FCJ_ws2](/images/6.codedeploy/20.png)
 
-1. 1
+16. 1
 
 ![FCJ_ws2](/images/6.codedeploy/21.png)
 
-1. 1
+17. 1
 
 ![FCJ_ws2](/images/6.codedeploy/22.png)
 
-1. 1
+18. 1
 
 ![FCJ_ws2](/images/6.codedeploy/23.png)
