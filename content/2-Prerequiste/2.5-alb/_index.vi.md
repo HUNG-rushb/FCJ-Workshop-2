@@ -2,44 +2,49 @@
 title: "Tạo Application load balancer"
 date: "`r Sys.Date()`"
 weight: 5
-chapter: true
+chapter: false
 pre: " <b> 2.5 </b> "
 ---
 
 ### Tạo Application load balancer
 
-1. 1
+1. Chuyển hướng tới **Load balancers**, chọn **Create load balancer**.
 
 ![FCJ_ws2](/images/2.prerequisite/12.png)
 
-1. 1
+2. Chọn **Application Load Balancer**
 
 ![FCJ_ws2](/images/2.prerequisite/13.png)
 
-1. 1
+3. \_
+
+- Mục **Load balancer name**, nhập **`FCJ-ALB`**.
+- Mục **Scheme**, chọn **Internet-facing** (mặc định).
+- Mục **IP address type**, chọn **IPv4** (mặc định).
 
 ![FCJ_ws2](/images/2.prerequisite/14.png)
 
-1. 1
+4. Tại mục **Network mapping**:
+
+- Mục **VPC**, chọn **Default VPC**.
+- Mục **Mappings**, tick chọn cả 3 **AZ**, sau đó chọn các **fcj-subnet** tương ứng với từng **AZ** mà ta đã tạo.
 
 ![FCJ_ws2](/images/2.prerequisite/15.png)
 
-1. 1
+5. Tại mục **Security groups**, mở bảng dropdown, bỏ chọn **default** và chọn **FCJ-SG**.
 
 ![FCJ_ws2](/images/2.prerequisite/16.png)
 
-1. 1
-
 ![FCJ_ws2](/images/2.prerequisite/17.png)
 
-1. 1
+6.  Tại mục **Listeners and routing**, tại **Default action**, chọn target group **FCJ-TG**.
 
 ![FCJ_ws2](/images/2.prerequisite/18.png)
 
-1. 1
+7. Kiểm tra lại cấu hình.
 
 ![FCJ_ws2](/images/2.prerequisite/19.png)
 
-1. 1
+8. Xác nhận ALB đã được tạo thành công.
 
 ![FCJ_ws2](/images/2.prerequisite/20.png)

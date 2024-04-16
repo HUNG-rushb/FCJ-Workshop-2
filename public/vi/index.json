@@ -14,11 +14,25 @@
 	"content": "\nBlue/Green Deployment là một quy trình triển khai liên tục nhằm giảm thời gian chết và rủi ro bằng cách có hai môi trường production giống hệt nhau, được gọi là Blue và Green.\nGiả sử môi trường Blue đang hoạt động và môi trường Green không hoạt động. Khi nhà phát triển muốn phát hành bất kỳ code mới nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường Green, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản Green và phiên bản Blue được duy trì như một bản sao lưu.\nƯu điểm của chiến lược Blue/Green Deployment là :\nTesting parity: tính năng này có nghĩa là các thử nghiệm phản ánh thực sự thực tế của sản xuất. Triển khai bất kỳ lúc nào: không có downtime có nghĩa là chúng ta có thể phát hành bất kỳ lúc nào. Không cần phải đợi các maintenance windows. Chuyển tiếp tức thì: người dùng được chuyển sang phiên bản mới ngay lập tức, hoặc gần như vậy. Mọi người đều xem bản phát hành mới nhất cùng một lúc. Khôi phục tức thì: phần chuyển tiếp hoạt động theo cả hai cách. Nếu chúng ta quyết định quay lại phiên bản trước, chúng ta có thể chuyển tất cả người dùng trở lại ngay lập tức. Hot standby: Blue-Green có thể cứu chúng ta khỏi các tình huống thảm họa. Giả sử rằng một trung tâm dữ liệu chuyển sang chế độ ngoại tuyến, chúng ta sẽ chuyển sang cái khác cho đến khi sự cố được khắc phục. Điều này sẽ hoạt động miễn là chúng ta đã có biện pháp phòng ngừa là không đặt Blue-Green vào cùng một vùng khả dụng. Postmortem: việc gỡ lỗi các bản phát hành không thành công rất khó khăn với việc triển khai tại chỗ. Khi đối mặt với downtime, ưu tiên luôn là trở lại trạng thái bình thường. Việc thu thập dữ liệu gỡ lỗi chỉ là thứ yếu, vì vậy nhiều thông tin có giá trị có thể bị mất trong quá trình khôi phục. Blue-green không gặp phải vấn đề này — Các lần khôi phục luôn giữ nguyên việc triển khai thất bại để phân tích. Song song với đó thì chiến lược này cũng có một vài nhược điểm, có thể kể đến:\nTiêu tốn nhiều tài nguyên do cần duy trì 2 môi trường cùng lúc khi triển khai Blue/Green Deployment đòi hỏi các service trên cả 2 môi trường sử dụng chung database, trong trường hợp code mới có tác động thay đổi cấu trúc database, cần xây dựng chiến lược đồng bộ sao cho cả hai môi trường có thể chạy cùng lúc mà không gặp sự cố. Với vấn đề này, ta có thể sử dụng liquibase để xây dựng giải pháp. "
 },
 {
+	"uri": "//localhost:1313/vi/6-codedeploy/6.1-cluster/",
+	"title": "Tạo ECS Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Tạo ECS Cluster 1\n1\n1\n"
+},
+{
 	"uri": "//localhost:1313/vi/2-prerequiste/2.1-git_credentials/",
 	"title": "Tạo HTTPS Git Credentials cho CodeCommit",
 	"tags": [],
 	"description": "",
 	"content": "Với Git credential, bạn có thể tạo username và static password trong IAM Console mà bạn có thể sử dụng để truy cập AWS CodeCommit từ cmd, Git CLI hoặc bất kỳ công cụ Git nào hỗ trợ xác thực HTTPS.\nVì đây là static credentials nên chúng có thể được cached bằng cách sử dụng các công cụ quản lý mật khẩu có trong hệ điều hành local của bạn hoặc được lưu trữ trong tiện ích quản lý thông tin xác thực. Điều này cho phép bạn bắt đầu với AWS CodeCommit trong vòng vài phút. Bạn không cần tải xuống AWS CLI hoặc đặt cấu hình ứng dụng khách Git để kết nối với kho lưu trữ CodeCommit trên HTTPS. Bạn cũng có thể sử dụng username và password để kết nối với CodeCommit từ các công cụ của bên thứ ba hỗ trợ xác thực tên username và password, bao gồm các ứng dụng khách GUI Git phổ biến (như TowerUI) và IDE (như Eclipse, IntelliJ và Visual Studio).\nTạo HTTPS Git Credentials cho CodeCommit Tiếp tục tạo bucket logging-workshop-destination Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. Mục Bucket name, nhập logging-workshop-destination. Không cần bỏ chọn mục Block Public Access settings for this bucket. Kéo xuống dưới cùng, chọn Create bucket. Xác nhận bucket đã được tạo thành công. Tiếp tục tạo bucket logging-workshop-destination b Mục AWS Region, chọn Asia Pacific (Singapore) ap-southeast-1. "
+},
+{
+	"uri": "//localhost:1313/vi/4-codebuild/4.1-ecr_repo/",
+	"title": "Tạo private repo ECR",
+	"tags": [],
+	"description": "",
+	"content": "Tạo private repo ECR 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/3-codecommit/3.1-repo/",
@@ -35,74 +49,18 @@
 	"content": "Nội dung Tạo HTTPS Git Credentials cho CodeCommit Tạo Public subnet Tạo Security group Tạo Target group Tạo Application load balancer "
 },
 {
-	"uri": "//localhost:1313/vi/4-codebuild/4.1-ecr_repo/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/4-codebuild/4.2-build_project/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/4-codebuild/4.3-role/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.1-cluster/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.2-task_def/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.3-code/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.4-service/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
-	"uri": "//localhost:1313/vi/6-codedeploy/6.6-deployment/",
-	"title": "Kiểm tra log",
-	"tags": [],
-	"description": "",
-	"content": " "
-},
-{
 	"uri": "//localhost:1313/vi/3-codecommit/3.2-code/",
 	"title": "Push code lên repo",
 	"tags": [],
 	"description": "",
 	"content": "Push code lên repo 1 1 1 1 1 1 1 1 "
+},
+{
+	"uri": "//localhost:1313/vi/4-codebuild/4.2-build_project/",
+	"title": "Tạo CodeBuild project",
+	"tags": [],
+	"description": "",
+	"content": "Tạo CodeBuild project 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
@@ -112,11 +70,32 @@
 	"content": " Cập nhật quyền tạo log cho S3 log delivery group "
 },
 {
+	"uri": "//localhost:1313/vi/6-codedeploy/6.2-task_def/",
+	"title": "Tạo Task definition",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Task definition 1 1 1 1 1 1 1 "
+},
+{
 	"uri": "//localhost:1313/vi/3-codecommit/",
 	"title": "AWS CodeCommit",
 	"tags": [],
 	"description": "",
 	"content": "Nội dung Tạo repo CodeCommit Push code lên repo "
+},
+{
+	"uri": "//localhost:1313/vi/6-codedeploy/6.3-code/",
+	"title": "Cập nhật code",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật code 1 1 1 1 1 1 1 1 1 1 1 "
+},
+{
+	"uri": "//localhost:1313/vi/4-codebuild/4.3-role/",
+	"title": "Cập nhật quyền cho codebuild role",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật quyền cho codebuild role 1 1 1 1 1 1 1 1 { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ecr-public:GetAuthorizationToken\u0026#34;, \u0026#34;sts:GetServiceBearerToken\u0026#34;, \u0026#34;ecr-public:BatchCheckLayerAvailability\u0026#34;, \u0026#34;ecr-public:GetRepositoryPolicy\u0026#34;, \u0026#34;ecr-public:DescribeRepositories\u0026#34;, \u0026#34;ecr-public:DescribeRegistries\u0026#34;, \u0026#34;ecr-public:DescribeImages\u0026#34;, \u0026#34;ecr-public:DescribeImageTags\u0026#34;, \u0026#34;ecr-public:GetRepositoryCatalogData\u0026#34;, \u0026#34;ecr-public:GetRegistryCatalogData\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.3-security_group/",
@@ -130,7 +109,14 @@
 	"title": "AWS CodeBuild",
 	"tags": [],
 	"description": "",
-	"content": "Nội dung Tạo private repo ECR Tạo CodeBuild project Cập nhật quyền cho codebuild role { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ecr-public:GetAuthorizationToken\u0026#34;, \u0026#34;sts:GetServiceBearerToken\u0026#34;, \u0026#34;ecr-public:BatchCheckLayerAvailability\u0026#34;, \u0026#34;ecr-public:GetRepositoryPolicy\u0026#34;, \u0026#34;ecr-public:DescribeRepositories\u0026#34;, \u0026#34;ecr-public:DescribeRegistries\u0026#34;, \u0026#34;ecr-public:DescribeImages\u0026#34;, \u0026#34;ecr-public:DescribeImageTags\u0026#34;, \u0026#34;ecr-public:GetRepositoryCatalogData\u0026#34;, \u0026#34;ecr-public:GetRegistryCatalogData\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
+	"content": "Nội dung Tạo private repo ECR Tạo CodeBuild project Cập nhật quyền cho codebuild role "
+},
+{
+	"uri": "//localhost:1313/vi/6-codedeploy/6.4-service/",
+	"title": "Tạo Cluster service",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Cluster service 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.4-target_group/",
@@ -144,7 +130,14 @@
 	"title": "AWS CodePipeline",
 	"tags": [],
 	"description": "",
-	"content": "AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\n"
+	"content": "AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\n1 1 1 1 1 1 1 1 1 1 "
+},
+{
+	"uri": "//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/",
+	"title": "Cập nhật Deploy stage",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật Deploy stage 1 1 1 1 1 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.5-alb/",
@@ -161,18 +154,25 @@
 	"content": "Nội dung Tạo ECS Cluster Tạo Task definition Cập nhật code Tạo Cluster service Cập nhật Deploy stage Cập nhật và quan sát deployment "
 },
 {
+	"uri": "//localhost:1313/vi/6-codedeploy/6.6-deployment/",
+	"title": "Cập nhật và quan sát deployment",
+	"tags": [],
+	"description": "",
+	"content": "Cập nhật và quan sát deployment 1 1 1 1 1 1 1 1 1 1 1 1 "
+},
+{
 	"uri": "//localhost:1313/vi/7-cleanup/",
 	"title": "Dọn dẹp tài nguyên",
 	"tags": [],
 	"description": "",
-	"content": " "
+	"content": " 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "
 },
 {
 	"uri": "//localhost:1313/vi/8-ref/",
 	"title": "Tài liệu tham khảo",
 	"tags": [],
 	"description": "",
-	"content": " "
+	"content": " https://stackoverflow.com/questions/69274998/could-not-connect-to-the-endpoint-url-https-api-ecr-public-xxxxxxxxx-amazona\nhttps://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken\nhttps://stackoverflow.com/questions/62022787/aws-ecs-blue-green-codepipeline-exception-while-trying-to-read-the-image-artifa\nhttps://stackoverflow.com/questions/60684118/aws-codedeploy-requires-two-target-groups-but-why\n"
 },
 {
 	"uri": "//localhost:1313/vi/categories/",

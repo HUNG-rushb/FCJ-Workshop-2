@@ -2,7 +2,7 @@
 title: "Tạo HTTPS Git Credentials cho CodeCommit"
 date: "`r Sys.Date()`"
 weight: 1
-chapter: true
+chapter: false
 pre: " <b> 2.1 </b> "
 ---
 
@@ -12,22 +12,14 @@ Vì đây là static credentials nên chúng có thể được cached bằng c�
 
 ### Tạo HTTPS Git Credentials cho CodeCommit
 
-1. Tiếp tục tạo bucket **logging-workshop-destination**
-
-- Mục **AWS Region**, chọn **Asia Pacific (Singapore) ap-southeast-1**.
-- Mục **Bucket name**, nhập **`logging-workshop-destination`**.
-- Không cần bỏ chọn mục **Block Public Access settings for this bucket**.
-- Kéo xuống dưới cùng, chọn **Create bucket**.
-- Xác nhận bucket đã được tạo thành công.
+1. Từ root account, truy cập vào IAM console của IAM account mà bạn sẽ sử dụng cho bài lab này, chọn mục **Security credentials**.
 
 ![FCJ_ws2](/images/2.prerequisite/_1.png)
 
-2. Tiếp tục tạo bucket **logging-workshop-destination**
+2. Ở phần **HTTPS Git credentials for AWS CodeCommit**, chọn **Generate credentials**
 
 ![FCJ_ws2](/images/2.prerequisite/_2.png)
 
-3. b
-
-- Mục **AWS Region**, chọn **Asia Pacific (Singapore) ap-southeast-1**.
+3. Chọn **Download credentials**, và lưu nó ở nơi bạn có thể dễ dàng truy cập lại.
 
 ![FCJ_ws2](/images/2.prerequisite/_3.png)
