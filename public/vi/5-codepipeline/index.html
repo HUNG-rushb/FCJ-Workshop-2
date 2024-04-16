@@ -12,21 +12,21 @@
     <title>AWS CodePipeline :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713287940" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713287940" rel="stylesheet">
-    <link href="/css/hybrid.css?1713287940" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713287940" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713287940" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713287940" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713287940" rel="stylesheet">
-    <link href="/css/theme.css?1713287940" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713287940" rel="stylesheet">
+    <link href="/css/nucleus.css?1713289134" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713289134" rel="stylesheet">
+    <link href="/css/hybrid.css?1713289134" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713289134" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713289134" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713289134" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713289134" rel="stylesheet">
+    <link href="/css/theme.css?1713289134" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713289134" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713287940" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713289134" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713287940"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713289134"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713287940"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713287940"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713289134"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713289134"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713287940"></script>
+<script type="text/javascript" src="/js/search.js?1713289134"></script>
 
     
   </div>
@@ -981,43 +981,56 @@
 
 	<p><strong>AWS CodePipeline</strong> là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. <strong>CodePipeline</strong> tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.</p>
 <ol>
-<li>1</li>
+<li>Truy cập dịch vụ <strong>AWS CodePipeline</strong>. Ở menu bên trái, chọn <strong>Pipelines</strong>, sau đó <strong>Create pipeline</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/1.png"></p>
-<ol>
-<li>1</li>
+<ol start="2">
+<li>Mục <strong>Pipeline name</strong>, nhập <strong><code>FCJ_Pipeline</code></strong>. Các lựa chọn khác giữ nguyên mặc định như hình.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/2.png"></p>
-<ol>
-<li>1</li>
+<ol start="3">
+<li>Mục <strong>Advanced settings</strong>, <strong>Artifact store</strong> chọn <strong>Default location</strong> và <strong>Encryption key</strong> chọn <strong>Default AWS Managed key</strong>. Ấn <strong>Next</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/3.png"></p>
-<ol>
-<li>1</li>
+<ol start="4">
+<li>Tiếp tục:</li>
 </ol>
+<ul>
+<li>Mục <strong>Source provider</strong>, chọn <strong>AWS CodeCommit</strong>.</li>
+<li>Mục <strong>Repository name</strong>, chọn <strong>FCJ_Repo</strong>.</li>
+<li>Mục <strong>Branch name</strong>, chọn <strong>master</strong>.</li>
+<li>Còn lại giữ nguyên mặc định, sau đó nhấn <strong>Next</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/4.png"></p>
-<ol>
-<li>1</li>
+<ol start="5">
+<li>Click vào account góc phía trên cùng bên phải, sau đó copy <strong>Account ID</strong> của bạn.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/5.png"></p>
-<ol>
-<li>1</li>
+<ol start="6">
+<li>Tiếp tục:</li>
 </ol>
+<ul>
+<li>Mục <strong>Build provider</strong>, chọn <strong>AWS CodeBuild</strong>.</li>
+<li>Mục <strong>Region</strong>, chọn <strong>US East</strong>.</li>
+<li>Mục <strong>Project name</strong>, chọn <strong>FCJ_Build_Project</strong>.</li>
+<li>Nhấn <strong>Add enviroment variable</strong>. Mục <strong>Name</strong>, nhập <strong><code>AWS_ACCOUNT_ID</code></strong>. Mục <strong>Value</strong> hãy paste vào Account ID mà bạn đã copy trước đó.</li>
+<li>Còn lại giữ nguyên mặc định, sau đó nhấn <strong>Next</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/6.png"></p>
-<ol>
-<li>1</li>
+<ol start="7">
+<li>Nhấn <strong>Skip deploy stage</strong>, xác nhận <strong>Skip</strong> khi popup hiện ra.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/7.png"></p>
-<ol>
-<li>1</li>
+<ol start="8">
+<li>Kiếm tra lại cấu hình và nhấn <strong>Create pipeline</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/8.png"></p>
-<ol>
-<li>1</li>
+<ol start="9">
+<li>Xác nhận pipeline đã được tạo thành công. Chờ cho đến khi pipeline build thành công như trong hình.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/9.png"></p>
-<ol>
-<li>1</li>
+<ol start="10">
+<li>Truy cập tới dịch vụ <strong>AWS ECR</strong>, vào repo <strong>fcj-image-repo</strong> và xác nhận đã có 1 image được build và store thành công.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/5.codepipeline/10.png"></p>
 
@@ -1476,19 +1489,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713287940"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713287940"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713287940"></script>
-    <script src="/js/jquery.sticky.js?1713287940"></script>
-    <script src="/js/featherlight.min.js?1713287940"></script>
-    <script src="/js/highlight.pack.js?1713287940"></script>
+    <script src="/js/clipboard.min.js?1713289134"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713289134"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713289134"></script>
+    <script src="/js/jquery.sticky.js?1713289134"></script>
+    <script src="/js/featherlight.min.js?1713289134"></script>
+    <script src="/js/highlight.pack.js?1713289134"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713287940"></script>
-    <script src="/js/learn.js?1713287940"></script>
-    <script src="/js/hugo-learn.js?1713287940"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713289134"></script>
+    <script src="/js/learn.js?1713289134"></script>
+    <script src="/js/hugo-learn.js?1713289134"></script>
 
-    <link href="/mermaid/mermaid.css?1713287940" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713287940"></script>
+    <link href="/mermaid/mermaid.css?1713289134" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713289134"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
