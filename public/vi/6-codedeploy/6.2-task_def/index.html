@@ -12,21 +12,21 @@
     <title>Tạo Task definition :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713291103" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713291103" rel="stylesheet">
-    <link href="/css/hybrid.css?1713291103" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713291103" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713291103" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713291103" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713291103" rel="stylesheet">
-    <link href="/css/theme.css?1713291103" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713291103" rel="stylesheet">
+    <link href="/css/nucleus.css?1713354650" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713354650" rel="stylesheet">
+    <link href="/css/hybrid.css?1713354650" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713354650" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713354650" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713354650" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713354650" rel="stylesheet">
+    <link href="/css/theme.css?1713354650" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713354650" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713291103" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713354650" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713291103"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713354650"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713291103"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713291103"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713354650"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713354650"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713291103"></script>
+<script type="text/javascript" src="/js/search.js?1713354650"></script>
 
     
   </div>
@@ -995,31 +995,37 @@
 
 	<h3 id="tạo-task-definition">Tạo Task definition</h3>
 <ol>
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/6.codedeploy/3.png"></p>
-<ol start="2">
-<li>1</li>
+<li>Truy cập tới dịch vụ <strong>AWS Elastic Container Service</strong>, chọn <strong>Task definitions</strong>, sau đó chọn <strong>Create new task definition</strong> liên tục 2 lần.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/4.png"></p>
-<ol start="3">
-<li>1</li>
+<ol start="2">
+<li>Mục <strong>Task definition family</strong>, nhập <strong><code>FCJ_Task_Definition</code></strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/5.png"></p>
-<ol start="4">
-<li>1</li>
+<ol start="3">
+<li>Mục <strong>Infrastructure requirements</strong>, thực hiện:</li>
 </ol>
+<ul>
+<li>Mục <strong>Launch type</strong>, chọn <strong>AWS Fargate</strong>.</li>
+<li>Mục <strong>Task size</strong>, <strong>CPU</strong> chọn <strong>.5 vCPU</strong>, <strong>Memory</strong> chọn <strong>2GB</strong>.</li>
+<li>Mục <strong>Task role</strong>, chọn <strong>ecsTaskExecutionRole</strong>.</li>
+<li>Mục <strong>Task execution role</strong>, chọn <strong>ecsTaskExecutionRole</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/6.png"></p>
-<ol start="5">
-<li>1</li>
+<ol start="4">
+<li>Truy cập <strong>AWS ECR</strong>, vào repo <strong>fci_image_repo</strong> và copy latest image URI như trong hình.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/7.png"></p>
-<ol start="6">
-<li>1</li>
+<ol start="5">
+<li>Mục <strong>Containner - 1</strong>, thực hiện:</li>
 </ol>
+<ul>
+<li>Mục <strong>Name</strong>, nhập <strong><code>fcj_container</code></strong>.</li>
+<li>Mục <strong>Image URI</strong>, paste vào image URI mà bạn đã copy ở bước 4.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/8.png"></p>
-<ol start="7">
-<li>1</li>
+<ol start="6">
+<li>Xác nhận task definition đã được tạo thành công.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/9.png"></p>
 
@@ -1482,19 +1488,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713291103"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713291103"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713291103"></script>
-    <script src="/js/jquery.sticky.js?1713291103"></script>
-    <script src="/js/featherlight.min.js?1713291103"></script>
-    <script src="/js/highlight.pack.js?1713291103"></script>
+    <script src="/js/clipboard.min.js?1713354650"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713354650"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713354650"></script>
+    <script src="/js/jquery.sticky.js?1713354650"></script>
+    <script src="/js/featherlight.min.js?1713354650"></script>
+    <script src="/js/highlight.pack.js?1713354650"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713291103"></script>
-    <script src="/js/learn.js?1713291103"></script>
-    <script src="/js/hugo-learn.js?1713291103"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713354650"></script>
+    <script src="/js/learn.js?1713354650"></script>
+    <script src="/js/hugo-learn.js?1713354650"></script>
 
-    <link href="/mermaid/mermaid.css?1713291103" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713291103"></script>
+    <link href="/mermaid/mermaid.css?1713354650" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713354650"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
