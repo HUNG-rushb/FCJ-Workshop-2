@@ -2,7 +2,7 @@
 title: "Create HTTPS Git Credentials for CodeCommit"
 date: "`r Sys.Date()`"
 weight: 1
-chapter: true
+chapter: false
 pre: " <b> 2.1 </b> "
 ---
 
@@ -23,4 +23,3 @@ Because these are static credentials, they can be cached using password manageme
 3. Choose **Download credentials**, and save it where you can easily access it again.
 
 ![FCJ_ws2](/images/2.prerequisite/_3.png)
-

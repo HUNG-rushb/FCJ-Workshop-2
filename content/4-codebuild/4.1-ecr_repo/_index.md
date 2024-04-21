@@ -2,7 +2,7 @@
 title: "Create private repo ECR"
 date: "`r Sys.Date()`"
 weight: 1
-chapter: true
+chapter: false
 pre: " <b> 4.1 </b> "
 ---
 
@@ -30,4 +30,3 @@ pre: " <b> 4.1 </b> "
 - Save the file.
 
 ![FCJ_ws2](/images/3.codecommit/12.png)
-

@@ -2,7 +2,7 @@
 title: "Create Application Load Balancer"
 date: "`r Sys.Date()`"
 weight: 5
-chapter: true
+chapter: false
 pre: " <b> 2.5 </b> "
 ---
 

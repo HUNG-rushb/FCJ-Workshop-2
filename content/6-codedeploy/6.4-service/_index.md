@@ -1,24 +1,106 @@
 ---
-title: "Check logs"
+title: "Create Cluster service"
 date: "`r Sys.Date()`"
-weight: 2
-chapter: true
-pre: " <b> 3.2 </b> "
+weight: 4
+chapter: false
+pre: " <b> 6.4 </b> "
 ---
 
-### Truy cập file và kiễm tra log
+### Tạo Cluster service
 
-1. Open new private tab and acces the file.
+1. Truy cập tới **AWS ECS**, vào danh sách **Clusters**, và chọn cluster **FCJ_Cluster**.
 
-2. In buckets console, select bucket **logging-workshop-destination**, wait about 15 minutes, refresh the bucket.
+![FCJ_ws2](/images/6.codedeploy/10.png)
 
-3. We can see there are logs there, select one.
+2. Chọn **Create** trong tab **Services**.
 
-4. Select **Download** and open it.
+![FCJ_ws2](/images/6.codedeploy/11.png)
 
-5. the log file will looks like below:
+3. Mục **Compute options**, chọn **Launch type**, và chọn **Fargate** (mặc định), **Platform version** là **LATEST**.
 
-```
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - "GET /logging-workshop?ownershipControls= HTTP/1.1" 200 - 193 - 53 53 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt "GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1" 200 - 115 - 13 10 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-```
+![FCJ_ws2](/images/6.codedeploy/12.png)
+
+4. Tại **Deployment configuration**:
+
+- Mục **Application type**, chọn **Service**.
+- Mục **Family**, chọn **FCJ_Task_Definition**, **Revision** tự động chọn bản **LATEST**.
+- Mục **Project name**, chọn **FCJ_Build_Project**.
+- Mục **Service name**, nhập **`FCJ_Service`**.
+- Mục **Desired tasks**, nhập **`3`**.
+
+![FCJ_ws2](/images/6.codedeploy/13.png)
+
+5. Tiếp tục:
+
+- Mục **Deployment options**, chọn **Blue/green deployment (powered by AWS CodeDeploy)**.
+- Mục **Deployment configuration**, chọn **CodeDeployDefault.ECSLinear10PercentEvery1Minutes**.
+- Mục **Service role for CodeDeploy**, chọn **CodeDeployServiceRole**.
+
+![FCJ_ws2](/images/6.codedeploy/14.png)
+
+6.  Tại **Networking**:
+
+- Mục **VPC**, chọn **Default VPC**.
+- Mục **Subnets**, chọn 3 puclic subnet **fcj-subnet-...**.
+- Mục **Security group**, chọn **Use an existing security group**, sau đó chọn thêm **FCJ_SG**, sẽ có 2 security group như trong hình.
+- Mục **Public IP**, chọn **Turned on**.
+
+![FCJ_ws2](/images/6.codedeploy/15.png)
+
+7.  Tại **Load balancing**:
+
+- Mục **Load balancer type**, chọn **Application Load Balancer**.
+- Mục **Application Load Balancer**, chọn **Use an existing load balancer**.
+- Mục **Load balancer**, chọn **FCJ_ALB**.
+- Mục **Health check grace periodInfo**, nhập **`0`**.
+
+![FCJ_ws2](/images/6.codedeploy/16.png)
+
+8.  Tiếp tục:
+
+- Mục **Listeners**, mục **Production listener**, chọn **Use an existing listener** và chọn **80:HTTP**.
+- Kiểm tra target group là **FCJ_TG**.
+
+![FCJ_ws2](/images/6.codedeploy/17.png)
+
+9.  Tại **Target groups**:
+
+- Mục **Application type**, chọn **Service**.
+- Mục **Target group 1**, chọn **Use an existing target group** và sau đó chọn **FCJ_TG** ở dropdown bên phải.
+- Mục **Target group 2**, chọn **Create new target group**.
+- Mục **Target group 2 name**, nhập **`FCJ-TG-Blue`**.
+- Sau đó kéo xuống dưới cùng và chọn **Create** (không có trong hình).
+
+![FCJ_ws2](/images/6.codedeploy/18.png)
+
+10. Truy cập tới dịch vụ **AWS CloudFormation**, chúng ta sẽ thấy có 1 stack mới đang được khởi tạo, đây chính là stack chứa service của chúng ta.
+
+![FCJ_ws2](/images/6.codedeploy/19.png)
+
+11. Sau khi stack tạo thành công, truy cập tới dịch vụ **AWS CodeDeploy**, vào **Applications**, chúng ta sẽ thấy một application có dạng **AppECS-...**. Đây là application mà **ECS** sử dụng để deploy ứng dụng. Nhấn vào application để quan sát.
+
+![FCJ_ws2](/images/6.codedeploy/19_1.png)
+
+12. Chọn tab **Deployment groups**, chọn deployment group duy nhất trong đó, và chọn **Edit**.
+
+![FCJ_ws2](/images/6.codedeploy/19_2.png)
+
+13. Kéo xuống bên dưới, tại phần **Deployment settings**, chình thời gian **Original revision termination** thành **0 hour 15 minutes** như trong hình. Nhấn **Save changes**.
+
+![FCJ_ws2](/images/6.codedeploy/19_3.png)
+
+14. Quay về **ECS** console, kiểm tra **Services** của cluster thì ta sẽ thấy **FCJ_Service** đang chạy thành công.
+
+![FCJ_ws2](/images/6.codedeploy/20.png)
+
+15. Chuyển sang tab **Tasks**, chúng ta sẽ thấy có 3 task đang **Running**.
+
+![FCJ_ws2](/images/6.codedeploy/21.png)
+
+16. Truy cập tới dịch vụ **AWS EC2**, tới **Load balancers**, chọn **FCJ_ALB** và copy **DNS Name**.
+
+![FCJ_ws2](/images/6.codedeploy/22.png)
+
+17. Truy cập địa chỉ DNS của ALB, chúng ta sẽ được điều hướng tới các **Fargate container** đang host ứng dụng Calculator. **Hãy chú ý bạn sẽ phải kết nối bằng HTTP**.
+
+![FCJ_ws2](/images/6.codedeploy/23.png)

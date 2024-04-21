@@ -1,5 +1,5 @@
 ---
-title: "Clean up"
+title: "AWS CodeDeploy and AWS ECS"
 date: "`r Sys.Date()`"
 weight: 6
 chapter: false

@@ -2,7 +2,7 @@
 title: "Create CodeCommit Repository"
 date: "`r Sys.Date()`"
 weight: 1
-chapter: true
+chapter: false
 pre: " <b> 3.1 </b> "
 ---
 
@@ -25,4 +25,3 @@ pre: " <b> 3.1 </b> "
 - Press **Clone URL**, choose **Clone HTTPS** and go to the next step.
 
 ![FCJ_ws2](/images/3.codecommit/4.png)
-

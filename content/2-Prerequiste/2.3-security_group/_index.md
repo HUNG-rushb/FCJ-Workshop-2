@@ -2,7 +2,7 @@
 title: "Create Security Group"
 date: "`r Sys.Date()`"
 weight: 3
-chapter: true
+chapter: false
 pre: " <b> 2.3 </b> "
 ---
 
@@ -21,4 +21,3 @@ pre: " <b> 2.3 </b> "
 - Scroll down, and choose **Create security group** (not shown in the image).
 
   ![FCJ_ws2](/images/2.prerequisite/10.png)
-

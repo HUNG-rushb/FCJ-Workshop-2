@@ -1,9 +1,9 @@
 ---
-title: "Clean up"
+title: "Reference"
 date: "`r Sys.Date()`"
-weight: 6
+weight: 8
 chapter: false
-pre: " <b> 6. </b> "
+pre: " <b> 8. </b> "
 ---
 
 We will take the following steps to delete the resources we created in this exercise.
