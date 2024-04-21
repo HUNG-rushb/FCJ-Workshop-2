@@ -1,21 +1,49 @@
 ---
-title: "Update logging permission "
+title: "Create Public Subnet"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: true
 pre: " <b> 2.2 </b> "
 ---
 
-### Cập nhật quyền tạo log cho S3 log delivery group
+1. Go to **VPC** console, and check if you have **Default VPC** or not.
 
-1. Return to bucket console, select bucket **logging-workshop-destination**. Scroll down to section **Object Ownership**, select **Edit**
+![FCJ_ws2](/images/2.prerequisite/2.png)
 
-2. Select **ACLs enabled**, confirm **I acknowledge that ACLS will be restored.**, select **Save changes**. This will make everythin in the **Access control list (ACL)** can create object.
+2. Choose **Subnets** in the navigation pane on the left, and then choose **Create subnet**.
 
-3. Scroll down to section **Access control list (ACL)**, select **Edit**.
+![FCJ_ws2](/images/2.prerequisite/3.png)
 
-4. At **S3 log delivery group**, select **Write**, then **Save changes**.
+3. Choose **Default VPC**.
 
-5. Confrim **Write** for **S3 log delivery group**.
+![FCJ_ws2](/images/2.prerequisite/4.png)
 
-6. Return to bucket console.
+4. Create subnet 1:
+
+- In the **Subnet name** field, enter **`fcj-subnet-1`**.
+- In the **Availability zone** field, choose **`us-east-1a`**.
+- In the **IPv4 subnet CIDR block** field, enter **`172.31.200.0/24`**.
+
+![FCJ_ws2](/images/2.prerequisite/5.png)
+
+5. Choose **Add new subnet**, and create subnet 2:
+
+- In the **Subnet name** field, enter **`fcj-subnet-1`**.
+- In the **Availability zone** field, choose **`us-east-1b`**.
+- In the **IPv4 subnet CIDR block** field, enter **`172.31.201.0/24`**.
+
+![FCJ_ws2](/images/2.prerequisite/6.png)
+
+6. Choose **Add new subnet**, and create subnet 3:
+
+- In the **Subnet name** field, enter **`fcj-subnet-1`**.
+- In the **Availability zone** field, choose **`us-east-1c`**.
+- In the **IPv4 subnet CIDR block** field, enter **`172.31.202.0/24`**.
+- Choose **Create subnet**.
+
+![FCJ_ws2](/images/2.prerequisite/7.png)
+
+7. Confirm that 3 subnets have been created successfully.
+
+![FCJ_ws2](/images/2.prerequisite/8.png)
+

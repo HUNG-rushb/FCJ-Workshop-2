@@ -1,14 +1,15 @@
 ---
-title: "S3 Server Access Logging"
+title: "AWS CodeCommit"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-In this step, we will enable **Server access logging**.
+![FCJ_ws2](/images/3.codecommit/aws_codecommit.png)
 
 ### Content
 
-1.  [Enable S3 Server Access Logging](3.1-sal/)
-2.  [Check log](3.2-log/)
+1.  [Create CodeCommit Repository](3.1-repo/)
+2.  [Push Code to Repository](3.2-code/)
+

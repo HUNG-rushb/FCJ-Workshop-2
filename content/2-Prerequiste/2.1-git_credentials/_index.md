@@ -1,35 +1,26 @@
 ---
-title: "Create 2 bucket "
+title: "Create HTTPS Git Credentials for CodeCommit"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: true
 pre: " <b> 2.1 </b> "
 ---
 
-### Create 2 bucket
+With Git credentials, you can create a username and static password in the IAM Console that you can use to access **AWS CodeCommit** from the command line, Git CLI, or any Git tool that supports HTTPS authentication.
 
-1. At **AWS Management Console**, find **S3** and select **S3**.
+Because these are static credentials, they can be cached using password management tools available in your local operating system or stored in a credential management utility. This allows you to get started with AWS CodeCommit in minutes. You don't need to download the AWS CLI or configure Git client applications to connect to **CodeCommit** repositories over HTTPS. You can also use the username and password to connect to **CodeCommit** from third-party tools that support username and password authentication, including popular Git GUI client applications (such as TowerUI) and IDEs (such as Eclipse, IntelliJ, and Visual Studio).
 
-2. At **S3** console, select **Create bucket**.
+### Create HTTPS Git Credentials for CodeCommit
 
-3. In create bucket steps:
+1. From the root account, access the IAM console of the IAM account you will use for this lab, choose **Security credentials**.
 
-- For **AWS Region**, select **Asia Pacific (Singapore) ap-southeast-1**.
-- For **Bucket name**, insert **`logging-workshop`**.
+![FCJ_ws2](/images/2.prerequisite/_1.png)
 
-4. Tiếp tục:
+2. In the **HTTPS Git credentials for AWS CodeCommit** section, choose **Generate credentials**
 
-- For **Block Public Access settings for this bucket**, untick **Block all public access**.
-- For **Turning off block all public access might result in this bucket and the objects within becoming public**, confirm this.
+![FCJ_ws2](/images/2.prerequisite/_2.png)
 
-5. Scroll down, select **Create bucket**.
+3. Choose **Download credentials**, and save it where you can easily access it again.
 
-6. Confirm bucket is created successfully.
+![FCJ_ws2](/images/2.prerequisite/_3.png)
 
-7. Continue creating bucket **logging-workshop-destination**
-
-- For **AWS Region**, select **Asia Pacific (Singapore) ap-southeast-1**.
-- For **Bucket name**, insert **`logging-workshop-destination`**.
-- No need to untick **Block Public Access settings for this bucket**.
-- Scroll down, select **Create bucket**.
-- Confirm bucket is created successfully.

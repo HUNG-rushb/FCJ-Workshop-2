@@ -1,24 +1,38 @@
 ---
-title: "Check logs"
+title: "Create CodeBuild Project"
 date: "`r Sys.Date()`"
 weight: 2
-chapter: true
-pre: " <b> 3.2 </b> "
+chapter: false
+pre: " <b> 4.2 </b> "
 ---
 
-### Truy cập file và kiễm tra log
+### Create CodeBuild Project
 
-1. Open new private tab and acces the file.
+1. Move to the **CodeBuild** service, on the left menu choose **Build projects**, then select **Create project**.
 
-2. In buckets console, select bucket **logging-workshop-destination**, wait about 15 minutes, refresh the bucket.
+![FCJ_ws2](/images/4.codebuild/1.png)
 
-3. We can see there are logs there, select one.
+2. Then:
 
-4. Select **Download** and open it.
+- In the **Project name** field, enter **`FCJ_Build_Project`**.
+- In the **Source 1 - Primary** field, choose provider **AWS CodeCommit**, then select repo **FCJ_Repo**.
+- In the **Branch** field, choose **master**.
 
-5. the log file will looks like below:
+![FCJ_ws2](/images/4.codebuild/2.png)
 
-```
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - "GET /logging-workshop?ownershipControls= HTTP/1.1" 200 - 193 - 53 53 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt "GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1" 200 - 115 - 13 10 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-```
+3. Open the **Additional configuration** section, then tick **Enable this flag if you want to build Docker images or want your builds to get elevated privileges**.
+
+![FCJ_ws2](/images/4.codebuild/3.png)
+
+4. In the **Buildspec** section, tick **Use a buildspec file**, enter **`buildspec.yml`**.
+
+![FCJ_ws2](/images/4.codebuild/4.png)
+
+5. Scroll down and choose **Create build project**.
+
+![FCJ_ws2](/images/4.codebuild/5.png)
+
+6. Confirm that the build project has been created successfully.
+
+![FCJ_ws2](/images/4.codebuild/6.png)
+

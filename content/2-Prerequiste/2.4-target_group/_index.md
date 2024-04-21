@@ -1,35 +1,31 @@
 ---
-title: "Edit policy "
+title: "Create Target Group"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: true
 pre: " <b> 2.4 </b> "
 ---
 
-### Thêm policy cho bucket
+### Create Target Group
 
-1. In **S3** console, select **logging-workshop** bucket.
+1. Go to **EC2** console.
 
-2. Select **Permissions** tab.
+![FCJ_ws2](/images/2.prerequisite/10_0.png)
 
-3. for **Bucket policy**, select **Edit**.
+2. Choose **Target groups**, and then choose **Create target group**.
 
-4. Insert:
+![FCJ_ws2](/images/2.prerequisite/10_1.png)
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::logging-workshop/*"
-    }
-  ]
-}
-```
+3. Create target group:
 
-5. Chọn **Save changes**
+- In the **Target type** field, choose **IP Adressess**.
+- In the **Target group name** field, enter **`FCJ-TG`**.
+- Scroll down, and choose **Create target group**.
 
-6. Confirm updated successfully
+![FCJ_ws2](/images/2.prerequisite/10_2.png)
+
+![FCJ_ws2](/images/2.prerequisite/10_3.png)
+
+4. Confirm that the target group has been created successfully.
+
+![FCJ_ws2](/images/2.prerequisite/10_4.png)
