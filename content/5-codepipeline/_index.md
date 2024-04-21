@@ -1,48 +1,60 @@
 ---
-title: "Query logs with Athena"
+title: "AWS CodePipeline"
 date: "`r Sys.Date()`"
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-Using **Athena** with **CloudTrail** logs is even easier than server access logs. With server access logs, you had to go to the Athena console to create a database and table, but with **CloudTrail** logging, **Athena** will automatically create a table for you.
+**AWS CodePipeline** là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. **CodePipeline** tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.
 
-To use **Athena** with **CloudTrail** logs, simply go to the **CloudTrail** event history and select Run advanced queries in Amazon Athena.
+1. Truy cập dịch vụ **AWS CodePipeline**. Ở menu bên trái, chọn **Pipelines**, sau đó **Create pipeline**.
 
-1. Go to [CloudTrail console](https://console.aws.amazon.com/cloudtrail/). On left panel, select **Event history**, select **Create Athena table**.
+![FCJ_ws2](/images/5.codepipeline/1.png)
 
-2. for **Storage location**, select bucket **aws-cloud-trail-logs-workshop** which we are using to store logs then select **Create table**.
+2. Mục **Pipeline name**, nhập **`FCJ_Pipeline`**. Các lựa chọn khác giữ nguyên mặc định như hình.
 
-3. Confirm Athena table **cloudtrail_logs_aws_cloudtrail_logs_workshop** created.
+![FCJ_ws2](/images/5.codepipeline/2.png)
 
-4. Find select service **Athena**, then select **Launch query editor**.
+3. Mục **Advanced settings**, **Artifact store** chọn **Default location** và **Encryption key** chọn **Default AWS Managed key**. Ấn **Next**.
 
-5. If this is the first time you use Athena, select **Edit settings**, if not, skip to step 10.
+![FCJ_ws2](/images/5.codepipeline/3.png)
 
-6. Click **Browse S3**.
+4. Tiếp tục:
 
-7. Select 1 bucket to store query's result, here we choose bucket **logging-workshop-destination**.
+- Mục **Source provider**, chọn **AWS CodeCommit**.
+- Mục **Repository name**, chọn **FCJ_Repo**.
+- Mục **Branch name**, chọn **master**.
+- Còn lại giữ nguyên mặc định, sau đó nhấn **Next**.
 
-8. Check and click **Save**.
+![FCJ_ws2](/images/5.codepipeline/4.png)
 
-9. Check and click **Editor** to return.
+5. Click vào account góc phía trên cùng bên phải, sau đó copy **Account ID** của bạn.
 
-10. Copy the query into the editor, make sure you are using the right table.This query will filter operation **GetObject** whihc have eventsource is **s3.amazonaws.com**. select **Run**.
+![FCJ_ws2](/images/5.codepipeline/5.png)
 
-```sql
-SELECT *
-FROM cloudtrail_logs_aws_cloudtrail_logs_workshop
-WHERE
-    eventsource = 's3.amazonaws.com' AND
-    eventname in ('GetObject')
-```
+6. Tiếp tục:
 
-11. Check the result below.
+- Mục **Build provider**, chọn **AWS CodeBuild**.
+- Mục **Region**, chọn **US East**.
+- Mục **Project name**, chọn **FCJ_Build_Project**.
+- Nhấn **Add enviroment variable**. Mục **Name**, nhập **`AWS_ACCOUNT_ID`**. Mục **Value** hãy paste vào Account ID mà bạn đã copy trước đó.
+- Còn lại giữ nguyên mặc định, sau đó nhấn **Next**.
 
-12. Finally, run this query to drop the table.
+![FCJ_ws2](/images/5.codepipeline/6.png)
 
-```sql
-DROP TABLE `cloudtrail_logs_aws_cloudtrail_logs_workshop`
+7. Nhấn **Skip deploy stage**, xác nhận **Skip** khi popup hiện ra.
 
-```
+![FCJ_ws2](/images/5.codepipeline/7.png)
+
+8. Kiếm tra lại cấu hình và nhấn **Create pipeline**.
+
+![FCJ_ws2](/images/5.codepipeline/8.png)
+
+9. Xác nhận pipeline đã được tạo thành công. Chờ cho đến khi pipeline build thành công như trong hình.
+
+![FCJ_ws2](/images/5.codepipeline/9.png)
+
+10. Truy cập tới dịch vụ **AWS ECR**, vào repo **fcj-image-repo** và xác nhận đã có 1 image được build và store thành công.
+
+![FCJ_ws2](/images/5.codepipeline/10.png)

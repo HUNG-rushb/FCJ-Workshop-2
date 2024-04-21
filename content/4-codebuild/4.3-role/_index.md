@@ -1,24 +1,69 @@
 ---
-title: "Check logs"
+title: "Update CodeBuild Role"
 date: "`r Sys.Date()`"
-weight: 2
-chapter: true
-pre: " <b> 3.2 </b> "
+weight: 3
+chapter: false
+pre: " <b> 4.3 </b> "
 ---
 
-### Truy cập file và kiễm tra log
+### Update CodeBuild Role
 
-1. Open new private tab and acces the file.
+1. Access the **IAM** service:
 
-2. In buckets console, select bucket **logging-workshop-destination**, wait about 15 minutes, refresh the bucket.
+- On the left menu, choose **Roles**.
+- Search for **`codebuild`**.
+- Select the codebuild role corresponding to your project.
 
-3. We can see there are logs there, select one.
+![FCJ_ws2](/images/4.codebuild/21.png)
 
-4. Select **Download** and open it.
+2. Choose **Add permissions**, then **Create inline policy**.
 
-5. the log file will looks like below:
+![FCJ_ws2](/images/4.codebuild/22.png)
 
+3. Copy and paste the policy below into the **Policy editor**. Then scroll down and choose **Next**.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:GetAuthorizationToken",
+        "sts:GetServiceBearerToken",
+        "ecr-public:BatchCheckLayerAvailability",
+        "ecr-public:GetRepositoryPolicy",
+        "ecr-public:DescribeRepositories",
+        "ecr-public:DescribeRegistries",
+        "ecr-public:DescribeImages",
+        "ecr-public:DescribeImageTags",
+        "ecr-public:GetRepositoryCatalogData",
+        "ecr-public:GetRegistryCatalogData"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
 ```
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - "GET /logging-workshop?ownershipControls= HTTP/1.1" 200 - 193 - 53 53 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt "GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1" 200 - 115 - 13 10 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-```
+
+![FCJ_ws2](/images/4.codebuild/23.png)
+
+4. In the **Policy name** field, enter **FCJ_ECR_Public_Access**. Then press **Create policy**.
+
+![FCJ_ws2](/images/4.codebuild/24.png)
+
+5. Confirm that the policy has been added successfully.
+
+![FCJ_ws2](/images/4.codebuild/25.png)
+
+6. Continue to choose **Add permissions**, then **Attach policies**.
+
+![FCJ_ws2](/images/4.codebuild/26.png)
+
+7. Search for **AmazonEC2ContainerRegistryFullAccess**. Select and press **Add permissions**.
+
+![FCJ_ws2](/images/4.codebuild/27.png)
+
+8. Confirm that the policy has been added successfully.
+
+![FCJ_ws2](/images/4.codebuild/28.png)

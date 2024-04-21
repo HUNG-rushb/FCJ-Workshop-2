@@ -1,33 +1,28 @@
 ---
-title: "Enable S3 Server access logging"
+title: "Create CodeCommit Repository"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: true
 pre: " <b> 3.1 </b> "
 ---
 
-In this step, we will enable **Server access logging**.
+### Create CodeCommit Repository
 
-Server access logs give you visibility into detailed object-level operations on your data. The log files are text files that have one line for each log record. Each log record represents one request and consists of space-delimited fields.
+1. Go to **CodeCommit** console.
 
-The fields relate to operation, requester, resource, and session information. Here is an example:
+![FCJ_ws2](/images/3.codecommit/1.png)
 
-```
-79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be awsexamplebucket1 [06/Feb/2019:00:00:38 +0000] 192.0.2.3 79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be 3E57427F3EXAMPLE REST.GET.VERSIONING - "GET /awsexamplebucket1?versioning HTTP/1.1" 200 - 113 - 7 - "-" "S3Console/0.4" - s9lzHYrFp76ZVxRcpX9+5cjAnEH2ROuNkd2BHfIa6UkFVdtjf5mKR3/eTPFvsiP/XV/VLi31234= SigV2 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader awsexamplebucket1.s3.us-west-1.amazonaws.com TLSV1.1
-```
+2. At **Repositories**, choose **Create repository**.
 
-### Kích hoạt Server access logging
+![FCJ_ws2](/images/3.codecommit/2.png)
 
-1. In S3 console, select bucket **logging-workshop**.
+3. In the **Repositorie name** field, enter **`FCJ_Repo`**.
 
-2. In bucket console, select **Properties**.
+![FCJ_ws2](/images/3.codecommit/3.png)
 
-3. Scroll dowm to **Server access logging**, select **Edit**
+4. Confirm that the repository has been created successfully.
 
-4. Select **Enable**, then select **Brow S3** for storing the logs afterward.
+- Press **Clone URL**, choose **Clone HTTPS** and go to the next step.
 
-5. Select bucket **logging-workshop-destination**, then select **Choose destination**.
+![FCJ_ws2](/images/3.codecommit/4.png)
 
-6. Review bucket, then select **Save changes**.
-
-7. Confirm **Server access logging** is enabled.

@@ -1,26 +1,24 @@
 ---
-title: "Upload file to S3 bucket "
+title: "Create Security Group"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: true
 pre: " <b> 2.3 </b> "
 ---
 
-### Upload file vào bucket
+### Create Security Group
 
-1. Select bucket **logging-workshop**. Then, select **Upload**.
+1. Go to **Security Groups** console, and choose **Create security group**.
 
-2. Select **Add files**.
+![FCJ_ws2](/images/2.prerequisite/9.png)
 
-3. Then:
+2. Create security group:
 
-- Download **S3_logging_workshop.txt** here {{%attachments  pattern=".txt"/%}}
+- In the **Security group name** field, enter **`FCJ_SG`**.
+- In the **Description** field, enter **`Allow inbound HTTP on port 80`**.
+- In the **VPC** field, choose **Default VPC**.
+- In the **Inbound rules** field, choose **Add rule**, **Type** choose **HTTP**, **Source** choose **Anywhere-IPv4**.
+- Scroll down, and choose **Create security group** (not shown in the image).
 
-{{% notice note %}}
-Open in a new tab, **Ctrl + S** to save the file to your local.
-{{% /notice %}}
+  ![FCJ_ws2](/images/2.prerequisite/10.png)
 
-- confirm the file is selected
-- Select **Upload**.
-
-4. Confirm uploaded successfully.

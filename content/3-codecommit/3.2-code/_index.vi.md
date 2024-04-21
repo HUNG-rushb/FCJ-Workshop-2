@@ -8,7 +8,7 @@ pre: " <b> 3.2 </b> "
 
 ### Tải về source code
 
-1. Truy cập vào https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1 và tải về source code. Đây là Calculator App đơn giản được viết bằng React và chúng ta sẽ dùng để deploy.
+1. Truy cập vào `https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1` và tải về source code. Đây là Calculator App đơn giản được viết bằng React và chúng ta sẽ dùng để deploy.
 
 ![FCJ_ws2](/images/3.codecommit/5.png)
 
