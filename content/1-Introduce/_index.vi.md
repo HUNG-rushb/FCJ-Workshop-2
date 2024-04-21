@@ -27,3 +27,7 @@ Song song với đó thì chiến lược này cũng có một vài nhược đi
 
 - **Tiêu tốn nhiều tài nguyên** do cần duy trì 2 môi trường cùng lúc khi triển khai
 - **Blue/Green Deployment** đòi hỏi các service trên cả 2 môi trường sử dụng chung database, trong trường hợp code mới có tác động thay đổi cấu trúc database, cần xây dựng chiến lược đồng bộ sao cho cả hai môi trường có thể chạy cùng lúc mà không gặp sự cố. Với vấn đề này, ta có thể sử dụng liquibase để xây dựng giải pháp.
+
+{{% notice note %}}
+A notice disclaimer
+{{% /notice %}}

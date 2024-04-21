@@ -24,7 +24,7 @@ pre: " <b> 6.6 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/34.png)
 
-4. Trở về **ECS** console, vào xem tasks của cluster **FCJ_Cluser**, chúng ta sẽ thấy 3 task mới **Running**, đây chính là **Blue enviroment**, trong khi đó 3 task cũ là **Green enviroment**.
+4. Trở về **ECS** console, vào xem tasks của cluster **FCJ_Cluser**, chúng ta sẽ thấy 3 task mới **Running**, đây chính là **Green enviroment**, trong khi đó 3 task cũ là **Blue enviroment**.
 
 ![FCJ_ws2](/images/6.codedeploy/34_1.png)
 
@@ -32,7 +32,7 @@ pre: " <b> 6.6 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/35.png)
 
-6. Hình bên dưới đang cho thấy traffic gửi đến **DNS name của FCJ_ALB** đang được chuyển từ **Green enviroment (90%)** sang **Blue enviroment (10%)**, đồng nghĩ với việc chuyển từ ứng dụng **Version 1.0** sang **2.0**.
+6. Hình bên dưới đang cho thấy traffic gửi đến **DNS name của FCJ_ALB** đang được chuyển từ **Blue enviroment (90%)** sang **Green enviroment (10%)**, đồng nghĩa với việc chuyển từ ứng dụng **Version 1.0** sang **2.0**.
 
 - Chúng ta đã cấu hình cho việc này là **10% mỗi phút (bước 5 phần 6.4)**.
 
@@ -43,7 +43,7 @@ pre: " <b> 6.6 </b> "
 - Truy cập **DNS name của FCJ_ALB (bước 17 phần 6.4)**.
 - Hãy thử **hard refresh (Ctrl + R)** vài lần.
 - Bạn sẽ thấy có lúc bạn nhận được **Version 1.0**, có lúc là **Version 2.0**.
-- Thử nghiệm sẽ rõ ràng hơn khi có càng nhiều % traffic được chuyển từ **Green enviroment** sang **Blue enviroment**.
+- Thử nghiệm sẽ rõ ràng hơn khi có càng nhiều % traffic được chuyển từ **Blue enviroment** sang **Green enviroment**.
 
 ![FCJ_ws2](/images/6.codedeploy/37.png)
 
@@ -53,13 +53,13 @@ pre: " <b> 6.6 </b> "
 
 ![FCJ_ws2](/images/6.codedeploy/38_1.png)
 
-9. Hình này thể hiện việc tất cả traffic đã được chuyển từ **Green enviroment (0%)** sang **Blue enviroment (100%)**. Từ đây, **Green enviroment hiện tại** sẽ được terminate, **Blue enviroment hiện tại** sẽ lên làm **Green enviroment mới**.
+9. Hình này thể hiện việc tất cả traffic đã được chuyển từ **Blue enviroment (0%)** sang **Green enviroment (100%)**. Từ đây, **Blue enviroment hiện tại** sẽ được terminate, **Green enviroment hiện tại** sẽ lên làm **Blue enviroment mới**.
 
 - Step 3 của deployment sẽ **đợi 15 phút (bước 13 phần 6.4)** để chắc chắn hệ thống ổn định, nếu có gì gây ra deploy hỏng, hệ thống sẽ tự động roll back. Còn không, nếu mọi thứ ổn định thì **Green enviroment hiện tại** sẽ được terminate.
 
 ![FCJ_ws2](/images/6.codedeploy/38.png)
 
-10. 3 task của **Green enviroment cũ (task definition 9)** đã được terminate và 3 task mới **(task definition 10)** sẽ lên làm **Green enviroment mới**, phục vụ **100%** traffic từ người dùng.
+10. 3 task của **Blue enviroment cũ (task definition 9)** đã được terminate và 3 task mới **(task definition 10)** sẽ lên làm **Blue enviroment mới**, phục vụ **100%** traffic từ người dùng.
 
 ![FCJ_ws2](/images/6.codedeploy/39_1.png)
 
