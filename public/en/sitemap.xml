@@ -146,6 +146,18 @@
                 href="//localhost:1313/2-prerequiste/2.2-public_subnet/"
                 />
   </url><url>
+    <loc>//localhost:1313/6-codedeploy/6.2-task_def/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codedeploy/6.2-task_def/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codedeploy/6.2-task_def/"
+                />
+  </url><url>
     <loc>//localhost:1313/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
@@ -288,18 +300,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/8-ref/"
-                />
-  </url><url>
-    <loc>//localhost:1313/6-codedeploy/6.2-task_def/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-codedeploy/6.2-task_def/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-codedeploy/6.2-task_def/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>

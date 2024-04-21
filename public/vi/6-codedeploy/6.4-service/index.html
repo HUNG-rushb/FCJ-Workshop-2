@@ -12,21 +12,21 @@
     <title>Tạo Cluster service :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713362465" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713362465" rel="stylesheet">
-    <link href="/css/hybrid.css?1713362465" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713362465" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713362465" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713362465" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713362465" rel="stylesheet">
-    <link href="/css/theme.css?1713362465" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713362465" rel="stylesheet">
+    <link href="/css/nucleus.css?1713715927" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713715927" rel="stylesheet">
+    <link href="/css/hybrid.css?1713715927" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713715927" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713715927" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713715927" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713715927" rel="stylesheet">
+    <link href="/css/theme.css?1713715927" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713715927" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713362465" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713715927" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713362465"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713715927"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713362465"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713362465"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713715927"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713715927"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713362465"></script>
+<script type="text/javascript" src="/js/search.js?1713715927"></script>
 
     
   </div>
@@ -995,75 +995,106 @@
 
 	<h3 id="tạo-cluster-service">Tạo Cluster service</h3>
 <ol>
-<li>1</li>
+<li>Truy cập tới <strong>AWS ECS</strong>, vào danh sách <strong>Clusters</strong>, và chọn cluster <strong>FCJ_Cluster</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/10.png"></p>
 <ol start="2">
-<li>1</li>
+<li>Chọn <strong>Create</strong> trong tab <strong>Services</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/11.png"></p>
 <ol start="3">
-<li>1</li>
+<li>Mục <strong>Compute options</strong>, chọn <strong>Launch type</strong>, và chọn <strong>Fargate</strong> (mặc định), <strong>Platform version</strong> là <strong>LATEST</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/12.png"></p>
 <ol start="4">
-<li>1</li>
+<li>Tại <strong>Deployment configuration</strong>:</li>
 </ol>
+<ul>
+<li>Mục <strong>Application type</strong>, chọn <strong>Service</strong>.</li>
+<li>Mục <strong>Family</strong>, chọn <strong>FCJ_Task_Definition</strong>, <strong>Revision</strong> tự động chọn bản <strong>LATEST</strong>.</li>
+<li>Mục <strong>Project name</strong>, chọn <strong>FCJ_Build_Project</strong>.</li>
+<li>Mục <strong>Service name</strong>, nhập <strong><code>FCJ_Service</code></strong>.</li>
+<li>Mục <strong>Desired tasks</strong>, nhập <strong><code>3</code></strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/13.png"></p>
 <ol start="5">
-<li>1</li>
+<li>Tiếp tục:</li>
 </ol>
+<ul>
+<li>Mục <strong>Deployment options</strong>, chọn <strong>Blue/green deployment (powered by AWS CodeDeploy)</strong>.</li>
+<li>Mục <strong>Deployment configuration</strong>, chọn <strong>CodeDeployDefault.ECSLinear10PercentEvery1Minutes</strong>.</li>
+<li>Mục <strong>Service role for CodeDeploy</strong>, chọn <strong>CodeDeployServiceRole</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/14.png"></p>
 <ol start="6">
-<li>1</li>
+<li>Tại <strong>Networking</strong>:</li>
 </ol>
+<ul>
+<li>Mục <strong>VPC</strong>, chọn <strong>Default VPC</strong>.</li>
+<li>Mục <strong>Subnets</strong>, chọn 3 puclic subnet <strong>fcj-subnet-&hellip;</strong>.</li>
+<li>Mục <strong>Security group</strong>, chọn <strong>Use an existing security group</strong>, sau đó chọn thêm <strong>FCJ_SG</strong>, sẽ có 2 security group như trong hình.</li>
+<li>Mục <strong>Public IP</strong>, chọn <strong>Turned on</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/15.png"></p>
 <ol start="7">
-<li>1</li>
+<li>Tại <strong>Load balancing</strong>:</li>
 </ol>
+<ul>
+<li>Mục <strong>Load balancer type</strong>, chọn <strong>Application Load Balancer</strong>.</li>
+<li>Mục <strong>Application Load Balancer</strong>, chọn <strong>Use an existing load balancer</strong>.</li>
+<li>Mục <strong>Load balancer</strong>, chọn <strong>FCJ_ALB</strong>.</li>
+<li>Mục <strong>Health check grace periodInfo</strong>, nhập <strong><code>0</code></strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/16.png"></p>
 <ol start="8">
-<li>1</li>
+<li>Tiếp tục:</li>
 </ol>
+<ul>
+<li>Mục <strong>Listeners</strong>, mục <strong>Production listener</strong>, chọn <strong>Use an existing listener</strong> và chọn <strong>80:HTTP</strong>.</li>
+<li>Kiểm tra target group là <strong>FCJ_TG</strong>.</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/17.png"></p>
 <ol start="9">
-<li>1</li>
+<li>Tại <strong>Target groups</strong>:</li>
 </ol>
+<ul>
+<li>Mục <strong>Application type</strong>, chọn <strong>Service</strong>.</li>
+<li>Mục <strong>Target group 1</strong>, chọn <strong>Use an existing target group</strong> và sau đó chọn <strong>FCJ_TG</strong> ở dropdown bên phải.</li>
+<li>Mục <strong>Target group 2</strong>, chọn <strong>Create new target group</strong>.</li>
+<li>Mục <strong>Target group 2 name</strong>, nhập <strong><code>FCJ-TG-Blue</code></strong>.</li>
+<li>Sau đó kéo xuống dưới cùng và chọn <strong>Create</strong> (không có trong hình).</li>
+</ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/18.png"></p>
 <ol start="10">
-<li>1</li>
+<li>Truy cập tới dịch vụ <strong>AWS CloudFormation</strong>, chúng ta sẽ thấy có 1 stack mới đang được khởi tạo, đây chính là stack chứa service của chúng ta.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/19.png"></p>
 <ol start="11">
-<li>1</li>
+<li>Sau khi stack tạo thành công, truy cập tới dịch vụ <strong>AWS CodeDeploy</strong>, vào <strong>Applications</strong>, chúng ta sẽ thấy một application có dạng <strong>AppECS-&hellip;</strong>. Đây là application mà <strong>ECS</strong> sử dụng để deploy ứng dụng. Nhấn vào application để quan sát.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/19_1.png"></p>
 <ol start="12">
-<li>1</li>
+<li>Chọn tab <strong>Deployment groups</strong>, chọn deployment group duy nhất trong đó, và chọn <strong>Edit</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/19_2.png"></p>
 <ol start="13">
-<li>1</li>
+<li>Kéo xuống bên dưới, tại phần <strong>Deployment settings</strong>, chình thời gian <strong>Original revision termination</strong> thành <strong>0 hour 15 minutes</strong> như trong hình. Nhấn <strong>Save changes</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/19_3.png"></p>
 <ol start="14">
-<li>1</li>
-</ol>
-<p><img alt="FCJ_ws2" src="/images/6.codedeploy/19.png"></p>
-<ol start="15">
-<li>1</li>
+<li>Quay về <strong>ECS</strong> console, kiểm tra <strong>Services</strong> của cluster thì ta sẽ thấy <strong>FCJ_Service</strong> đang chạy thành công.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/20.png"></p>
-<ol start="16">
-<li>1</li>
+<ol start="15">
+<li>Chuyển sang tab <strong>Tasks</strong>, chúng ta sẽ thấy có 3 task đang <strong>Running</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/21.png"></p>
-<ol start="17">
-<li>1</li>
+<ol start="16">
+<li>Truy cập tới dịch vụ <strong>AWS EC2</strong>, tới <strong>Load balancers</strong>, chọn <strong>FCJ_ALB</strong> và copy <strong>DNS Name</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/22.png"></p>
-<ol start="18">
-<li>1</li>
+<ol start="17">
+<li>Truy cập địa chỉ DNS của ALB, chúng ta sẽ được điều hướng tới các <strong>Fargate container</strong> đang host ứng dụng Calculator. <strong>Hãy chú ý bạn sẽ phải kết nối bằng HTTP</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/23.png"></p>
 
@@ -1526,19 +1557,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713362465"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713362465"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713362465"></script>
-    <script src="/js/jquery.sticky.js?1713362465"></script>
-    <script src="/js/featherlight.min.js?1713362465"></script>
-    <script src="/js/highlight.pack.js?1713362465"></script>
+    <script src="/js/clipboard.min.js?1713715927"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713715927"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713715927"></script>
+    <script src="/js/jquery.sticky.js?1713715927"></script>
+    <script src="/js/featherlight.min.js?1713715927"></script>
+    <script src="/js/highlight.pack.js?1713715927"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713362465"></script>
-    <script src="/js/learn.js?1713362465"></script>
-    <script src="/js/hugo-learn.js?1713362465"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713715927"></script>
+    <script src="/js/learn.js?1713715927"></script>
+    <script src="/js/hugo-learn.js?1713715927"></script>
 
-    <link href="/mermaid/mermaid.css?1713362465" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713362465"></script>
+    <link href="/mermaid/mermaid.css?1713715927" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713715927"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

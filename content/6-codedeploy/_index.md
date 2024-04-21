@@ -1,33 +1,16 @@
 ---
-title: "Clean up"
+title: "AWS CodeDeploy and AWS ECS"
 date: "`r Sys.Date()`"
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-We will take the following steps to delete the resources we created in this exercise.
+### Content
 
-### Xóa Athena query
-
-1. Find and select service **Athena**, then select **Launch query editor**, select tab **Settings**, click **Manage**.
-
-2. Click _X_ to delete the connections to bucket, click **Save**.
-
-### Xóa CloudTrail
-
-3. Find and select service **CloudTrail**, select **Trails** on left panel. Select trail **S3_logging_workshop**, then select **Delete**.
-
-4. Confirm **Delete**.
-
-### Xóa S3 buckets
-
-5. Find and select service **S3**, select bucket **logging_workshop**. We have to empty the bucket before delete it. Select all files then click **Delete**.
-
-6. Confirmto delete. click **Delete objects**.
-
-7. Return to buckets list, then select bucket **logging_workshop**, select **Delete**.
-
-8. Confirm bucket's name and click **Delete bucket**.
-
-9. Repeat delete step from step 5 to delete 2 remainings buckets, **logging-workshop-destinations** và **aws-cloudtrail-log-workshop**.
+1.  [Create ECS Cluster](6.1-cluster/)
+2.  [Create Task definition](6.2-task_def)
+3.  [Update code](6.3-code/)
+4.  [Create Cluster service](6.4-service/)
+5.  [Update Deploy stage](6.5-deploy_stage/)
+6.  [Update and observe deployment](6.6-deployment/)

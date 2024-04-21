@@ -1,24 +1,60 @@
 ---
-title: "Check logs"
+title: "Update Deploy stage"
 date: "`r Sys.Date()`"
-weight: 2
-chapter: true
-pre: " <b> 3.2 </b> "
+weight: 5
+chapter: false
+pre: " <b> 6.5 </b> "
 ---
 
-### Truy cập file và kiễm tra log
+### Update Deploy stage
 
-1. Open new private tab and acces the file.
+1. Access **AWS CodePipeline**, select **FCJ_Pipeline**, and choose **Edit**.
 
-2. In buckets console, select bucket **logging-workshop-destination**, wait about 15 minutes, refresh the bucket.
+![FCJ_ws2](/images/6.codedeploy/24.png)
 
-3. We can see there are logs there, select one.
+2. Click **Add stage** after the **Build** stage.
 
-4. Select **Download** and open it.
+![FCJ_ws2](/images/6.codedeploy/25.png)
 
-5. the log file will looks like below:
+3. Enter **Deploy** into **Stage name** and click **Add stage**.
 
-```
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - "GET /logging-workshop?ownershipControls= HTTP/1.1" 200 - 193 - 53 53 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt "GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1" 200 - 115 - 13 10 "-" "S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard" - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-```
+![FCJ_ws2](/images/6.codedeploy/26.png)
+
+4. Click **Add action group** for the **Deploy** stage.
+
+![FCJ_ws2](/images/6.codedeploy/27.png)
+
+5. Perform:
+
+- In **Action name**, enter **`DeployToECS`**.
+- In **Action provider**, choose **Amazon ECS (Blue/Green)**.
+- In **Region**, choose **US East (N. Virginia)**.
+- In **Input artifacts**, choose **BuildArtifact**.
+- In **AWS CodeDeploy application name**, choose the application that **ECS** has created.
+- In **AWS CodeDeploy deployment group**, choose the unique deployment group.
+
+![FCJ_ws2](/images/6.codedeploy/28.png)
+
+6. Continue:
+
+- In **Amazon ECS task definition**, choose **BuildArtifact** and enter **`taskdef.json`**.
+- In **AWS CodeDeploy AppSpec file**, choose **BuildArtifact** and enter **`appspec.yaml`**.
+- In **Input artifact with image details**, choose **BuildArtifact**.
+- In **Placeholder text in the task definition**, enter **`IMAGE1_NAME`**.
+- Click **Done** (not shown in the image).
+
+![FCJ_ws2](/images/6.codedeploy/29.png)
+
+7. Click **Done** to save the stage.
+
+![FCJ_ws2](/images/6.codedeploy/30.png)
+
+8. Scroll to the top and click **Save** and confirm.
+
+![FCJ_ws2](/images/6.codedeploy/31.png)
+
+![FCJ_ws2](/images/6.codedeploy/32.png)
+
+9. Confirm the pipeline has added the **Deploy** stage, the stage has not run because there is no trigger.
+
+![FCJ_ws2](/images/6.codedeploy/33.png)
