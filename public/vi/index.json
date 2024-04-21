@@ -18,7 +18,7 @@
 	"title": "Tạo ECS Cluster",
 	"tags": [],
 	"description": "",
-	"content": "Tạo ECS Cluster 1\n1\n1\n"
+	"content": "Tạo ECS Cluster Truy cập tới dịch vụ AWS Elastic Container Service, chọn Create cluster. Mục Cluster name, nhập FCJ_Cluster. Xác nhận cluster đã được tạo thành công "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.1-git_credentials/",
@@ -60,7 +60,7 @@
 	"title": "Tạo CodeBuild project",
 	"tags": [],
 	"description": "",
-	"content": "Tạo CodeBuild project Di chuyển tới dịch vụ CodeBuild, ở menu bên trái chọn Build projects, sau đó chọn Create project. Sau đó: Mục Target type, chọn IP Adressess. Mục Target group name, nhập FCJ-TG. Kéo xuống chọn Create target group. 1 1 1 1 "
+	"content": "Tạo CodeBuild project Di chuyển tới dịch vụ CodeBuild, ở menu bên trái chọn Build projects, sau đó chọn Create project. Sau đó: Mục Project name, nhập FCJ_Build_Project. Mục Source 1 - Primary, chọn provider AWS CodeCommit, sau đó chọn repo FCJ_Repo. Mục Branch, chọn master. Mở mục Additional configuration, sau đó tick chọn Enable this flag if you want to build Docker images or want your builds to get elevated privileges. Mục Buildspec, tick chọn Use a buildspec file, nhập buildspec.yml. Kéo xuống dưới và chọn Create build project. Xác nhận build project đã được tạo thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.2-public_subnet/",
@@ -95,7 +95,7 @@
 	"title": "Cập nhật quyền cho codebuild role",
 	"tags": [],
 	"description": "",
-	"content": "Cập nhật quyền cho codebuild role 1 1 1 1 1 1 1 1 { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ecr-public:GetAuthorizationToken\u0026#34;, \u0026#34;sts:GetServiceBearerToken\u0026#34;, \u0026#34;ecr-public:BatchCheckLayerAvailability\u0026#34;, \u0026#34;ecr-public:GetRepositoryPolicy\u0026#34;, \u0026#34;ecr-public:DescribeRepositories\u0026#34;, \u0026#34;ecr-public:DescribeRegistries\u0026#34;, \u0026#34;ecr-public:DescribeImages\u0026#34;, \u0026#34;ecr-public:DescribeImageTags\u0026#34;, \u0026#34;ecr-public:GetRepositoryCatalogData\u0026#34;, \u0026#34;ecr-public:GetRegistryCatalogData\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } "
+	"content": "Cập nhật quyền cho codebuild role Truy cập tới dịch vụ IAM: Ở menu bên trái, chọn Roles. Nhập tìm codebuild. Chọn role codebuild tương ứng với project của bạn. Chọn Add permissions, sau đó Create inline policy. Copy và paste policy dưới đây vào Policy editor. Sau đó kéo xuống dưới chọn Next. { \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;ecr-public:GetAuthorizationToken\u0026#34;, \u0026#34;sts:GetServiceBearerToken\u0026#34;, \u0026#34;ecr-public:BatchCheckLayerAvailability\u0026#34;, \u0026#34;ecr-public:GetRepositoryPolicy\u0026#34;, \u0026#34;ecr-public:DescribeRepositories\u0026#34;, \u0026#34;ecr-public:DescribeRegistries\u0026#34;, \u0026#34;ecr-public:DescribeImages\u0026#34;, \u0026#34;ecr-public:DescribeImageTags\u0026#34;, \u0026#34;ecr-public:GetRepositoryCatalogData\u0026#34;, \u0026#34;ecr-public:GetRegistryCatalogData\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } Mục Policy name, nhập FCJ_ECR_Public_Access. Sau đó nhấn Create policy. Xác nhận policy đã được thêm thành công. Tiếp tục chọn Add permissions, sau đó Attach policies. Nhập tìm AmazonEC2ContainerRegistryFullAccess. Chọ và nhấn Add permissions. Xác nhận policy đã được thêm thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/2-prerequiste/2.3-security_group/",
@@ -130,7 +130,7 @@
 	"title": "AWS CodePipeline",
 	"tags": [],
 	"description": "",
-	"content": "AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\n1 1 1 1 1 1 1 1 1 1 "
+	"content": "AWS CodePipeline là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. CodePipeline tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.\nTruy cập dịch vụ AWS CodePipeline. Ở menu bên trái, chọn Pipelines, sau đó Create pipeline. Mục Pipeline name, nhập FCJ_Pipeline. Các lựa chọn khác giữ nguyên mặc định như hình. Mục Advanced settings, Artifact store chọn Default location và Encryption key chọn Default AWS Managed key. Ấn Next. Tiếp tục: Mục Source provider, chọn AWS CodeCommit. Mục Repository name, chọn FCJ_Repo. Mục Branch name, chọn master. Còn lại giữ nguyên mặc định, sau đó nhấn Next. Click vào account góc phía trên cùng bên phải, sau đó copy Account ID của bạn. Tiếp tục: Mục Build provider, chọn AWS CodeBuild. Mục Region, chọn US East. Mục Project name, chọn FCJ_Build_Project. Nhấn Add enviroment variable. Mục Name, nhập AWS_ACCOUNT_ID. Mục Value hãy paste vào Account ID mà bạn đã copy trước đó. Còn lại giữ nguyên mặc định, sau đó nhấn Next. Nhấn Skip deploy stage, xác nhận Skip khi popup hiện ra. Kiếm tra lại cấu hình và nhấn Create pipeline. Xác nhận pipeline đã được tạo thành công. Chờ cho đến khi pipeline build thành công như trong hình. Truy cập tới dịch vụ AWS ECR, vào repo fcj-image-repo và xác nhận đã có 1 image được build và store thành công. "
 },
 {
 	"uri": "//localhost:1313/vi/6-codedeploy/6.5-deploy_stage/",

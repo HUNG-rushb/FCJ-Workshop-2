@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Query logs with Athena on AWS System Manager</title>
+    <title>AWS CodePipeline on AWS System Manager</title>
     <link>//localhost:1313/5-codepipeline/</link>
-    <description>Recent content in Query logs with Athena on AWS System Manager</description>
+    <description>Recent content in AWS CodePipeline on AWS System Manager</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <atom:link href="//localhost:1313/5-codepipeline/index.xml" rel="self" type="application/rss+xml" />

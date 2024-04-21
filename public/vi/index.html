@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.0">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>AWS Blue/Green Deployment :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713283192" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713283192" rel="stylesheet">
-    <link href="/css/hybrid.css?1713283192" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713283192" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713283192" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713283192" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713283192" rel="stylesheet">
-    <link href="/css/theme.css?1713283192" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713283192" rel="stylesheet">
+    <link href="/css/nucleus.css?1713362465" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713362465" rel="stylesheet">
+    <link href="/css/hybrid.css?1713362465" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713362465" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713362465" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713362465" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713362465" rel="stylesheet">
+    <link href="/css/theme.css?1713362465" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713362465" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713283192" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713362465" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713283192"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713362465"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -43,7 +43,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/FCJ-Workshop-2">
+      <a id="logo" href="/">
   <svg
     id="Layer_1"
     data-name="Layer 1"
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713283192"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713283192"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713362465"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713362465"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713283192"></script>
+<script type="text/javascript" src="/js/search.js?1713362465"></script>
 
     
   </div>
@@ -937,12 +937,12 @@
  
 <h1 id="triển-khai-bluegreen-pipeline-trên-nền-tảng-aws">Triển khai Blue/Green pipeline trên nền tảng AWS</h1>
 <h3 id="tổng-quan">Tổng quan</h3>
-<p><img alt="FCJ_ws2" src="/images/1.introduce/aws.png"></p>
 <p>Trong workshop này, chúng ta sẽ cùng nhau xây dựng một Blue/Green pipeline sử dụng <strong>AWS CodePipeline</strong> và <strong>AWS ECS</strong>.</p>
 <ul>
 <li><strong>Thời lượng</strong>: 150 phút.</li>
 <li><strong>Cần chuẩn bị</strong>: git đã được cài đặt trên máy local, tài khoản GitHub, IDE, tài khoản AWS, IAM User/Role với AdministratorAcess.</li>
 </ul>
+<p><img alt="FCJ_ws2" src="/images/1.introduce/aws.png"></p>
 <h3 id="nội-dung">Nội dung</h3>
 <ol>
 <li><a href="/vi/1-introduce/">Giới thiệu</a></li>
@@ -1397,19 +1397,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713283192"></script>
-    <script src="/js/jquery.sticky.js?1713283192"></script>
-    <script src="/js/featherlight.min.js?1713283192"></script>
-    <script src="/js/highlight.pack.js?1713283192"></script>
+    <script src="/js/clipboard.min.js?1713362465"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713362465"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713362465"></script>
+    <script src="/js/jquery.sticky.js?1713362465"></script>
+    <script src="/js/featherlight.min.js?1713362465"></script>
+    <script src="/js/highlight.pack.js?1713362465"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713283192"></script>
-    <script src="/js/learn.js?1713283192"></script>
-    <script src="/js/hugo-learn.js?1713283192"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713362465"></script>
+    <script src="/js/learn.js?1713362465"></script>
+    <script src="/js/hugo-learn.js?1713362465"></script>
 
-    <link href="/mermaid/mermaid.css?1713283192" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713283192"></script>
+    <link href="/mermaid/mermaid.css?1713362465" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713362465"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

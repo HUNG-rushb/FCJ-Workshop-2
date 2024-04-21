@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.0">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Check logs :: AWS System Manager</title>
+    <title>Push Code to CodeCommit Repository :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713283192" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713283192" rel="stylesheet">
-    <link href="/css/hybrid.css?1713283192" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713283192" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713283192" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713283192" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713283192" rel="stylesheet">
-    <link href="/css/theme.css?1713283192" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713283192" rel="stylesheet">
+    <link href="/css/nucleus.css?1713362464" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713362464" rel="stylesheet">
+    <link href="/css/hybrid.css?1713362464" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713362464" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713362464" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713362464" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713362464" rel="stylesheet">
+    <link href="/css/theme.css?1713362464" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713362464" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713283192" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713362464" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713283192"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713362464"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -43,7 +43,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/FCJ-Workshop-2">
+      <a id="logo" href="/">
   <svg
     id="Layer_1"
     data-name="Layer 1"
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713283192"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713283192"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713362464"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713362464"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713283192"></script>
+<script type="text/javascript" src="/js/search.js?1713362464"></script>
 
     
   </div>
@@ -168,13 +168,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-git_credentials/" title="Create 2 bucket " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-git_credentials/" title="Create HTTPS Git Credentials for CodeCommit" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.1-git_credentials/">
-           <b> 2.1 </b> Create 2 bucket 
+           <b> 2.1 </b> Create HTTPS Git Credentials for CodeCommit
           
             <i class="fas fa-check read-icon"></i>
           
@@ -196,13 +196,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-public_subnet/" title="Update logging permission " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-public_subnet/" title="Create Public Subnet" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.2-public_subnet/">
-           <b> 2.2 </b> Update logging permission 
+           <b> 2.2 </b> Create Public Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -224,13 +224,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.3-security_group/" title="Upload file to S3 bucket " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.3-security_group/" title="Create Security Group" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.3-security_group/">
-           <b> 2.3 </b> Upload file to S3 bucket 
+           <b> 2.3 </b> Create Security Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -252,13 +252,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.4-target_group/" title="Edit policy " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.4-target_group/" title="Create Target Group" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.4-target_group/">
-           <b> 2.4 </b> Edit policy 
+           <b> 2.4 </b> Create Target Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -280,13 +280,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.5-alb/" title="Access the file " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.5-alb/" title="Create Application Load Balancer" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.5-alb/">
-           <b> 2.5 </b> Access the file 
+           <b> 2.5 </b> Create Application Load Balancer
           
             <i class="fas fa-check read-icon"></i>
           
@@ -315,13 +315,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/" title="S3 Server Access Logging" class="dd-item 
+    <li data-nav-id="/3-codecommit/" title="AWS CodeCommit" class="dd-item 
         parent
         
         
         ">
       <a href="/3-codecommit/">
-           <b> 3. </b> S3 Server Access Logging
+           <b> 3. </b> AWS CodeCommit
           
             <i class="fas fa-check read-icon"></i>
           
@@ -346,13 +346,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/3.1-repo/" title="Enable S3 Server access logging" class="dd-item 
+    <li data-nav-id="/3-codecommit/3.1-repo/" title="Create CodeCommit Repository" class="dd-item 
         
         
         
         ">
       <a href="/3-codecommit/3.1-repo/">
-           <b> 3.1 </b> Enable S3 Server access logging
+           <b> 3.1 </b> Create CodeCommit Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -374,13 +374,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/3.2-code/" title="Check logs" class="dd-item 
+    <li data-nav-id="/3-codecommit/3.2-code/" title="Push Code to CodeCommit Repository" class="dd-item 
         
         active
         
         ">
       <a href="/3-codecommit/3.2-code/">
-           <b> 3.2 </b> Check logs
+           <b> 3.2 </b> Push Code to CodeCommit Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/" title="Logging with AWS CloudTrail" class="dd-item 
+    <li data-nav-id="/4-codebuild/" title="AWS CodeBuild" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/">
-           <b> 4. </b> Logging with AWS CloudTrail
+           <b> 4. </b> AWS CodeBuild
           
             <i class="fas fa-check read-icon"></i>
           
@@ -440,13 +440,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.1-ecr_repo/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.1-ecr_repo/" title="Create private repo ECR" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.1-ecr_repo/">
-           <b> 3.2 </b> Check logs
+           <b> 4.1 </b> Create private repo ECR
           
             <i class="fas fa-check read-icon"></i>
           
@@ -468,13 +468,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.2-build_project/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.2-build_project/" title="Create CodeBuild Project" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.2-build_project/">
-           <b> 3.2 </b> Check logs
+           <b> 4.2 </b> Create CodeBuild Project
           
             <i class="fas fa-check read-icon"></i>
           
@@ -496,13 +496,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.3-role/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.3-role/" title="Update CodeBuild Role" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.3-role/">
-           <b> 3.2 </b> Check logs
+           <b> 4.3 </b> Update CodeBuild Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -531,13 +531,13 @@
  
   
     
-    <li data-nav-id="/5-codepipeline/" title="Query logs with Athena" class="dd-item 
+    <li data-nav-id="/5-codepipeline/" title="AWS CodePipeline" class="dd-item 
         
         
         
         ">
       <a href="/5-codepipeline/">
-           <b> 5. </b> Query logs with Athena
+           <b> 5. </b> AWS CodePipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -588,41 +588,13 @@
  
   
     
-    <li data-nav-id="/6-codedeploy/6.1-cluster/" title="Check logs" class="dd-item 
+    <li data-nav-id="/6-codedeploy/6.1-cluster/" title="Create ECS Cluster" class="dd-item 
         
         
         
         ">
       <a href="/6-codedeploy/6.1-cluster/">
-           <b> 3.2 </b> Check logs
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-codedeploy/6.2-task_def/" title="Check logs" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/6-codedeploy/6.2-task_def/">
-           <b> 3.2 </b> Check logs
+           <b> 6.1 </b> Create ECS Cluster
           
             <i class="fas fa-check read-icon"></i>
           
@@ -735,6 +707,34 @@
         ">
       <a href="/6-codedeploy/6.6-deployment/">
            <b> 3.2 </b> Check logs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-codedeploy/6.2-task_def/" title="" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-codedeploy/6.2-task_def/">
+          
           
             <i class="fas fa-check read-icon"></i>
           
@@ -946,7 +946,7 @@
             
           
           
-            <a href='/'>AWS S3 Logging</a> > <a href='/3-codecommit/'>S3 Server Access Logging</a> > Check logs
+            <a href='/'>AWS Blue/Green Deployment</a> > <a href='/3-codecommit/'>AWS CodeCommit</a> > Push Code to CodeCommit Repository
           
         
           
@@ -973,27 +973,45 @@
 
 
 
-	<h3 id="truy-cập-file-và-kiễm-tra-log">Truy cập file và kiễm tra log</h3>
+	<h3 id="download-source-code">Download source code</h3>
 <ol>
-<li>
-<p>Open new private tab and acces the file.</p>
-</li>
-<li>
-<p>In buckets console, select bucket <strong>logging-workshop-destination</strong>, wait about 15 minutes, refresh the bucket.</p>
-</li>
-<li>
-<p>We can see there are logs there, select one.</p>
-</li>
-<li>
-<p>Select <strong>Download</strong> and open it.</p>
-</li>
-<li>
-<p>the log file will looks like below:</p>
-</li>
+<li>Access this link <code>https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1</code> and download the source code. This is a simple Calculator App written in React that we will use to deploy.</li>
 </ol>
-<pre tabindex="0"><code>b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:26 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung 2ET0N53Y32R632Q5 REST.GET.OWNERSHIP_CONTROLS - &#34;GET /logging-workshop?ownershipControls= HTTP/1.1&#34; 200 - 193 - 53 53 &#34;-&#34; &#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard&#34; - xqa7XzBU4q1xnx4NmkVBFhDsnt0jk07Slo9F3j2kvD0/6zSveFBzQ5t+Zrfs/me6L4epr6/dG3k= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-workshop [03/Mar/2024:12:52:28 +0000] 118.69.159.186 arn:aws:iam::928738046450:user/hung YP9K97RHY7C5JPBC REST.GET.OBJECT_TAGGING S3_logging_workshop.txt &#34;GET /logging-workshop/S3_logging_workshop.txt?tagging= HTTP/1.1&#34; 200 - 115 - 13 10 &#34;-&#34; &#34;S3Console/0.4, aws-internal/3 aws-sdk-java/1.12.488 Linux/5.10.209-175.858.amzn2int.x86_64 OpenJDK_64-Bit_Server_VM/25.372-b08 java/1.8.0_372 vendor/Oracle_Corporation cfg/retry-mode/standard&#34; - nGxxv80fXE5xGWiS6C7OIg7/ncxoVho61Lmw9+qyveqdOBbiqRD4HJZf8qU90j0IeUXNGmwcSwA= SigV4 ECDHE-RSA-AES128-GCM-SHA256 AuthHeader s3.ap-southeast-1.amazonaws.com TLSv1.2 - -
-</code></pre>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/5.png"></p>
+<ol start="2">
+<li>Download and extract it to the directory you want to work in. Check if the files are complete as shown below.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/6.png"></p>
+<h3 id="push-code-to-codecommit-repo">Push code to CodeCommit repo</h3>
+<ol start="3">
+<li>Inside that directory:</li>
+</ol>
+<ul>
+<li>Run <strong><code>git init</code></strong> to create a git repo.</li>
+<li>Run <strong><code>git remote add origin PASTE_HTTPS_REPO_LINK_HERE</code></strong>, replace <strong>PASTE_HTTPS_REPO_LINK_HERE</strong> with the HTTPS link you copied in the previous section.</li>
+<li>Run <strong><code>git add .</code></strong>.</li>
+<li>Run <strong><code>git commit -m &quot;init&quot;</code></strong> to commit the code locally (not in the image).</li>
+</ul>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/7.png"></p>
+<ol start="4">
+<li>Continue:</li>
+</ol>
+<ul>
+<li>Run <strong><code>git push origin master</code></strong> to push the code to the repo on <strong>CodeCommit</strong>.</li>
+<li>Git will ask you for <strong>Username</strong> and <strong>Password</strong>, this is the credentials in the codecommit credentials file that we created in the <strong>Create HTTPS Git Credentials for CodeCommit</strong> section.</li>
+<li>Open the file credentials, copy <strong>username</strong> and <strong>password</strong> into cmd.</li>
+<li>Enter and confirm that the code has been successfully pushed.</li>
+</ul>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/9.png"></p>
+<ol start="5">
+<li>Return to the tab you are opening <strong>AWS</strong>, move to the <strong>CodeCommit</strong> service and into your repo, you will see the code has been successfully pushed.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/10.png"></p>
+<ol start="6">
+<li>On the left menu, choose <strong>Commits</strong> and check the most recent commit is yours, in the image is <strong>init</strong>.</li>
+</ol>
+<p><img alt="FCJ_ws2" src="/images/3.codecommit/11.png"></p>
+
 
 
 
@@ -1442,10 +1460,10 @@ b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-worksho
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-codecommit/3.1-repo/" title="Enable S3 Server access logging"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-codecommit/3.1-repo/" title="Create CodeCommit Repository"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-codebuild/" title="Logging with AWS CloudTrail" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-codebuild/" title="AWS CodeBuild" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1455,19 +1473,19 @@ b07c1e6c73fc3be646182d0400a50638e0703b6352275b2d165aa35f9791c572 logging-worksho
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713283192"></script>
-    <script src="/js/jquery.sticky.js?1713283192"></script>
-    <script src="/js/featherlight.min.js?1713283192"></script>
-    <script src="/js/highlight.pack.js?1713283192"></script>
+    <script src="/js/clipboard.min.js?1713362464"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713362464"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713362464"></script>
+    <script src="/js/jquery.sticky.js?1713362464"></script>
+    <script src="/js/featherlight.min.js?1713362464"></script>
+    <script src="/js/highlight.pack.js?1713362464"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713283192"></script>
-    <script src="/js/learn.js?1713283192"></script>
-    <script src="/js/hugo-learn.js?1713283192"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713362464"></script>
+    <script src="/js/learn.js?1713362464"></script>
+    <script src="/js/hugo-learn.js?1713362464"></script>
 
-    <link href="/mermaid/mermaid.css?1713283192" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713283192"></script>
+    <link href="/mermaid/mermaid.css?1713362464" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713362464"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.123.0">
+    <meta name="generator" content="Hugo 0.124.1">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Logging with AWS CloudTrail :: AWS System Manager</title>
+    <title>AWS CodeBuild :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713283192" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713283192" rel="stylesheet">
-    <link href="/css/hybrid.css?1713283192" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713283192" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713283192" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713283192" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713283192" rel="stylesheet">
-    <link href="/css/theme.css?1713283192" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713283192" rel="stylesheet">
+    <link href="/css/nucleus.css?1713363004" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713363004" rel="stylesheet">
+    <link href="/css/hybrid.css?1713363004" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713363004" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713363004" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713363004" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713363004" rel="stylesheet">
+    <link href="/css/theme.css?1713363004" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713363004" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713283192" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713363004" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713283192"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713363004"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -43,7 +43,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/FCJ-Workshop-2">
+      <a id="logo" href="/">
   <svg
     id="Layer_1"
     data-name="Layer 1"
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713283192"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713283192"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713363004"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713363004"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713283192"></script>
+<script type="text/javascript" src="/js/search.js?1713363004"></script>
 
     
   </div>
@@ -168,13 +168,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.1-git_credentials/" title="Create 2 bucket " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-git_credentials/" title="Create HTTPS Git Credentials for CodeCommit" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.1-git_credentials/">
-           <b> 2.1 </b> Create 2 bucket 
+           <b> 2.1 </b> Create HTTPS Git Credentials for CodeCommit
           
             <i class="fas fa-check read-icon"></i>
           
@@ -196,13 +196,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.2-public_subnet/" title="Update logging permission " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-public_subnet/" title="Create Public Subnet" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.2-public_subnet/">
-           <b> 2.2 </b> Update logging permission 
+           <b> 2.2 </b> Create Public Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -224,13 +224,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.3-security_group/" title="Upload file to S3 bucket " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.3-security_group/" title="Create Security Group" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.3-security_group/">
-           <b> 2.3 </b> Upload file to S3 bucket 
+           <b> 2.3 </b> Create Security Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -252,13 +252,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.4-target_group/" title="Edit policy " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.4-target_group/" title="Create Target Group" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.4-target_group/">
-           <b> 2.4 </b> Edit policy 
+           <b> 2.4 </b> Create Target Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -280,13 +280,13 @@
  
   
     
-    <li data-nav-id="/2-prerequiste/2.5-alb/" title="Access the file " class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.5-alb/" title="Create Application Load Balancer" class="dd-item 
         
         
         
         ">
       <a href="/2-prerequiste/2.5-alb/">
-           <b> 2.5 </b> Access the file 
+           <b> 2.5 </b> Create Application Load Balancer
           
             <i class="fas fa-check read-icon"></i>
           
@@ -315,13 +315,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/" title="S3 Server Access Logging" class="dd-item 
+    <li data-nav-id="/3-codecommit/" title="AWS CodeCommit" class="dd-item 
         
         
         
         ">
       <a href="/3-codecommit/">
-           <b> 3. </b> S3 Server Access Logging
+           <b> 3. </b> AWS CodeCommit
           
             <i class="fas fa-check read-icon"></i>
           
@@ -346,13 +346,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/3.1-repo/" title="Enable S3 Server access logging" class="dd-item 
+    <li data-nav-id="/3-codecommit/3.1-repo/" title="Create CodeCommit Repository" class="dd-item 
         
         
         
         ">
       <a href="/3-codecommit/3.1-repo/">
-           <b> 3.1 </b> Enable S3 Server access logging
+           <b> 3.1 </b> Create CodeCommit Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -374,13 +374,13 @@
  
   
     
-    <li data-nav-id="/3-codecommit/3.2-code/" title="Check logs" class="dd-item 
+    <li data-nav-id="/3-codecommit/3.2-code/" title="Push Code to CodeCommit Repository" class="dd-item 
         
         
         
         ">
       <a href="/3-codecommit/3.2-code/">
-           <b> 3.2 </b> Check logs
+           <b> 3.2 </b> Push Code to CodeCommit Repository
           
             <i class="fas fa-check read-icon"></i>
           
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/" title="Logging with AWS CloudTrail" class="dd-item 
+    <li data-nav-id="/4-codebuild/" title="AWS CodeBuild" class="dd-item 
         
         active
         
         ">
       <a href="/4-codebuild/">
-           <b> 4. </b> Logging with AWS CloudTrail
+           <b> 4. </b> AWS CodeBuild
           
             <i class="fas fa-check read-icon"></i>
           
@@ -440,13 +440,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.1-ecr_repo/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.1-ecr_repo/" title="Create private repo ECR" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.1-ecr_repo/">
-           <b> 3.2 </b> Check logs
+           <b> 4.1 </b> Create private repo ECR
           
             <i class="fas fa-check read-icon"></i>
           
@@ -468,13 +468,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.2-build_project/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.2-build_project/" title="Create CodeBuild Project" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.2-build_project/">
-           <b> 3.2 </b> Check logs
+           <b> 4.2 </b> Create CodeBuild Project
           
             <i class="fas fa-check read-icon"></i>
           
@@ -496,13 +496,13 @@
  
   
     
-    <li data-nav-id="/4-codebuild/4.3-role/" title="Check logs" class="dd-item 
+    <li data-nav-id="/4-codebuild/4.3-role/" title="Update CodeBuild Role" class="dd-item 
         
         
         
         ">
       <a href="/4-codebuild/4.3-role/">
-           <b> 3.2 </b> Check logs
+           <b> 4.3 </b> Update CodeBuild Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -531,13 +531,13 @@
  
   
     
-    <li data-nav-id="/5-codepipeline/" title="Query logs with Athena" class="dd-item 
+    <li data-nav-id="/5-codepipeline/" title="AWS CodePipeline" class="dd-item 
         
         
         
         ">
       <a href="/5-codepipeline/">
-           <b> 5. </b> Query logs with Athena
+           <b> 5. </b> AWS CodePipeline
           
             <i class="fas fa-check read-icon"></i>
           
@@ -588,41 +588,13 @@
  
   
     
-    <li data-nav-id="/6-codedeploy/6.1-cluster/" title="Check logs" class="dd-item 
+    <li data-nav-id="/6-codedeploy/6.1-cluster/" title="Create ECS Cluster" class="dd-item 
         
         
         
         ">
       <a href="/6-codedeploy/6.1-cluster/">
-           <b> 3.2 </b> Check logs
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-codedeploy/6.2-task_def/" title="Check logs" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/6-codedeploy/6.2-task_def/">
-           <b> 3.2 </b> Check logs
+           <b> 6.1 </b> Create ECS Cluster
           
             <i class="fas fa-check read-icon"></i>
           
@@ -735,6 +707,34 @@
         ">
       <a href="/6-codedeploy/6.6-deployment/">
            <b> 3.2 </b> Check logs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-codedeploy/6.2-task_def/" title="Create Task definition" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-codedeploy/6.2-task_def/">
+           <b> 6.2 </b> Create Task definition
           
             <i class="fas fa-check read-icon"></i>
           
@@ -944,7 +944,7 @@
             
           
           
-            <a href='/'>AWS S3 Logging</a> > Logging with AWS CloudTrail
+            <a href='/'>AWS Blue/Green Deployment</a> > AWS CodeBuild
           
         
           
@@ -959,7 +959,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#kích-hoạt-server-access-logging">Kích hoạt Server access logging</a></li>
+        <li><a href="#content">Content</a></li>
       </ul>
     </li>
   </ul>
@@ -979,7 +979,7 @@
           
             <h1>
               
-              Logging with AWS CloudTrail
+              AWS CodeBuild
             </h1>
           
 
@@ -987,134 +987,15 @@
 
 
 
-	<ul>
-<li>CloudTrail includes 3 main components:
-<ul>
-<li><strong>Event</strong> A record of an activity in an AWS account..</li>
-<li><strong>Trail</strong> A trail enables CloudTrail to deliver log files to an Amazon S3 bucket, CloudWatch logs, and CloudWatch events.</li>
-<li><strong>Log bucket</strong> The target S3 bucket where logs files are delivered.</li>
-</ul>
-</li>
-</ul>
-<h3 id="kích-hoạt-server-access-logging">Kích hoạt Server access logging</h3>
+	<p><img alt="FCJ_ws2" src="/images/4.codebuild/aws_codebuild.png">
+<img alt="FCJ_ws2" src="/images/4.codebuild/aws_ecr.png"></p>
+<h3 id="content">Content</h3>
 <ol>
-<li>
-<p>In <strong>AWS Console</strong>, find and choose <strong>Cloudtrail</strong>.</p>
-</li>
-<li>
-<p>Select <strong>Create trail</strong></p>
-</li>
-<li>
-<p>Continue:</p>
-</li>
+<li><a href="/4-codebuild/4.1-ecr_repo/">Create private ECR repo</a></li>
+<li><a href="/4-codebuild/4.2-build_project/">Create CodeBuild project</a></li>
+<li><a href="/4-codebuild/4.3-role/">Update CodeBuild role</a></li>
 </ol>
-<ul>
-<li>For <strong>Trail name</strong>, insert <strong><code>S3_logging_workshop</code></strong>.</li>
-<li>For <strong>Trail log bucket and folder</strong>, insert <strong><code>aws-cloud-trail-logs-workshop</code></strong>.</li>
-<li>For <strong>Log file SSE-KMS encryption</strong>, untick <strong>Enable</strong>.</li>
-</ul>
-<ol start="4">
-<li>
-<p>Scroll down and select <strong>Next</strong>.</p>
-</li>
-<li>
-<p>For <strong>Event type</strong>, tick <strong>Data events</strong>.</p>
-</li>
-<li>
-<p>Scroll down, for <strong>Data events</strong>, select <strong>S3</strong>. Then hit <strong>Next</strong>.</p>
-</li>
-<li>
-<p>Review and select <strong>Create trail</strong>.</p>
-</li>
-<li>
-<p>Confirm trail is created.</p>
-</li>
-<li>
-<p>Return <strong>S3 console</strong>, we can see that <strong>aws-cloud-trail-logs-workshop</strong> is created for storing logs.</p>
-</li>
-<li>
-<p>Open private tab and access the file.</p>
-</li>
-<li>
-<p>Wait 10 minuts then refresh. Follow, get into inners folder until you can see the logs.</p>
-</li>
-<li>
-<p>Select a file and <strong>Download</strong>.</p>
-</li>
-<li>
-<p>Log file will look like this:</p>
-</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Records&#34;</span>: [
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventVersion&#34;</span>: <span style="color:#e6db74">&#34;1.09&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;userIdentity&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;IAMUser&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;principalId&#34;</span>: <span style="color:#e6db74">&#34;******&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::****:user/****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;accessKeyId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;userName&#34;</span>: <span style="color:#e6db74">&#34;****&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;sessionContext&#34;</span>: {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;attributes&#34;</span>: {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;creationDate&#34;</span>: <span style="color:#e6db74">&#34;2024-03-03T05:32:58Z&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;mfaAuthenticated&#34;</span>: <span style="color:#e6db74">&#34;false&#34;</span>
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventTime&#34;</span>: <span style="color:#e6db74">&#34;2024-03-03T14:00:32Z&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventSource&#34;</span>: <span style="color:#e6db74">&#34;s3.amazonaws.com&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventName&#34;</span>: <span style="color:#e6db74">&#34;GetObject&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;awsRegion&#34;</span>: <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;sourceIPAddress&#34;</span>: <span style="color:#e6db74">&#34;118.69.159.186&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;userAgent&#34;</span>: <span style="color:#e6db74">&#34;[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0]&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestParameters&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Date&#34;</span>: <span style="color:#e6db74">&#34;20240303T140026Z&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bucketName&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Algorithm&#34;</span>: <span style="color:#e6db74">&#34;AWS4-HMAC-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;response-content-disposition&#34;</span>: <span style="color:#e6db74">&#34;attachment&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-SignedHeaders&#34;</span>: <span style="color:#e6db74">&#34;host&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Host&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;X-Amz-Expires&#34;</span>: <span style="color:#e6db74">&#34;300&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz&#34;</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;responseElements&#34;</span>: <span style="color:#66d9ef">null</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;additionalEventData&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;SignatureVersion&#34;</span>: <span style="color:#e6db74">&#34;SigV4&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;CipherSuite&#34;</span>: <span style="color:#e6db74">&#34;ECDHE-RSA-AES128-GCM-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bytesTransferredIn&#34;</span>: <span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;AuthenticationMethod&#34;</span>: <span style="color:#e6db74">&#34;QueryString&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;x-amz-id-2&#34;</span>: <span style="color:#e6db74">&#34;0nSxx7oCCBTlrpXwQsLYoA0MqHo/+k/FiMnikrVCDKiWDr1Aoeg7oSqlJvBsYm2J3BnFpU31IUA=&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bytesTransferredOut&#34;</span>: <span style="color:#ae81ff">7759</span>
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;requestID&#34;</span>: <span style="color:#e6db74">&#34;MB8NVKR3FVMSSRM9&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventID&#34;</span>: <span style="color:#e6db74">&#34;3d4906c8-52ce-456f-bc0a-a89f07b364a0&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;readOnly&#34;</span>: <span style="color:#66d9ef">true</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;resources&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;AWS::S3::Object&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;ARN&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::aws-cloudtrail-logs-workshop/AWSLogs/*****/CloudTrail/ap-southeast-1/2024/03/03/*****_CloudTrail_ap-southeast-1_20240303T1355Z_FXZWnsQMI7Esmlr6.json.gz&#34;</span>
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;accountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;AWS::S3::Bucket&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;ARN&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::aws-cloudtrail-logs-workshop&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      ],
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventType&#34;</span>: <span style="color:#e6db74">&#34;AwsApiCall&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;managementEvent&#34;</span>: <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;recipientAccountId&#34;</span>: <span style="color:#e6db74">&#34;*****&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;eventCategory&#34;</span>: <span style="color:#e6db74">&#34;Data&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tlsDetails&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;tlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLSv1.2&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;cipherSuite&#34;</span>: <span style="color:#e6db74">&#34;ECDHE-RSA-AES128-GCM-SHA256&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;clientProvidedHostHeader&#34;</span>: <span style="color:#e6db74">&#34;aws-cloudtrail-logs-workshop.s3.ap-southeast-1.amazonaws.com&#34;</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+
 
 
 
@@ -1557,10 +1438,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-codecommit/3.2-code/" title="Check logs"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-codecommit/3.2-code/" title="Push Code to CodeCommit Repository"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-codebuild/4.1-ecr_repo/" title="Check logs" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-codebuild/4.1-ecr_repo/" title="Create private repo ECR" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1570,19 +1451,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713283192"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713283192"></script>
-    <script src="/js/jquery.sticky.js?1713283192"></script>
-    <script src="/js/featherlight.min.js?1713283192"></script>
-    <script src="/js/highlight.pack.js?1713283192"></script>
+    <script src="/js/clipboard.min.js?1713363004"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713363004"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713363004"></script>
+    <script src="/js/jquery.sticky.js?1713363004"></script>
+    <script src="/js/featherlight.min.js?1713363004"></script>
+    <script src="/js/highlight.pack.js?1713363004"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713283192"></script>
-    <script src="/js/learn.js?1713283192"></script>
-    <script src="/js/hugo-learn.js?1713283192"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713363004"></script>
+    <script src="/js/learn.js?1713363004"></script>
+    <script src="/js/hugo-learn.js?1713363004"></script>
 
-    <link href="/mermaid/mermaid.css?1713283192" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713283192"></script>
+    <link href="/mermaid/mermaid.css?1713363004" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713363004"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
