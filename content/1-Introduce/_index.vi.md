@@ -10,7 +10,7 @@ pre: " <b> 1. </b> "
 
 **Blue/Green Deployment** là một quy trình triển khai liên tục nhằm giảm thời gian chết và rủi ro bằng cách có hai môi trường production giống hệt nhau, được gọi là Blue và Green.
 
-Giả sử môi trường **Blue** đang hoạt động và môi trường Green không hoạt động. Khi nhà phát triển muốn phát hành bất kỳ code mới nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường **Green**, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản **Green** và phiên bản **Blue** được duy trì như một bản sao lưu.
+Giả sử môi trường **Blue** đang hoạt động và môi trường **Green** không hoạt động. Khi developer muốn publish những thay đổi mới về code nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường **Green**, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản **Green** và trở thành **Blue** mới, trong khi đó phiên bản **Blue cũ** sẽ được duy trì như một bản sao lưu hoặc bị terminate.
 
 ![FCJ_ws2](/images/1.introduce/bg.jpg)
 

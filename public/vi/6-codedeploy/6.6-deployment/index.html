@@ -12,21 +12,21 @@
     <title>Cập nhật và quan sát deployment :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1713530341" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1713530341" rel="stylesheet">
-    <link href="/css/hybrid.css?1713530341" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1713530341" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1713530341" rel="stylesheet">
-    <link href="/css/auto-complete.css?1713530341" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1713530341" rel="stylesheet">
-    <link href="/css/theme.css?1713530341" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1713530341" rel="stylesheet">
+    <link href="/css/nucleus.css?1713709908" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1713709908" rel="stylesheet">
+    <link href="/css/hybrid.css?1713709908" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1713709908" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1713709908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1713709908" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1713709908" rel="stylesheet">
+    <link href="/css/theme.css?1713709908" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1713709908" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1713530341" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1713709908" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1713530341"></script>
+    <script src="/js/jquery-3.3.1.min.js?1713709908"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1713530341"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1713530341"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1713709908"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1713709908"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1713530341"></script>
+<script type="text/javascript" src="/js/search.js?1713709908"></script>
 
     
   </div>
@@ -1013,7 +1013,7 @@
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/34.png"></p>
 <ol start="4">
-<li>Trở về <strong>ECS</strong> console, vào xem tasks của cluster <strong>FCJ_Cluser</strong>, chúng ta sẽ thấy 3 task mới <strong>Running</strong>, đây chính là <strong>Blue enviroment</strong>, trong khi đó 3 task cũ là <strong>Green enviroment</strong>.</li>
+<li>Trở về <strong>ECS</strong> console, vào xem tasks của cluster <strong>FCJ_Cluser</strong>, chúng ta sẽ thấy 3 task mới <strong>Running</strong>, đây chính là <strong>Green enviroment</strong>, trong khi đó 3 task cũ là <strong>Blue enviroment</strong>.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/34_1.png"></p>
 <ol start="5">
@@ -1021,7 +1021,7 @@
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/35.png"></p>
 <ol start="6">
-<li>Hình bên dưới đang cho thấy traffic gửi đến <strong>DNS name của FCJ_ALB</strong> đang được chuyển từ <strong>Green enviroment (90%)</strong> sang <strong>Blue enviroment (10%)</strong>, đồng nghĩ với việc chuyển từ ứng dụng <strong>Version 1.0</strong> sang <strong>2.0</strong>.</li>
+<li>Hình bên dưới đang cho thấy traffic gửi đến <strong>DNS name của FCJ_ALB</strong> đang được chuyển từ <strong>Blue enviroment (90%)</strong> sang <strong>Green enviroment (10%)</strong>, đồng nghĩa với việc chuyển từ ứng dụng <strong>Version 1.0</strong> sang <strong>2.0</strong>.</li>
 </ol>
 <ul>
 <li>Chúng ta đã cấu hình cho việc này là <strong>10% mỗi phút (bước 5 phần 6.4)</strong>.</li>
@@ -1034,7 +1034,7 @@
 <li>Truy cập <strong>DNS name của FCJ_ALB (bước 17 phần 6.4)</strong>.</li>
 <li>Hãy thử <strong>hard refresh (Ctrl + R)</strong> vài lần.</li>
 <li>Bạn sẽ thấy có lúc bạn nhận được <strong>Version 1.0</strong>, có lúc là <strong>Version 2.0</strong>.</li>
-<li>Thử nghiệm sẽ rõ ràng hơn khi có càng nhiều % traffic được chuyển từ <strong>Green enviroment</strong> sang <strong>Blue enviroment</strong>.</li>
+<li>Thử nghiệm sẽ rõ ràng hơn khi có càng nhiều % traffic được chuyển từ <strong>Blue enviroment</strong> sang <strong>Green enviroment</strong>.</li>
 </ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/37.png"></p>
 <ol start="8">
@@ -1045,14 +1045,14 @@
 </ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/38_1.png"></p>
 <ol start="9">
-<li>Hình này thể hiện việc tất cả traffic đã được chuyển từ <strong>Green enviroment (0%)</strong> sang <strong>Blue enviroment (100%)</strong>. Từ đây, <strong>Green enviroment hiện tại</strong> sẽ được terminate, <strong>Blue enviroment hiện tại</strong> sẽ lên làm <strong>Green enviroment mới</strong>.</li>
+<li>Hình này thể hiện việc tất cả traffic đã được chuyển từ <strong>Blue enviroment (0%)</strong> sang <strong>Green enviroment (100%)</strong>. Từ đây, <strong>Blue enviroment hiện tại</strong> sẽ được terminate, <strong>Green enviroment hiện tại</strong> sẽ lên làm <strong>Blue enviroment mới</strong>.</li>
 </ol>
 <ul>
 <li>Step 3 của deployment sẽ <strong>đợi 15 phút (bước 13 phần 6.4)</strong> để chắc chắn hệ thống ổn định, nếu có gì gây ra deploy hỏng, hệ thống sẽ tự động roll back. Còn không, nếu mọi thứ ổn định thì <strong>Green enviroment hiện tại</strong> sẽ được terminate.</li>
 </ul>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/38.png"></p>
 <ol start="10">
-<li>3 task của <strong>Green enviroment cũ (task definition 9)</strong> đã được terminate và 3 task mới <strong>(task definition 10)</strong> sẽ lên làm <strong>Green enviroment mới</strong>, phục vụ <strong>100%</strong> traffic từ người dùng.</li>
+<li>3 task của <strong>Blue enviroment cũ (task definition 9)</strong> đã được terminate và 3 task mới <strong>(task definition 10)</strong> sẽ lên làm <strong>Blue enviroment mới</strong>, phục vụ <strong>100%</strong> traffic từ người dùng.</li>
 </ol>
 <p><img alt="FCJ_ws2" src="/images/6.codedeploy/39_1.png"></p>
 <ol start="11">
@@ -1524,19 +1524,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1713530342"></script>
-    <script src="/js/perfect-scrollbar.min.js?1713530342"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1713530342"></script>
-    <script src="/js/jquery.sticky.js?1713530342"></script>
-    <script src="/js/featherlight.min.js?1713530342"></script>
-    <script src="/js/highlight.pack.js?1713530342"></script>
+    <script src="/js/clipboard.min.js?1713709908"></script>
+    <script src="/js/perfect-scrollbar.min.js?1713709908"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1713709908"></script>
+    <script src="/js/jquery.sticky.js?1713709908"></script>
+    <script src="/js/featherlight.min.js?1713709908"></script>
+    <script src="/js/highlight.pack.js?1713709908"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1713530342"></script>
-    <script src="/js/learn.js?1713530342"></script>
-    <script src="/js/hugo-learn.js?1713530342"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1713709908"></script>
+    <script src="/js/learn.js?1713709908"></script>
+    <script src="/js/hugo-learn.js?1713709908"></script>
 
-    <link href="/mermaid/mermaid.css?1713530342" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1713530342"></script>
+    <link href="/mermaid/mermaid.css?1713709908" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1713709908"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
