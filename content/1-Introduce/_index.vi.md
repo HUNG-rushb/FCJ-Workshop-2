@@ -10,7 +10,7 @@ pre: " <b> 1. </b> "
 
 **Blue/Green Deployment** là một quy trình triển khai liên tục nhằm giảm thời gian chết và rủi ro bằng cách có hai môi trường production giống hệt nhau, được gọi là Blue và Green.
 
-Giả sử môi trường **Blue** đang hoạt động và môi trường **Green** không hoạt động. Khi developer muốn publish những thay đổi mới về code nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường **Green**, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản **Green** và trở thành **Blue** mới, trong khi đó phiên bản **Blue cũ** sẽ được duy trì như một bản sao lưu hoặc bị terminate.
+Giả sử môi trường **Blue** đang hoạt động và môi trường **Green** là phiên bản mới của ứng dụng bạn sẽ triển khai. Khi developer muốn publish những thay đổi mới về code nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường **Green**, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản **Green** và trở thành **Blue** mới, trong khi đó phiên bản **Blue cũ** sẽ được duy trì như một bản sao lưu hoặc bị terminate.
 
 ![FCJ_ws2](/images/1.introduce/bg.jpg)
 
@@ -27,6 +27,8 @@ Song song với đó thì chiến lược này cũng có một vài nhược đi
 
 - **Tiêu tốn nhiều tài nguyên** do cần duy trì 2 môi trường cùng lúc khi triển khai
 - **Blue/Green Deployment** đòi hỏi các service trên cả 2 môi trường sử dụng chung database, trong trường hợp code mới có tác động thay đổi cấu trúc database, cần xây dựng chiến lược đồng bộ sao cho cả hai môi trường có thể chạy cùng lúc mà không gặp sự cố. Với vấn đề này, ta có thể sử dụng liquibase để xây dựng giải pháp.
+
+Với **AWS**, bạn có thể deploy **Blue/Green deployments** sử dụng **Amazon ECS**, **Application Load Balancer** và **target groups**.
 
 {{% notice note %}}
 A notice disclaimer

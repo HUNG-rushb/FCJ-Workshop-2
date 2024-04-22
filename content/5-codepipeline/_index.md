@@ -6,9 +6,18 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-**AWS CodePipeline** là dịch vụ continuous delivery mà bạn có thể sử dụng để lập mô hình, trực quan hóa và tự động hóa các bước cần thiết để deploy phần mềm của mình. Bạn có thể nhanh chóng thiết lập mô hình, xác định cấu hình các giai đoạn khác nhau của quy trình phát hành phần mềm. **CodePipeline** tự động hóa các bước cần thiết để liên tục deploy các thay đổi phần mềm.
+![FCJ_ws2](/images/5.codepipeline/aws_codepipeline.png)
 
-1. Truy cập dịch vụ **AWS CodePipeline**. Ở menu bên trái, chọn **Pipelines**, sau đó **Create pipeline**.
+**AWS CodePipeline** is a continuous delivery service you can use to model, visualize, and automate the steps required to release your software. You can quickly model and configure the different stages of a software release process. **CodePipeline** automates the steps required to release your software changes continuously.
+
+- **Rapid delivery** **CodePipeline** automates your software release process, enabling you to rapidly release new features to your users. With **CodePipeline**, you can quickly iterate on feedback and get new features to your users faster.
+- **Configurable workflow** **AWS CodePipeline** enables you to model the different stages of your software release process using the console interface, the **AWS CLI**, **AWS CloudFormation**, or the **AWS SDKs**. You can easily specify the tests to run and customize the steps to deploy your application and its dependencies.
+- **Get started fast** With **CodePipeline**, you can immediately begin to model your software release process. There are no servers to provision or set up. **CodePipeline** is a fully managed continuous delivery service that connects to your existing tools and systems.
+- **Easy to integrate** **AWS CodePipeline** can easily be extended to adapt to your specific needs. You can use AWS pre-built plugins or your own custom plugins in any step of your release process. For example, you can pull your source code from GitHub or use your on-premises Jenkins build server. You can run load tests using a third-party service or pass on deployment information to your custom operations dashboard.
+
+Automating your build, test, and release process enables you to quickly and easily test each code change and catch bugs while they are small and simple to fix. You can ensure the quality of your application or infrastructure code by running each change through your staging and release process.
+
+1. Truy cập dịch vụ \***\*AWS CodePipeline\*\***. Ở menu bên trái, chọn **Pipelines**, sau đó **Create pipeline**.
 
 ![FCJ_ws2](/images/5.codepipeline/1.png)
 

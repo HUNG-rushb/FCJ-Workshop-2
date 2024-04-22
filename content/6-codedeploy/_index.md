@@ -6,28 +6,20 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-We will take the following steps to delete the resources we created in this exercise.
+![FCJ_ws2](/images/6.codedeploy/aws_codedeploy.png)
 
-### Xóa Athena query
+**CodeDeploy** is a deployment service that automates application deployments to **Amazon EC2** instances, on-premises instances, serverless **Lambda** functions, or **Amazon** ECS services.
 
-1. Find and select service **Athena**, then select **Launch query editor**, select tab **Settings**, click **Manage**.
+- **Automated deployments** **AWS CodeDeploy** fully automates your software deployments, enabling you to deploy reliably and rapidly. You can consistently deploy your application across your development, test, and production environments whether deploying to **Amazon EC2**, **Fargate**, **Lambda**, or your on-premises servers. The service scales with your infrastructure.
+- **Minimize downtime** **AWS CodeDeploy** helps maximize your application availability during the software deployment process. It introduces changes incrementally and tracks application health according to configurable rules. Software deployments can easily be stopped and rolled back if there are errors.
+- **Centralized control** - **AWS CodeDeploy** enables you to easily launch and track the status of your application deployments through the **AWS Management Console** or the **AWS Command Line Interface (AWS CLI)**. **CodeDeploy** gives you a detailed report enabling you to view when and to where each application revision was deployed. You can also create push notifications to receive live updates about your deployments.
+- **Easy to adopt** - **AWS CodeDeploy** is platform and language agnostic, works with any application, and provides the same experience whether you’re deploying to **Amazon EC2**, **Fargate**, or **Lambda**. You can easily reuse your existing setup code. **CodeDeploy** can also integrate with your existing software release process or continuous delivery toolchain (e.g., **CodePipeline**, **GitHub**, **Jenkins**).
 
-2. Click _X_ to delete the connections to bucket, click **Save**.
+### Content
 
-### Xóa CloudTrail
-
-3. Find and select service **CloudTrail**, select **Trails** on left panel. Select trail **S3_logging_workshop**, then select **Delete**.
-
-4. Confirm **Delete**.
-
-### Xóa S3 buckets
-
-5. Find and select service **S3**, select bucket **logging_workshop**. We have to empty the bucket before delete it. Select all files then click **Delete**.
-
-6. Confirmto delete. click **Delete objects**.
-
-7. Return to buckets list, then select bucket **logging_workshop**, select **Delete**.
-
-8. Confirm bucket's name and click **Delete bucket**.
-
-9. Repeat delete step from step 5 to delete 2 remainings buckets, **logging-workshop-destinations** và **aws-cloudtrail-log-workshop**.
+1.  [Create ECS Cluster](6.1-cluster/)
+2.  [Create Task definition](6.2-task_def)
+3.  [Update code](6.3-code/)
+4.  [Create Cluster service](6.4-service/)
+5.  [Update Deploy stage](6.5-deploy_stage/)
+6.  [Update và monitor deployment](6.6-deployment/)
