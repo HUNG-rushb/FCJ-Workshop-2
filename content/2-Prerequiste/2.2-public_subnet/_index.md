@@ -2,7 +2,7 @@
 title: "Create Public Subnet"
 date: "`r Sys.Date()`"
 weight: 2
-chapter: true
+chapter: false
 pre: " <b> 2.2 </b> "
 ---
 
@@ -46,4 +46,3 @@ pre: " <b> 2.2 </b> "
 7. Confirm that 3 subnets have been created successfully.
 
 ![FCJ_ws2](/images/2.prerequisite/8.png)
-

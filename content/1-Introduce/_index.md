@@ -10,7 +10,7 @@ pre: " <b> 1. </b> "
 
 **Blue/Green Deployment** is a continuous deployment process that reduces downtime and risk by having two identical production environments, called Blue and Green.
 
-Assume the **Blue** environment is running and the Green environment is not. When developers want to release any new code - a new feature release, a new version of the application, etc. - work on the new version is done in the **Green** environment, while the old version is maintained in Blue. When the new release process is complete, the load balancer will switch all production traffic to the **Green** version, and the **Blue** version is maintained as a backup.
+Assume the **Blue** environment is running and the **Green** environment is the new version of your application you will deploy. When developers want to release any new code - a new feature release, a new version of the application, etc. - work on the new version is done in the **Green** environment, while the old version is maintained in Blue. When the new release process is complete, the load balancer will switch all production traffic to the **Green** version, and the **Blue** version is maintained as a backup.
 
 ![FCJ_ws2](/images/1.introduce/bg.jpg)
 
@@ -27,3 +27,5 @@ Along with that, this strategy also has some disadvantages, such as:
 
 - **Consuming more resources** because it needs to maintain 2 environments at the same time when deploying
 - **Blue/Green Deployment** requires services on both environments to share a database, in case the new code affects changes in the database structure, a synchronization strategy needs to be built so that both environments can run simultaneously without incident. With this issue, we can use liquibase to build a solution.
+
+With **AWS**, you can operationalize your **Blue/Green deployments** using **Amazon ECS**, an **Application Load Balancer**, and **target groups**.

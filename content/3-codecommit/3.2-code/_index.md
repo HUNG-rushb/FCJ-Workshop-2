@@ -2,7 +2,7 @@
 title: "Push Code to CodeCommit Repository"
 date: "`r Sys.Date()`"
 weight: 2
-chapter: true
+chapter: false
 pre: " <b> 3.2 </b> "
 ---
 
