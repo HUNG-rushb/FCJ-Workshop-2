@@ -17,53 +17,53 @@ pre: " <b> 5. </b> "
 
 Automating your build, test, and release process enables you to quickly and easily test each code change and catch bugs while they are small and simple to fix. You can ensure the quality of your application or infrastructure code by running each change through your staging and release process.
 
-1. Truy cập dịch vụ \***\*AWS CodePipeline\*\***. Ở menu bên trái, chọn **Pipelines**, sau đó **Create pipeline**.
+1. Access the **AWS CodePipeline** service. In the left menu, select **Pipelines**, then **Create pipeline**.
 
 ![FCJ_ws2](/images/5.codepipeline/1.png)
 
-2. Mục **Pipeline name**, nhập **`FCJ_Pipeline`**. Các lựa chọn khác giữ nguyên mặc định như hình.
+2. In the **Pipeline name** field, enter **`FCJ_Pipeline`**. Keep the other options as default.
 
 ![FCJ_ws2](/images/5.codepipeline/2.png)
 
-3. Mục **Advanced settings**, **Artifact store** chọn **Default location** và **Encryption key** chọn **Default AWS Managed key**. Ấn **Next**.
+3. In the **Advanced settings**, **Artifact store** select **Default location** and **Encryption key** select **Default AWS Managed key**. Click **Next**.
 
 ![FCJ_ws2](/images/5.codepipeline/3.png)
 
-4. Tiếp tục:
+4. Continue:
 
-- Mục **Source provider**, chọn **AWS CodeCommit**.
-- Mục **Repository name**, chọn **FCJ_Repo**.
-- Mục **Branch name**, chọn **master**.
-- Còn lại giữ nguyên mặc định, sau đó nhấn **Next**.
+- In the **Source provider**, select **AWS CodeCommit**.
+- In the **Repository name**, select **FCJ_Repo**.
+- In the **Branch name**, select **master**.
+- Keep the rest as default, then click **Next**.
 
 ![FCJ_ws2](/images/5.codepipeline/4.png)
 
-5. Click vào account góc phía trên cùng bên phải, sau đó copy **Account ID** của bạn.
+5. Click on the account in the top right corner, then copy your **Account ID**.
 
 ![FCJ_ws2](/images/5.codepipeline/5.png)
 
-6. Tiếp tục:
+6. Continue:
 
-- Mục **Build provider**, chọn **AWS CodeBuild**.
-- Mục **Region**, chọn **US East**.
-- Mục **Project name**, chọn **FCJ_Build_Project**.
-- Nhấn **Add enviroment variable**. Mục **Name**, nhập **`AWS_ACCOUNT_ID`**. Mục **Value** hãy paste vào Account ID mà bạn đã copy trước đó.
-- Còn lại giữ nguyên mặc định, sau đó nhấn **Next**.
+- In the **Build provider**, select **AWS CodeBuild**.
+- In the **Region**, select **US East**.
+- In the **Project name**, select **FCJ_Build_Project**.
+- Click **Add enviroment variable**. In the **Name**, enter **`AWS_ACCOUNT_ID`**. In the **Value** paste the Account ID you copied earlier.
+- Keep the rest as default, then click **Next**.
 
 ![FCJ_ws2](/images/5.codepipeline/6.png)
 
-7. Nhấn **Skip deploy stage**, xác nhận **Skip** khi popup hiện ra.
+7. Hit **Skip deploy stage**, confirm **Skip** when the popup appears.
 
 ![FCJ_ws2](/images/5.codepipeline/7.png)
 
-8. Kiếm tra lại cấu hình và nhấn **Create pipeline**.
+8. Check the configuration again and click **Create pipeline**.
 
 ![FCJ_ws2](/images/5.codepipeline/8.png)
 
-9. Xác nhận pipeline đã được tạo thành công. Chờ cho đến khi pipeline build thành công như trong hình.
+9. Confirm the pipeline has been created successfully. Wait until the pipeline builds successfully as shown in the image.
 
 ![FCJ_ws2](/images/5.codepipeline/9.png)
 
-10. Truy cập tới dịch vụ **AWS ECR**, vào repo **fcj-image-repo** và xác nhận đã có 1 image được build và store thành công.
+10. Access the **AWS ECR** service, go to the **fcj-image-repo** repo and confirm that an image has been built and stored successfully.
 
 ![FCJ_ws2](/images/5.codepipeline/10.png)
