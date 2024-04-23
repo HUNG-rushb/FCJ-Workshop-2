@@ -17,6 +17,8 @@ pre: " <b> 5. </b> "
 
 Automating your build, test, and release process enables you to quickly and easily test each code change and catch bugs while they are small and simple to fix. You can ensure the quality of your application or infrastructure code by running each change through your staging and release process.
 
+### Create pipeline
+
 1. Truy cập dịch vụ \***\*AWS CodePipeline\*\***. Ở menu bên trái, chọn **Pipelines**, sau đó **Create pipeline**.
 
 ![FCJ_ws2](/images/5.codepipeline/1.png)
