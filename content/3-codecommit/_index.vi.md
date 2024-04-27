@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-![FCJ_ws2](/images/3.codecommit/aws_codecommit.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/aws_codecommit.png)
 
 **CodeCommit** là một dịch vụ quản lý mã nguồn hoàn toàn được quản lý, chứa các kho lưu trữ Git an toàn. Nó giúp các nhóm dễ dàng hợp tác trên mã nguồn trong một hệ sinh thái an toàn và có khả năng mở rộng cao. Chọn biểu tượng + bên cạnh mỗi lợi ích để tìm hiểu thêm.
 

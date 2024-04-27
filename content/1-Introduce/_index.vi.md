@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-![FCJ_ws2](/images/1.introduce/aws.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/1.introduce/aws.png)
 
 **Blue/Green Deployment** là một quy trình triển khai liên tục nhằm giảm thời gian chết và rủi ro bằng cách có hai môi trường production giống hệt nhau, được gọi là Blue và Green.
 
 Giả sử môi trường **Blue** đang hoạt động và môi trường **Green** là phiên bản mới của ứng dụng bạn sẽ triển khai. Khi developer muốn publish những thay đổi mới về code nào - bản phát hành tính năng mới, phiên bản mới của ứng dụng, v.v. - công việc trên phiên bản mới được thực hiện trong môi trường **Green**, trong khi phiên bản cũ được duy trì trong Blue. Khi quá trình phát hành mới kết thúc, bộ cân bằng tải sẽ chuyển tất cả lưu lượng sản xuất sang phiên bản **Green** và trở thành **Blue** mới, trong khi đó phiên bản **Blue cũ** sẽ được duy trì như một bản sao lưu hoặc bị terminate.
 
-![FCJ_ws2](/images/1.introduce/bg.jpg)
+![FCJ_ws2](/FCJ-Workshop-2/images/1.introduce/bg.jpg)
 
 Ưu điểm của chiến lược **Blue/Green Deployment** là :
 

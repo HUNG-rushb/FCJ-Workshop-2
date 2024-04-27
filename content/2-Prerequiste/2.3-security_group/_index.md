@@ -10,7 +10,7 @@ pre: " <b> 2.3 </b> "
 
 1. Go to **Security Groups** console, and choose **Create security group**.
 
-![FCJ_ws2](/images/2.prerequisite/9.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/9.png)
 
 2. Create security group:
 
@@ -20,4 +20,4 @@ pre: " <b> 2.3 </b> "
 - In the **Inbound rules** field, choose **Add rule**, **Type** choose **HTTP**, **Source** choose **Anywhere-IPv4**.
 - Scroll down, and choose **Create security group** (not shown in the image).
 
-  ![FCJ_ws2](/images/2.prerequisite/10.png)
+  ![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10.png)

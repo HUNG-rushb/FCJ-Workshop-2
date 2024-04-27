@@ -14,11 +14,11 @@ pre: " <b> 4.3 </b> "
 - Nhập tìm **`codebuild`**.
 - Chọn role codebuild tương ứng với project của bạn.
 
-![FCJ_ws2](/images/4.codebuild/21.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/21.png)
 
 2. Chọn **Add permissions**, sau đó **Create inline policy**.
 
-![FCJ_ws2](/images/4.codebuild/22.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/22.png)
 
 3. Copy và paste policy dưới đây vào **Policy editor**. Sau đó kéo xuống dưới chọn **Next**.
 
@@ -46,24 +46,24 @@ pre: " <b> 4.3 </b> "
 }
 ```
 
-![FCJ_ws2](/images/4.codebuild/23.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/23.png)
 
 4. Mục **Policy name**, nhập **FCJ_ECR_Public_Access**. Sau đó nhấn **Create policy**.
 
-![FCJ_ws2](/images/4.codebuild/24.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/24.png)
 
 5. Xác nhận policy đã được thêm thành công.
 
-![FCJ_ws2](/images/4.codebuild/25.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/25.png)
 
 6. Tiếp tục chọn **Add permissions**, sau đó **Attach policies**.
 
-![FCJ_ws2](/images/4.codebuild/26.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/26.png)
 
 7. Nhập tìm **AmazonEC2ContainerRegistryFullAccess**. Chọ và nhấn **Add permissions**.
 
-![FCJ_ws2](/images/4.codebuild/27.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/27.png)
 
 8. Xác nhận policy đã được thêm thành công.
 
-![FCJ_ws2](/images/4.codebuild/28.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/28.png)

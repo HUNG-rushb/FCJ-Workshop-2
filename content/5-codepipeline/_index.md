@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-![FCJ_ws2](/images/5.codepipeline/aws_codepipeline.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/aws_codepipeline.png)
 
 **AWS CodePipeline** is a continuous delivery service you can use to model, visualize, and automate the steps required to release your software. You can quickly model and configure the different stages of a software release process. **CodePipeline** automates the steps required to release your software changes continuously.
 
@@ -19,15 +19,15 @@ Automating your build, test, and release process enables you to quickly and easi
 
 1. Access the **AWS CodePipeline** service. In the left menu, select **Pipelines**, then **Create pipeline**.
 
-![FCJ_ws2](/images/5.codepipeline/1.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/1.png)
 
 2. In the **Pipeline name** field, enter **`FCJ_Pipeline`**. Keep the other options as default.
 
-![FCJ_ws2](/images/5.codepipeline/2.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/2.png)
 
 3. In the **Advanced settings**, **Artifact store** select **Default location** and **Encryption key** select **Default AWS Managed key**. Click **Next**.
 
-![FCJ_ws2](/images/5.codepipeline/3.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/3.png)
 
 4. Continue:
 
@@ -36,11 +36,11 @@ Automating your build, test, and release process enables you to quickly and easi
 - In the **Branch name**, select **master**.
 - Keep the rest as default, then click **Next**.
 
-![FCJ_ws2](/images/5.codepipeline/4.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/4.png)
 
 5. Click on the account in the top right corner, then copy your **Account ID**.
 
-![FCJ_ws2](/images/5.codepipeline/5.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/5.png)
 
 6. Continue:
 
@@ -50,20 +50,20 @@ Automating your build, test, and release process enables you to quickly and easi
 - Click **Add enviroment variable**. In the **Name**, enter **`AWS_ACCOUNT_ID`**. In the **Value** paste the Account ID you copied earlier.
 - Keep the rest as default, then click **Next**.
 
-![FCJ_ws2](/images/5.codepipeline/6.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/6.png)
 
 7. Hit **Skip deploy stage**, confirm **Skip** when the popup appears.
 
-![FCJ_ws2](/images/5.codepipeline/7.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/7.png)
 
 8. Check the configuration again and click **Create pipeline**.
 
-![FCJ_ws2](/images/5.codepipeline/8.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/8.png)
 
 9. Confirm the pipeline has been created successfully. Wait until the pipeline builds successfully as shown in the image.
 
-![FCJ_ws2](/images/5.codepipeline/9.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/9.png)
 
 10. Access the **AWS ECR** service, go to the **fcj-image-repo** repo and confirm that an image has been built and stored successfully.
 
-![FCJ_ws2](/images/5.codepipeline/10.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/5.codepipeline/10.png)

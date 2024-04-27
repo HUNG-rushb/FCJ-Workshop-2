@@ -6,13 +6,13 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-![FCJ_ws2](/images/1.introduce/aws.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/1.introduce/aws.png)
 
 **Blue/Green Deployment** is a continuous deployment process that reduces downtime and risk by having two identical production environments, called Blue and Green.
 
 Assume the **Blue** environment is running and the **Green** environment is the new version of your application you will deploy. When developers want to release any new code - a new feature release, a new version of the application, etc. - work on the new version is done in the **Green** environment, while the old version is maintained in Blue. When the new release process is complete, the load balancer will switch all production traffic to the **Green** version, and the **Blue** version is maintained as a backup.
 
-![FCJ_ws2](/images/1.introduce/bg.jpg)
+![FCJ_ws2](/FCJ-Workshop-2/images/1.introduce/bg.jpg)
 
 The advantages of the **Blue/Green Deployment** strategy are:
 

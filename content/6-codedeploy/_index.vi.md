@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-![FCJ_ws2](/images/6.codedeploy/aws_codedeploy.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/aws_codedeploy.png)
 
 **CodeDeploy** là một dịch vụ triển khai tự động ứng dụng đến các instance **Amazon EC2**, instance on-premises, hàm serverless **Lambda**, hoặc dịch vụ **Amazon ECS**.
 

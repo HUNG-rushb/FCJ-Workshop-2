@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-![FCJ_ws2](/images/4.codebuild/aws_codebuild.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/aws_codebuild.png)
 
 **AWS CodeBuild** is a fully managed build service in the cloud. **CodeBuild** compiles your source code, runs unit tests, and produces artifacts that are ready to deploy. **CodeBuild** eliminates the need to provision, manage, and scale your own build servers. It provides prepackaged build environments for popular programming languages and build tools such as **Apache Maven**, **Gradle**, and more. You can also customize build environments in **CodeBuild** to use your own build tools. **CodeBuild** scales automatically to meet peak build requests.
 
@@ -18,7 +18,7 @@ CodeBuild provides these benefits:
 - **Enables continuous integration and delivery** - **CodeBuild** belongs to a family of AWS developer tools, which you can use to create complete, automated software release workflows for continuous integration and delivery (CI/CD). You can also integrate **CodeBuild** into your existing CI/CD workflow. For example, you can use **CodeBuild** as a worker node for your existing Jenkins server setup for distributed builds.
 - **Secure** - With **CodeBuild**, your build artifacts are encrypted with customer-specific keys that are managed by the **AWS Key Management Service (AWS KMS)**. **CodeBuild** is integrated with **IAM**, so you can assign user-specific permissions to your build projects
 
-![FCJ_ws2](/images/4.codebuild/aws_ecr.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/aws_ecr.png)
 
 **Amazon Elastic Container Registry (Amazon ECR)** is an AWS managed container image registry service that is secure, scalable, and reliable. **Amazon ECR** supports private repositories with resource-based permissions using **AWS IAM**. This is so that specified users or **Amazon EC2** instances can access your container repositories and images. You can use your preferred CLI to push, pull, and manage Docker images, Open Container Initiative (OCI) images, and OCI compatible artifacts.
 

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-![FCJ_ws2](/images/6.codedeploy/aws_codedeploy.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/aws_codedeploy.png)
 
 **CodeDeploy** is a deployment service that automates application deployments to **Amazon EC2** instances, on-premises instances, serverless **Lambda** functions, or **Amazon** ECS services.
 

@@ -10,11 +10,11 @@ pre: " <b> 3.2 </b> "
 
 1. Access this link `https://github.com/HUNG-rushb/React-Calculator/releases/tag/v1` and download the source code. This is a simple Calculator App written in React that we will use to deploy.
 
-![FCJ_ws2](/images/3.codecommit/5.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/5.png)
 
 2. Download and extract it to the directory you want to work in. Check if the files are complete as shown below.
 
-![FCJ_ws2](/images/3.codecommit/6.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/6.png)
 
 ### Push code to CodeCommit repo
 
@@ -25,7 +25,7 @@ pre: " <b> 3.2 </b> "
 - Run **`git add .`**.
 - Run **`git commit -m "init"`** to commit the code locally (not in the image).
 
-![FCJ_ws2](/images/3.codecommit/7.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/7.png)
 
 4. Continue:
 
@@ -34,12 +34,12 @@ pre: " <b> 3.2 </b> "
 - Open the file credentials, copy **username** and **password** into cmd.
 - Enter and confirm that the code has been successfully pushed.
 
-![FCJ_ws2](/images/3.codecommit/9.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/9.png)
 
 5. Return to the tab you are opening **AWS**, move to the **CodeCommit** service and into your repo, you will see the code has been successfully pushed.
 
-![FCJ_ws2](/images/3.codecommit/10.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/10.png)
 
 6. On the left menu, choose **Commits** and check the most recent commit is yours, in the image is **init**.
 
-![FCJ_ws2](/images/3.codecommit/11.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/11.png)

@@ -12,7 +12,7 @@ pre: " <b> 2.3 </b> "
 
 1. Chuyển tới **Security Groups**, chọn **Create security group**.
 
-![FCJ_ws2](/images/2.prerequisite/9.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/9.png)
 
 2. Tạo security group:
 
@@ -22,4 +22,4 @@ pre: " <b> 2.3 </b> "
 - Mục **Inbound rules**, chọn **Add rule**, **Type** chọn **HTTP**, **Source** chọn **Anywhere-IPv4**.
 - Kéo xuống dưới cùng, chọn **Create security group** (không có trong hình).
 
-  ![FCJ_ws2](/images/2.prerequisite/10.png)
+  ![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10.png)

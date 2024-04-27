@@ -14,12 +14,12 @@ Vì đây là static credentials nên chúng có thể được cached bằng c�
 
 1. Từ root account, truy cập vào IAM console của IAM account mà bạn sẽ sử dụng cho bài lab này, chọn mục **Security credentials**.
 
-![FCJ_ws2](/images/2.prerequisite/_1.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/_1.png)
 
 2. Ở phần **HTTPS Git credentials for AWS CodeCommit**, chọn **Generate credentials**
 
-![FCJ_ws2](/images/2.prerequisite/_2.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/_2.png)
 
 3. Chọn **Download credentials**, và lưu nó ở nơi bạn có thể dễ dàng truy cập lại.
 
-![FCJ_ws2](/images/2.prerequisite/_3.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/_3.png)

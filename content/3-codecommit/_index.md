@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-![FCJ_ws2](/images/3.codecommit/aws_codecommit.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/3.codecommit/aws_codecommit.png)
 
 **CodeCommit** is a fully managed source control service that hosts secure Git-based repositories. It makes it easy for teams to collaborate on code in a secure and highly-scalable ecosystem. Select the + symbol next to each benefit to learn more.
 

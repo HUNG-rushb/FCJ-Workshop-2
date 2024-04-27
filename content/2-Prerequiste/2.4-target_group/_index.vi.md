@@ -10,11 +10,11 @@ pre: " <b> 2.4 </b> "
 
 1. Chuyển tới **EC2** console.
 
-![FCJ_ws2](/images/2.prerequisite/10_0.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10_0.png)
 
 2. Chuyển tới **Target groups**, chọn **Create target group**.
 
-![FCJ_ws2](/images/2.prerequisite/10_1.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10_1.png)
 
 3. Tạo target group:
 
@@ -22,10 +22,10 @@ pre: " <b> 2.4 </b> "
 - Mục **Target group name**, nhập **`FCJ-TG`**.
 - Kéo xuống chọn **Create target group**.
 
-![FCJ_ws2](/images/2.prerequisite/10_2.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10_2.png)
 
-![FCJ_ws2](/images/2.prerequisite/10_3.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10_3.png)
 
 4. Xác nhận target group đã được tạo thành công.
 
-![FCJ_ws2](/images/2.prerequisite/10_4.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/2.prerequisite/10_4.png)

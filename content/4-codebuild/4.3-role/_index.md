@@ -14,11 +14,11 @@ pre: " <b> 4.3 </b> "
 - Search for **`codebuild`**.
 - Select the codebuild role corresponding to your project.
 
-![FCJ_ws2](/images/4.codebuild/21.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/21.png)
 
 2. Choose **Add permissions**, then **Create inline policy**.
 
-![FCJ_ws2](/images/4.codebuild/22.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/22.png)
 
 3. Copy and paste the policy below into the **Policy editor**. Then scroll down and choose **Next**.
 
@@ -46,24 +46,24 @@ pre: " <b> 4.3 </b> "
 }
 ```
 
-![FCJ_ws2](/images/4.codebuild/23.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/23.png)
 
 4. In the **Policy name** field, enter **FCJ_ECR_Public_Access**. Then press **Create policy**.
 
-![FCJ_ws2](/images/4.codebuild/24.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/24.png)
 
 5. Confirm that the policy has been added successfully.
 
-![FCJ_ws2](/images/4.codebuild/25.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/25.png)
 
 6. Continue to choose **Add permissions**, then **Attach policies**.
 
-![FCJ_ws2](/images/4.codebuild/26.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/26.png)
 
 7. Search for **AmazonEC2ContainerRegistryFullAccess**. Select and press **Add permissions**.
 
-![FCJ_ws2](/images/4.codebuild/27.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/27.png)
 
 8. Confirm that the policy has been added successfully.
 
-![FCJ_ws2](/images/4.codebuild/28.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/4.codebuild/28.png)

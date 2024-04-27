@@ -14,7 +14,7 @@ In this workshop, we will build a Blue/Green pipeline using **AWS CodePipeline**
 - **Duration**: 150 minutes.
 - **Prerequisite**: git has been installed on the local machine, GitHub account, IDE, AWS account, IAM User/Role with AdministratorAcess.
 
-![FCJ_ws2](/images/1.introduce/aws.png)
+![FCJ_ws2](/FCJ-Workshop-2/images/1.introduce/aws.png)
 
 ### Content
 
@@ -26,4 +26,3 @@ In this workshop, we will build a Blue/Green pipeline using **AWS CodePipeline**
 6.  [AWS CodeDeploy and AWS ECS](6-codedeploy/)
 7.  [Clean up resources](7-cleanup/)
 8.  [Reference](8-ref/)
-
