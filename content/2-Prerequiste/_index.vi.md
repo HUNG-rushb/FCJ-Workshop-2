@@ -6,12 +6,10 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Để chuẩn bị cho workshop này, chúng ta tạo 1 bucket với public access để chứa file cần truy cập và 1 private bucket để chứa server access log.
-
 ### Nội dung
 
-1.  [Tạo 2 bucket](2.1-2buckets/)
-2.  [Cập nhật quyền tạo log](2.2-permission/)
-3.  [Upload file vào bucket](2.3-upload/)
-4.  [Thêm policy cho bucket](2.4-policy/)
-5.  [Truy cập file](2.5-file/)
+1.  [Tạo HTTPS Git Credentials cho CodeCommit](2.1-git_credentials/)
+2.  [Tạo Public subnet](2.2-public_subnet/)
+3.  [Tạo Security group](2.3-security_group/)
+4.  [Tạo Target group](2.4-target_group/)
+5.  [Tạo Application load balancer](2.5-alb/)

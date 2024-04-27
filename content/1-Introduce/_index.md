@@ -6,33 +6,26 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-When you use logging with Amazon S3, you can record actions taken by users, and services on your Amazon S3 resources. You can then use the log records for auditing and compliance purposes.
+![FCJ_ws2](/images/1.introduce/aws.png)
 
-You can log Amazon S3 actions using server access logs or AWS CloudTrail logs.
+**Blue/Green Deployment** is a continuous deployment process that reduces downtime and risk by having two identical production environments, called Blue and Green.
 
-**Server access logging** is a mechanism that provides detailed records for requests made to an S3 bucket.
+Assume the **Blue** environment is running and the **Green** environment is the new version of your application you will deploy. When developers want to release any new code - a new feature release, a new version of the application, etc. - work on the new version is done in the **Green** environment, while the old version is maintained in Blue. When the new release process is complete, the load balancer will switch all production traffic to the **Green** version, and the **Blue** version is maintained as a backup.
 
-Server access logging is disabled by default. Enable server access logging to start receiving logs. Log records are generally delivered within a few hours and it is rare to lose log records. There is no charge for enabling access logging, nor for PUT operations for log files. You are only charged for storage of the logs and for GET operations on the files. You can use object lifecycle management to minimize storage costs.
+![FCJ_ws2](/images/1.introduce/bg.jpg)
 
-AWS CloudTrail is a service that provides records of actions taken by a user, role, or service in your AWS Account. You can use CloudTrail to audit your account by logging and monitoring all activity. You can also use CloudTrail to detect unusual activity in your account.
+The advantages of the **Blue/Green Deployment** strategy are:
 
-Logging Amazon S3 actions with AWS CloudTrail helps keep your account secure by providing access auditing and analysis.
+- **Testing parity**: this feature means that tests reflect the reality of production.
+- **Deploy anytime**: no downtime means we can deploy anytime. No need to wait for maintenance windows.
+- **Instant rollback**: the transition works both ways. If we decide to go back to the previous version, we can switch all users back immediately.
+- **Instant switchover**: users are switched to the new version immediately, or nearly so. Everyone sees the latest release at the same time.
+- **Hot standby**: Blue-Green can save us from disaster scenarios. Suppose a data center goes offline, we switch to another until the issue is resolved. This will work as long as we have a contingency plan that does not place Blue-Green in the same availability zone.
+- **Postmortem**: debugging failed deployments is very difficult with in-place deployments. When faced with downtime, the priority is always to return to normal. Collecting debugging data is secondary, so much valuable information can be lost in the recovery process. Blue-green does not have this problem — Rollbacks always keep the failed deployment intact for analysis.
 
-**Comparison**
+Along with that, this strategy also has some disadvantages, such as:
 
-| Log properties                                                                                       | AWS CloudTrail | Amazon S3 server logs |
-| ---------------------------------------------------------------------------------------------------- | :------------: | :-------------------: |
-| Can be forwarded to other systems (Amazon CloudWatch Logs, Amazon CloudWatch Events)                 |    **Yes**     |          No           |
-| Deliver logs to more than one destination (for example, send the same logs to two different buckets) |    **Yes**     |          No           |
-| Turn on logs for a subset of objects (prefix)                                                        |    **Yes**     |          No           |
-| Cross-account log delivery (target and source bucket owned by different accounts)                    |    **Yes**     |          No           |
-| Integrity validation of log file by using digital signature or hashing                               |    **Yes**     |          No           |
-| Default or choice of encryption for log files                                                        |    **Yes**     |          No           |
-| Object operations (by using Amazon S3 APIs)                                                          |    **Yes**     |        **Yes**        |
-| Bucket operations (by using Amazon S3 APIs)                                                          |    **Yes**     |        **Yes**        |
-| Searchable UI for logs                                                                               |    **Yes**     |          No           |
-| Fields for Object Lock parameters, Amazon S3 Select properties for log records                       |    **Yes**     |          No           |
+- **Consuming more resources** because it needs to maintain 2 environments at the same time when deploying
+- **Blue/Green Deployment** requires services on both environments to share a database, in case the new code affects changes in the database structure, a synchronization strategy needs to be built so that both environments can run simultaneously without incident. With this issue, we can use liquibase to build a solution.
 
-Amazon Athena is an interactive query service that makes it easy for you to analyze data in Amazon S3 using standard SQL. You do not need to manage any infrastructure with Athena, and you pay only for the queries that you run.
-
-Once you enable server access logs and store them in your target S3 bucket, you might want to analyze or search through them. Logs are not automatically analyzed by Amazon S3, and you might have a lot of data. To analyze all your Amazon S3 data, you can use Amazon Athena.
+With **AWS**, you can operationalize your **Blue/Green deployments** using **Amazon ECS**, an **Application Load Balancer**, and **target groups**.
