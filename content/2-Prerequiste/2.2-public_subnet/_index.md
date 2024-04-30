@@ -28,7 +28,7 @@ pre: " <b> 2.2 </b> "
 
 5. Choose **Add new subnet**, and create subnet 2:
 
-- In the **Subnet name** field, enter **`fcj-subnet-1`**.
+- In the **Subnet name** field, enter **`fcj-subnet-2`**.
 - In the **Availability zone** field, choose **`us-east-1b`**.
 - In the **IPv4 subnet CIDR block** field, enter **`172.31.201.0/24`**.
 
@@ -36,7 +36,7 @@ pre: " <b> 2.2 </b> "
 
 6. Choose **Add new subnet**, and create subnet 3:
 
-- In the **Subnet name** field, enter **`fcj-subnet-1`**.
+- In the **Subnet name** field, enter **`fcj-subnet-3`**.
 - In the **Availability zone** field, choose **`us-east-1c`**.
 - In the **IPv4 subnet CIDR block** field, enter **`172.31.202.0/24`**.
 - Choose **Create subnet**.

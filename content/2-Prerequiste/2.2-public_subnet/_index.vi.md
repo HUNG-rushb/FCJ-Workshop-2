@@ -28,7 +28,7 @@ pre: " <b> 2.2 </b> "
 
 5. Chọn **Add new subnet**, và tạo subnet 2:
 
-- Mục **Subnet name**, nhập **`fcj-subnet-1`**.
+- Mục **Subnet name**, nhập **`fcj-subnet-2`**.
 - Mục **Availability zone**, chọn **`us-east-1b`**.
 - Mục **IPv4 subnet CIDR block**, nhập **`172.31.201.0/24`**.
 
@@ -36,7 +36,7 @@ pre: " <b> 2.2 </b> "
 
 1. Chọn **Add new subnet**, và tạo subnet 3:
 
-- Mục **Subnet name**, nhập **`fcj-subnet-1`**.
+- Mục **Subnet name**, nhập **`fcj-subnet-3`**.
 - Mục **Availability zone**, chọn **`us-east-1c`**.
 - Mục **IPv4 subnet CIDR block**, nhập **`172.31.202.0/24`**.
 - Chọn **Create subnet**.
