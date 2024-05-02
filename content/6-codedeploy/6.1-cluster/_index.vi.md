@@ -39,16 +39,42 @@ pre: " <b> 6.1 </b> "
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/106.png)
 
+### Tạo CodeDeploy Role cho ECS
+
+7. Tiếp tục chọn **Create role**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/201.png)
+
+8. Tiếp tục:
+
+- Mục **Trusted entity type**, chọn **AWS Service**.
+- Mục **Use case**, chọn **`CodeDeploy`**, sau đó chọn **CodeDeploy - ECS**.
+- Nhấn **Next**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/202.png)
+
+9. Xác nhận đã có policy **AWSCodeDeployRoleForECS**. Nhấn **Next**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/203.png)
+
+10. Nhập tên `CodeDeployServiceRole`. Kiểm tra policy và nhấn **Create role** (cuối trang).
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/204.png)
+
+11. Xác nhận tạo role thành công.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/205.png)
+
 ### Tạo ECS Cluster
 
-7.  Truy cập tới dịch vụ **AWS Elastic Container Service**, chọn **Create cluster**.
+12. Truy cập tới dịch vụ **AWS Elastic Container Service**, chọn **Create cluster**.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/1.png)
 
-8. Mục **Cluster name**, nhập **`FCJ_Cluster`**.
+13. Mục **Cluster name**, nhập **`FCJ_Cluster`**.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/2.png)
 
-9. Xác nhận cluster đã được tạo thành công
+14. Xác nhận cluster đã được tạo thành công
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/3.png)

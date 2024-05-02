@@ -39,16 +39,42 @@ pre: " <b> 6.1 </b> "
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/106.png)
 
+### Create CodeDeploy Role for ECS
+
+7. Continue, click **Create role**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/201.png)
+
+8. Continue:
+
+- For **Trusted entity type**, choose **AWS Service**.
+- For **Use case**, choose **`CodeDeploy`**, then choose **CodeDeploy - ECS**.
+- Click **Next**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/202.png)
+
+9. Confirm policy **AWSCodeDeployRoleForECS**. Click **Next**.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/203.png)
+
+10. Type in `CodeDeployServiceRole` for name. Check everything again and click **Create role** (end of page).
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/204.png)
+
+11. Cofirm role created successfully.
+
+![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/205.png)
+
 ### Create ECS Cluster
 
-7. Access the **AWS Elastic Container Service** service, then choose **Create cluster**.
+12. Access the **AWS Elastic Container Service** service, then choose **Create cluster**.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/1.png)
 
-8. In the **Cluster name** field, enter **`FCJ_Cluster`**.
+13. In the **Cluster name** field, enter **`FCJ_Cluster`**.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/2.png)
 
-9. Confirm that the cluster has been created successfully.
+14. Confirm that the cluster has been created successfully.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/6.codedeploy/3.png)
