@@ -46,11 +46,14 @@ pre: " <b> 7. </b> "
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/7.clean/18.png)
 
-9. Truy cập dịch vụ **ECR**, vào **Roles** và tìm **`codebuild`**, chọn role **codebuild*FCJ*...** và **Delete**.
+9. Truy cập dịch vụ **IAM**, vào **Roles** và tìm **`codebuild`**, chọn role **codebuild*FCJ*...** và **Delete**.
+
+- Lặp lại bước xóa với role `ecsTaskExecutionRole`.
+- Lặp lại bước xóa với role `AWSCodeDeployRoleForECS`.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/7.clean/12.png)
 
-10. Truy cập dịch vụ **EC2**, vào **Load balancers**, chọn **FCJ_ALB**, sau đó **Actions** và **Delete load balancer**.
+1.  Truy cập dịch vụ **EC2**, vào **Load balancers**, chọn **FCJ_ALB**, sau đó **Actions** và **Delete load balancer**.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/7.clean/13.png)
 

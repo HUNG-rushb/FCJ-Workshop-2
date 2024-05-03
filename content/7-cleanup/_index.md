@@ -46,7 +46,10 @@ pre: " <b> 7. </b> "
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/7.clean/18.png)
 
-9. Access the **ECR** service, go to **Roles** and search for **`codebuild`**, select the **codebuild*FCJ*...** role and **Delete**.
+9. Access the **IAM** service, go to **Roles** and search for **`codebuild`**, select the **codebuild*FCJ*...** role and **Delete**.
+
+- Repeat deleting steps with role `ecsTaskExecutionRole`.
+- Repeat deleting steps with role `AWSCodeDeployRoleForECS`.
 
 ![FCJ_ws2](/FCJ-Workshop-2/images/7.clean/12.png)
 
